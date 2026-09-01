@@ -16,6 +16,61 @@ Context and configuration reference for Claude Code sessions on the `alexvl64/sc
 
 ---
 
+## Gestion du site — handover 2026-09-01
+
+Décision Alex (2026-09-01) : **le site est géré exclusivement depuis le VPS
+SparkCore** (clone `/home/ubuntu/sci`, deploy key `~/.ssh/sci_deploy` en
+écriture, `core.sshCommand` configuré dans le clone). La machine
+`claude-vps-01` (Contabo) est retirée de l'exploitation du site : ses crons
+SEO/blog (pausés depuis 2026-06-21) sont supprimés, ses configs et sa mémoire
+purgées. Ses fichiers non versionnés (audits SEO/blog de juin 2026, prompts
+cron) sont archivés sur la branche `claude/archive-audit-2026-06-21`
+(`MD/ops-prompts/` pour les prompts).
+
+- Workflow inchangé : `beta` = revue (beta.sparkcore.fund), `main` = prod ;
+  **règle Alex : `main` doit toujours égaler `beta`** — promotion par ff-merge
+  validé par Alex.
+- Build CSS : local (`npm run build:css`, node v20 via nvm sur le VPS), le
+  `tailwind.min.css` est commité.
+- Outillage SEO (GSC/GA4/Bing/Cloudflare API) : les credentials qui vivaient
+  sur claude-vps-01 sont supprimés (révocation côté dashboards : voir la
+  section Cloudflare API et le service account). Si l'automatisation SEO est
+  relancée un jour depuis le VPS SparkCore, tout est à recréer : token CF
+  IP-restreint au nouvel hôte, **2e clé** du service account
+  `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com`
+  (console GCP, compte `sparkcore.public.df59f6@gmail.com`), clé Bing WMT.
+
+## Règles de travail (reprises de la mémoire claude-vps-01, 2026-09-01)
+
+1. **Propose-then-implement** : toute refonte ou refactor substantiel du site
+   passe par une roadmap MD (`MD/<slug>-YYYY-MM-DD.md`) sur branche
+   `claude/<slug>` en PR, et **attend le go explicite d'Alex avant tout
+   code** (consigne du 2026-05-05). Exclusions : typos, liens cassés,
+   sitemap, publication blog via le pipeline, patchs schema.
+2. **Design — angles vifs** : 90° partout ; le seul radius sanctionné est
+   **4 px** (boutons, badges, cards, AUM pills, CTA bars — validé
+   2026-06-12), jamais plus grand. Palette des fund-cards = source de vérité
+   PR #156.
+3. **Deux comptes Google** : `sparkcore.public.df59f6@gmail.com` = owner du
+   projet GCP `sparkcore-projet-1733486598578`, de Bing WMT et des services
+   SparkCore ; `alex@cointips.fr` = perso. Un « Request access » sur la
+   console GCP signifie mauvais compte dans le navigateur, pas un blocage
+   IAM.
+4. **Publication blog — 3 fichiers dans le même commit** : l'article +
+   `blog/index.html` (card en tête de grid + entrée JSON-LD `blogPost` +
+   incrément du chip de filtre) + `sitemap.xml` — puis
+   `python3 scripts/ops/indexnow_ping.py <url article> <url index> <url sitemap>`.
+   (Le gabarit HTML : skill `md-to-html` dans `MD/.claude/skills/`.)
+5. **KPMG — interdiction légale** (demande KPMG 2026-05-29) : ne jamais
+   nommer KPMG comme prestataire SparkCore sur une page indexée → « Big Four
+   firm » / « Cabinet Big Four ». Mentions génériques neutres (citations de
+   sources, exemples sectoriels) OK ; factsheets noindex hors scope.
+6. **Rédaction LinkedIn** : conclusion d'abord, 3-4 risques intuitifs max,
+   pas d'énumérations jargon, français financier idiomatique.
+7. **Coupons preferred annualisés** : toujours « coupon annuel de X % versé
+   mensuellement », jamais « coupon mensuel de X % » (erreur corrigée
+   2026-05-11).
+
 ## Tracking & Analytics
 
 > Site institutionnel sans pub. Tracking uniquement pour comprendre le comportement (sessions, sources organiques, scroll, clics formulaires/CTA). **Pas de Google Tag Manager** — overkill pour 1 seul tag, pas d'équipe marketing à autoguider.
@@ -467,7 +522,13 @@ early_hints: on              ✅
 
 > Tous les recommendations de l'audit `2026-05-06` sont **déjà appliqués**. La config CF zone est en l'état idéal pour Free plan.
 
-### Cloudflare API — token disponible
+### Cloudflare API — token (RETIRÉ 2026-09-01)
+
+> **Handover 2026-09-01** : ce token vivait sur claude-vps-01 (IP-restreint à
+> `158.220.123.20`), fichier supprimé au retrait de la machine — **à révoquer
+> au dashboard CF**. Aucun token CF n'existe côté VPS SparkCore : le
+> déploiement n'en a pas besoin (git-driven) ; en créer un seulement si un
+> usage API réapparaît, IP-restreint au nouvel hôte.
 
 Token "Read-all" dans `~/.config/claude-seo/projects/sci.json` clé `cloudflare_api_token` :
 - Scope : Read-only sur le compte (lecture zones/settings/DNS)
