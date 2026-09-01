@@ -323,16 +323,11 @@ Workflow recommandé : feature branch → PR vers `beta` (tester sur beta.sparkc
 
 ## Files intentionally excluded from git
 
-The following files are gitignored and must never be committed or pushed:
+The exclusion list itself lives in `.gitignore` at the repo root — read it
+there rather than duplicating it here. `form_config.php` in particular holds
+secrets and must never be committed.
 
-| File | Reason |
-|---|---|
-| `node_modules/` | Build artifacts |
-| `request_limit.db` | Runtime data |
-| `form_config.php` | Contains secrets — never commit |
-| `.env`, `*.env`, `*.key`, `*.pem` | Sensitive config patterns |
-
-> The `MD/` directory IS tracked in git (since 2026-04-15) for versioning. CF Pages publishes `MD/*` to the static asset store by default, so HTTP access is blocked at edge level via `_redirects` (`/MD/* /404.html 404`) plus `X-Robots-Tag: noindex` from `_headers` as defense in depth.
+> The `MD/` directory IS tracked in git (since 2026-04-15) for versioning. CF Pages publishes `MD/*` to the static asset store by default. HTTP access is blocked by the Function `functions/MD/[[path]].js` (returns the branded 404 with status 404 + noindex), plus `X-Robots-Tag: noindex` from `_headers` as defense in depth. **History (2026-09-01)**: the previous block relied on `_redirects` rules with status `404`, which Cloudflare Pages silently ignores (only 301/302/303/307/308 are supported) — `/MD/*`, `/.gitignore`, `/package.json` and `/package-lock.json` were publicly fetchable (noindexed, but served 200) from the 2026-05-06 migration until this fix. The three root files are now hidden behind a 301 to `/`.
 
 ---
 
@@ -665,103 +660,9 @@ The CRON produces a triage report (which articles need updates and why) — actu
 
 # Instructions pour Claude Code — SparkCore / site statique
 
-## Conversion Markdown → HTML (skill md-to-html)
+## Conversion Markdown → HTML
 
-### Rôle
-Convertir un article Markdown en page HTML statique cohérente avec le site existant. La structure, les classes CSS, le `<head>`, la nav, le footer et le disclaimer doivent être copiés à l'identique depuis un article HTML de référence du repo. Seuls le contenu, le titre, la description, le canonical, les OG tags et le JSON-LD changent.
-
-### Règle fondamentale : jamais de sortie HTML complète en un seul bloc
-Toujours procéder par étapes successives avec des remplacements ciblés (`str_replace_editor` ou `write_file` partiel). Cela évite de saturer le contexte et permet de valider à chaque étape.
-
----
-
-### Workflow obligatoire
-
-**0. Lecture du template de référence**
-Avant toute génération, lire **obligatoirement** `blog/do-crypto-fund-managers-need-mica-casp-license.html` comme article de référence (ou `blog/bitcoin-outperformance-strategy-fund.html` en secours).
-Extraire et mémoriser :
-- Le `<head>` complet (meta, CSS, fonts, scripts)
-- La structure `<nav>`
-- Les classes CSS des conteneurs d'article (`font-inter`, `font-funnel-display`, etc.)
-- Le footer et le disclaimer
-
-> ⚠️ **Ne jamais écrire le footer de mémoire.** Copier littéralement le bloc `<footer>…</footer>` depuis l'article de référence. Le footer correct contient exactement : logo (sans LinkedIn), `@<span id="year">`, séparateur `bg-paleBlue`, [FSA link] + [Licence: EFIU] dans le même `flex gap-3` **sans séparateur `&mdash;` entre eux**, puis Reg. No./LEI, Disclaimer, Privacy Policy. Pas de LinkedIn, pas de Terms of Use.
-
-**Étape A — Squelette**
-Créer `blog/<slug>.html` avec :
-- `<!DOCTYPE html>` → `</head>` (copié du template)
-- `<nav>` (copié du template)
-- `<article>` avec titre, meta-ligne, puis **obligatoirement dans cet ordre** :
-  1. Paragraphes d'introduction
-  2. **Image hero** : `<figure class="mt-6 mb-12"><img src="..." alt="..." class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" decoding="async" /></figure>`
-  3. **Bloc Key Takeaways** : `<div class="border-l-4 border-steelBlue bg-[#F9FAFB] pl-5 py-4 pr-4 mb-8 rounded-r-lg"><p class="font-inter text-sm font-semibold text-darkGray mb-3">Key takeaways</p><ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-5 space-y-2">...</ul></div>`
-  4. Marqueurs de contenu :
-     - `<!-- BODY_PART_1 -->`
-     - `<!-- BODY_PART_2 -->`
-     - `<!-- BODY_PART_3 -->`
-- Footer + disclaimer (copiés du template)
-
-> **Image hero** : utiliser l'URL de `coverImage` du frontmatter MD si disponible, sinon une URL Unsplash pertinente (`https://images.unsplash.com/photo-XXXX?w=1260&h=750&fit=crop&q=80`). Ne jamais omettre l'image hero.
->
-> **Key Takeaways** : reprendre les bullets du bloc `> **Key Takeaways**` du MD source. Ne jamais omettre ce bloc.
-
-Valider que le fichier s'ouvre avant de continuer.
-
-**Étape B — Remplacement BODY_PART_1**
-Remplacer `<!-- BODY_PART_1 -->` par le HTML de la première section (intro, H2/H3, paragraphes, tableaux, listes). Ne pas toucher au head ni au footer.
-
-**Étape C — Remplacement BODY_PART_2**
-Idem pour `<!-- BODY_PART_2 -->` (sections suivantes, SVG, tableaux longs).
-
-**Étape D — Remplacement BODY_PART_3**
-Idem pour `<!-- BODY_PART_3 -->` (FAQ, conclusion, sources).
-
-**Validation finale**
-```bash
-grep -n "BODY_PART" blog/<slug>.html
-# Doit retourner 0 ligne
-```
-
----
-
-### Règles de conversion du contenu
-
-**Classes CSS**
-Reprendre exactement les classes des autres articles du repo. Ne pas inventer de classes.
-
-**Placeholders `[INTERNAL-LINK: …]`**
-- Ne jamais laisser le texte brut dans le HTML final.
-- Rechercher l'URL réelle : `grep -r "keyword" blog/`
-- Remplacer par `<a href="/blog/slug.html">texte ancre</a>`
-
-**SVG sur fond sombre**
-Encapsuler dans :
-```html
-<div class="rounded-lg bg-[#0f172a] p-4">
-  <!-- SVG ici -->
-</div>
-```
-
-**Métadonnées à mettre à jour**
-- `<title>`, `<meta name="description">`, `<link rel="canonical">`
-- OG tags : `og:title`, `og:description`, `og:url`, `og:image`
-- JSON-LD `Article` : `headline`, `description`, `url`, `datePublished`, `dateModified`, `author`
-
----
-
-### Ce qu'il ne faut pas faire
-- ❌ Sortir l'intégralité du HTML en une seule réponse
-- ❌ Réécrire le markdown en prose libre
-- ❌ Inventer des classes CSS absentes du repo
-- ❌ Laisser des placeholders `[INTERNAL-LINK: …]` non résolus
-- ❌ Modifier le head, la nav ou le footer entre les étapes B/C/D
-- ❌ Omettre l'image hero (`<figure class="mt-6 mb-12">`)
-- ❌ Omettre le bloc Key Takeaways (`border-l-4 border-steelBlue bg-[#F9FAFB]`)
-- ❌ Créer des SVGs avec fond clair (`fill="#f9fafb"`) — toujours fond sombre (`fill="#0f1117"`) dans `<figure class="... rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">`
-- ❌ Écrire le footer de mémoire — toujours copier depuis `blog/do-crypto-fund-managers-need-mica-casp-license.html`
-- ❌ Ajouter LinkedIn, Terms of Use, ou des séparateurs `&mdash;` dans le footer
-
----
-
-### Livrable attendu
-`blog/<slug>.html` cohérent avec le site, sans placeholders résiduels, avec métadonnées SEO complètes, produit en 4 étapes max.
+Le mode opératoire complet (template de référence, workflow obligatoire en
+4 étapes, règles de conversion, pièges du footer) vit dans la compétence
+`md-to-html` : `.claude/skills/md-to-html/SKILL.md`. Elle se charge à la
+demande — inutile de la garder en contexte permanent.

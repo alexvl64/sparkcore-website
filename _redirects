@@ -4,14 +4,16 @@
 
 # ----------------------------------------------------------------
 # Block internal/dev files leaked by CF Pages default deploy
-# Replaces legacy .htaccess: RewriteRule ^MD(/|$) - [F,L] and dotfile blocks.
 # CF Pages excludes most dotfiles automatically (.git, .env, .DS_Store, README.md,
 # _headers, _redirects, .gitattributes) but ships these by default.
+# CF Pages _redirects only supports 301/302/303/307/308 — the previous
+# `/x /404.html 404` rewrites were SILENTLY IGNORED (constaté 2026-09-01).
+# /MD/* is blocked by functions/MD/[[path]].js (real 404); the three files
+# below are hidden behind a 301 to the homepage.
 # ----------------------------------------------------------------
-/MD/*              /404.html  404
-/.gitignore        /404.html  404
-/package.json      /404.html  404
-/package-lock.json /404.html  404
+/.gitignore        /  301
+/package.json      /  301
+/package-lock.json /  301
 
 # ----------------------------------------------------------------
 # Blog slug 301s (mirrors legacy .htaccess, commit 3a79321)
