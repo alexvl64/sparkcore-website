@@ -442,3 +442,6 @@ a.trust-strip__value:hover {
 .fund-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border-top: 1px solid; padding-top: 12px; margin-bottom: 16px; }
 .fund-facts dt { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #667085; }
 .fund-facts dd { font-family: 'Inter', sans-serif; font-size: 14px; color: #111111; margin: 0; }
+
+/* Homepage chart disclaimer: small print */
+.perf-note { font-size: 11.5px; line-height: 1.55; font-weight: 400; max-width: 980px; margin-top: 4px; }
