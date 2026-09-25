@@ -168,8 +168,8 @@ l'Admin : ne pas la révoquer sans prévoir la relève) — lecture via `sudo`.
 | GSC Search Analytics | ✅ | `sc-domain:sparkcore.fund`, le SA est `siteOwner` |
 | GSC URL Inspection | ✅ | accueil « Submitted and indexed » |
 | GA4 Data + Admin API | ✅ | property `530665322` ; rétention : événements **2 mois**, données utilisateur **14 mois** (remise à zéro à chaque visite) |
-| PageSpeed Insights | ✅ via le SA | jeton OAuth du SA avec le scope **`openid`** (quota du projet) ; sans clé, le quota anonyme partagé renvoie 429 |
-| CrUX | ❌ | demande une clé API ; trafic Chrome insuffisant de toute façon |
+| PageSpeed Insights | ✅ clé API + SA | jeton OAuth du SA avec le scope **`openid`** (quota du projet) ; sans clé, le quota anonyme partagé renvoie 429 |
+| CrUX | ✅ API / ❌ données | clé OK, origine sans données (trafic Chrome insuffisant) |
 | Bing Webmaster | ❌ | clé perdue avec claude-vps-01 |
 | IndexNow | ✅ | clé dans le repo, `scripts/ops/indexnow_ping.py` |
 
@@ -180,9 +180,9 @@ l'Admin : ne pas la révoquer sans prévoir la relève) — lecture via `sudo`.
 `--user`). Config Google commune : `~/.config/claude-seo/google-api.json`
 (SA ci-dessus, copie de clé `service_account.json` en 600, GSC
 `sc-domain:sparkcore.fund`, GA4 `530665322`) — `gsc_query.py` et
-`ga4_report.py` vérifiés. **PageSpeed / CrUX dans ces outils exigent une clé
-API** (`"api_key"` dans le JSON) : à créer dans la console GCP du projet ;
-en attendant, PSI passe par le jeton du SA (scope `openid`).
+`ga4_report.py` vérifiés. **Clé API Google** (PSI + CrUX, restreinte) posée par Alex
+le 2026-09-25 dans `"api_key"` du même JSON : PSI vérifié ; CrUX répond « pas
+de données » (trafic Chrome insuffisant).
 
 
 > ⚠️ **Note historique 2026-05-02** : la config sci pointait par erreur vers `properties/529476067` (orphelin, 0 row). Corrigé vers `530665322` après triangulation : repo `analytics.js:3` + `curl https://sparkcore.fund/assets/js/analytics.js` + GA4 admin `dataStreams.list`. Toujours croiser ces 3 sources avant de déclarer le tracking en panne.
