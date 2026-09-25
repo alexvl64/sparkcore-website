@@ -209,9 +209,10 @@ function renderChart(fund, btc) {
       labels: {
         colors: "#DBD1BC",
       },
+      fontSize: "14px",
       markers: {
         shape: "square",
-        size: window.innerWidth <= 768 ? 10 : 14,
+        size: window.innerWidth <= 768 ? 6 : 7,
         strokeWidth: 0,
       },
     },
