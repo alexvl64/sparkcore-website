@@ -59,6 +59,16 @@ elle ne sert qu'aux éléments de ce fonds.
 - **Liste de faits** (`.team-governance__list`, `.reg-facts`) : `dl`, libellé
   en capitales grises au-dessus ou à gauche, valeur en `#0E1117`, filets
   entre lignes.
+- **Titres de section** : classe `.section-title` (32 / 40 / 48 px selon
+  largeur), une seule échelle pour toutes les sections.
+- **Hero** : colonne texte (surtitre, titre, accroche, deux boutons côte à côte)
+  + faits réglementaires en pied de colonne (`.hero__facts`) ; image à droite.
+  Pas de courbe décorative ni d'image de graphique « qui monte ».
+- **Parcours investisseur** (`.invest__steps`) : étapes réelles numérotées,
+  sans photo d'illustration.
+- **Faits d'un fonds** (`.fund-facts`) : lancement, liquidité ; jamais de
+  performance sur une carte.
+- Texte courant aligné à gauche, **jamais justifié**.
 - **Graphiques de performance** : base 100 datée, séries fonds (trait plein)
   vs référence (pointillé), **période hors fonds grisée et nommée**, repère
   vertical au lancement du fonds, date d'arrêt affichée, mention net/brut de

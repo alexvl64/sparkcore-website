@@ -46,6 +46,7 @@ const translations = {
     // === HERO ===
     heroLatestArticle: "<span class=\"hero-latest-badge__label\">Nouveau</span><span class=\"hero-latest-badge__title\">STRC à 11,5 % : pourquoi ce rendement sous-rémunère le risque</span><span class=\"hero-latest-badge__arrow\" aria-hidden=\"true\">→</span>",
     heroTitle: "Stratégies institutionnelles <span class=\"block\">sur les actifs numériques</span>",
+    heroEyebrow: "Gestionnaire de fonds alternatifs régulé · Estonie",
     heroTagline: "Trois approches distinctes. Un cadre réglementé. Conçu pour les investisseurs qui exigent la rigueur.",
     heroCtaPrimary: "Planifier un appel →",
     heroCtaSecondary: "Demander la documentation",
@@ -128,10 +129,14 @@ const translations = {
     // === INVEST SECTION ===
     investTitle: "Investissez avec nous",
     investText: "Nos fonds sont commercialisés auprès d'investisseurs professionnels. D'autres investisseurs peuvent, sous conditions, y accéder dans les limites du régime estonien. Le capital minimum par investisseur est de 50 000 €, en EUR, USD ou stablecoins réglementés. La VL est calculée quotidiennement ; les rachats sont traités chaque trimestre.",
-    investStep1: "Demander des informations",
-    investStep2: "Nous vous contacterons avec plus de détails",
-    investStep3: "Signer les documents nécessaires",
-    investStep4: "Devenez investisseur",
+    investStep1: "Demande d'information",
+    investStep1Desc: "Formulaire de contact ou appel de découverte avec l'équipe de gestion.",
+    investStep2: "Vérification d'identité",
+    investStep2Desc: "KYC et vérification de l'origine des fonds en ligne.",
+    investStep3: "Signature électronique",
+    investStep3Desc: "Documents de souscription signés électroniquement.",
+    investStep4: "Espace investisseur",
+    investStep4Desc: "Positions, rapports et documents dans votre espace sécurisé.",
 
     // === WHITE LABEL SECTION ===
     wlSubtitle: "Services aux gestionnaires",
@@ -237,6 +242,7 @@ const translations = {
     // === HERO ===
     heroLatestArticle: "<span class=\"hero-latest-badge__label\">New</span><span class=\"hero-latest-badge__title\">AIF vs AIFM: What's the Difference for Crypto Funds</span><span class=\"hero-latest-badge__arrow\" aria-hidden=\"true\">→</span>",
     heroTitle: "Institutional-grade strategies <span class=\"block\">in digital assets</span>",
+    heroEyebrow: "Regulated alternative investment fund manager · Estonia",
     heroTagline: "Three distinct approaches. One regulated framework. Managed for investors who demand precision.",
     heroCtaPrimary: "Schedule a Discovery Call →",
     heroCtaSecondary: "Request Documentation",
@@ -320,9 +326,13 @@ const translations = {
     investTitle: "Invest with us",
     investText: "SparkCore funds are marketed to professional investors. Other investors may, subject to conditions, access them within the limits of the Estonian regime. The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins. NAV is calculated daily; redemptions are processed quarterly.",
     investStep1: "Request information",
-    investStep2: "We will contact you with further details",
-    investStep3: "Sign the required documents",
-    investStep4: "Become an investor",
+    investStep1Desc: "Contact form or discovery call with the management team.",
+    investStep2: "Identity verification",
+    investStep2Desc: "Online KYC and source-of-funds checks.",
+    investStep3: "Electronic signature",
+    investStep3Desc: "Subscription documents signed electronically.",
+    investStep4: "Investor portal",
+    investStep4Desc: "Positions, reports and documents in your secure investor space.",
 
     // === WHITE LABEL SECTION ===
     wlSubtitle: "Services for managers",

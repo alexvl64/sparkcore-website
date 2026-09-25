@@ -396,3 +396,49 @@ a.trust-strip__value:hover {
 @media (min-width: 640px) { .reg-facts > div { grid-template-columns: 220px 1fr; gap: 24px; } }
 .reg-facts dt { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: #667085; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 3px; }
 .reg-facts dd { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.5; color: #0E1117; margin: 0; }
+
+/* ── Refresh 2026-09 (lot 4): section titles, hero, invest steps, fund facts ── */
+.section-title { font-size: 32px; line-height: 1.2; letter-spacing: -0.01em; }
+@media (min-width: 768px) { .section-title { font-size: 40px; } }
+@media (min-width: 1280px) { .section-title { font-size: 48px; } }
+
+.hero__grid { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 1024px) { .hero__grid { grid-template-columns: 1fr 1fr; min-height: min(calc(100vh - 88px), 820px); } }
+.hero__content { display: flex; flex-direction: column; justify-content: space-between; gap: 48px; padding: 48px 24px 32px; }
+@media (min-width: 768px) { .hero__content { padding: 64px 40px 40px; } }
+@media (min-width: 1024px) { .hero__content { padding: 88px 48px 48px 40px; } }
+.hero__eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8FA3B8; margin-bottom: 20px; }
+.hero__title { font-size: 38px; line-height: 1.15; letter-spacing: -0.01em; }
+@media (min-width: 768px) { .hero__title { font-size: 50px; } }
+@media (min-width: 1280px) { .hero__title { font-size: 58px; } }
+.hero__tagline { font-size: 18px; line-height: 1.55; max-width: 520px; margin-top: 20px; }
+@media (min-width: 768px) { .hero__tagline { font-size: 20px; } }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero__facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; border-top: 1px solid rgba(219, 209, 188, 0.18); padding-top: 24px; }
+@media (min-width: 1280px) { .hero__facts { grid-template-columns: repeat(4, auto); justify-content: start; } }
+.hero__facts dt { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8FA3B8; margin-bottom: 4px; }
+.hero__facts dd { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.45; color: #DBD1BC; margin: 0; }
+.hero__facts a { color: inherit; text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(219, 209, 188, 0.4); }
+.hero__media { position: relative; min-height: 360px; }
+@media (min-width: 768px) { .hero__media { min-height: 480px; } }
+.hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.invest { padding: 64px 24px; }
+@media (min-width: 1024px) { .invest { padding: 96px 24px; } }
+.invest__panel { background: #DBD1BC; padding: 32px 24px; }
+@media (min-width: 768px) { .invest__panel { padding: 48px; } }
+.invest__intro { display: grid; gap: 16px; }
+@media (min-width: 1024px) { .invest__intro { grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; } }
+.invest__text { font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.6; color: #545047; }
+.invest__steps { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; margin: 40px 0 32px; border-top: 1px solid rgba(84, 80, 71, 0.3); }
+@media (min-width: 768px) { .invest__steps { grid-template-columns: 1fr 1fr; column-gap: 32px; } }
+@media (min-width: 1024px) { .invest__steps { grid-template-columns: repeat(4, 1fr); } }
+.invest__step { padding: 20px 0; border-bottom: 1px solid rgba(84, 80, 71, 0.3); }
+@media (min-width: 1024px) { .invest__step { border-bottom: none; } }
+.invest__num { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #545047; font-variant-numeric: tabular-nums; }
+.invest__step-title { font-family: 'Funnel Display', sans-serif; font-size: 20px; line-height: 1.3; color: #0E1117; margin-top: 8px; }
+.invest__step-desc { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.55; color: #545047; margin-top: 6px; }
+
+.fund-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border-top: 1px solid; padding-top: 12px; margin-bottom: 16px; }
+.fund-facts dt { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #667085; }
+.fund-facts dd { font-family: 'Inter', sans-serif; font-size: 14px; color: #111111; margin: 0; }

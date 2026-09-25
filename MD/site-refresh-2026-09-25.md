@@ -79,6 +79,16 @@
 - Beta : `X-Robots-Tag: noindex, nofollow` posé par `functions/_middleware.js`
   pour tout hôte autre que `sparkcore.fund` (inerte en prod).
 
+### Lot 4 — Passe design de l'accueil (go Alex 2026-09-25)
+
+- Hero rééquilibré (faits réglementaires en pied de colonne, bandeau séparé
+  supprimé), courbes décoratives retirées (hero, newsletter), photo de banque
+  d'images de « Investir » remplacée par les 4 étapes réelles, texte non
+  justifié, échelle de titres unifiée, cartes de fonds allégées + faits.
+- Header uniforme sur toutes les pages du site (logo, bouton Espace
+  investisseur, Nous contacter) ; Articles en pied de page uniquement.
+  Factsheets et discovery-call gardent leur en-tête de document.
+
 ## Hors périmètre
 
 Aucune modification Admin/R2, aucun envoi. Relecture Hedman Partners des

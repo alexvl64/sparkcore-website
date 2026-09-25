@@ -42,12 +42,12 @@
 
     <!-- style css -->
     <!-- Critical CSS: fonts.css + style.css inlined (minified) to eliminate render-blocking round-trip -->
-    <style>@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}html,body{scroll-behavior:smooth;}::-webkit-scrollbar{width:0;}.contact-us-form::-webkit-scrollbar{width:0;}input:-webkit-autofill{background-color:transparent !important;transition:background-color 5000s ease-in-out 0s;-webkit-text-fill-color:inherit !important;}input:-webkit-autofill::first-line{font-family:inherit;font-size:inherit;color:inherit;}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}input[type="number"]{-moz-appearance:textfield;}.apexcharts-legend-text{font-size:14px !important;font-family:"Inter","sans-serif" !important;padding-left:18px !important;}.apexcharts-text tspan{font-family:"Inter","sans-serif" !important;font-size:14px !important;}.apexcharts-legend{padding-left:0px !important;}@media (max-width:1023.98px){.apexcharts-text tspan{font-size:12px !important;}}@media (max-width:767.98px){.apexcharts-text tspan{font-size:8px !important;}.apexcharts-legend{padding-left:20px !important;}.apexcharts-legend-text{font-size:13px !important;padding-left:16px !important;}}.toastify{display:flex !important;align-items:center !important;border:1px solid black !important;font-size:14px !important;font-family:'Funnel Display',sans-serif !important;color:white !important;border-radius:0 !important;background:rgba(0,0,0,0.7) !important;}.toastify .toastify-avatar{width:24px;height:24px;margin-right:12px;}.lang-toggle{display:flex !important;border:1px solid #D0DAE3 !important;overflow:hidden;border-radius:3px;}.lang-btn{padding:7px 12px !important;background:#FFFFFF !important;background-color:#FFFFFF !important;color:#6B7B8D !important;border:none !important;cursor:pointer !important;font-family:'Inter',sans-serif !important;font-size:11px !important;font-weight:600 !important;letter-spacing:0.4px !important;transition:background 0.2s,color 0.2s;}.lang-btn+.lang-btn{border-left:1px solid #D0DAE3 !important;}.lang-btn.active{background:#0E1117 !important;background-color:#0E1117 !important;color:#FFFFFF !important;}.lang-btn:hover:not(.active){background:#F3F5F7 !important;background-color:#F3F5F7 !important;color:#0E1117 !important;}@media (min-width:768px){.hero-content-left{padding-right:48px;}}.section-light-bg{background-color:#F3F5F7;}.trust-strip{background-color:#F3F5F7;border-bottom:1px solid #D0DAE3;}.trust-strip__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;max-width:1360px;margin:0 auto;padding:14px 24px;}@media (min-width:1024px){.trust-strip__grid{grid-template-columns:repeat(4,1fr);gap:0;padding:14px 24px;}.trust-strip__grid>div{padding:0 24px;border-left:1px solid #D0DAE3;}.trust-strip__grid>div:first-child{padding-left:0;border-left:none;}.trust-strip__grid>div:last-child{padding-right:0;}}.trust-strip__label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;}.trust-strip__value{display:block;font-family:'Inter',sans-serif;font-size:12px;line-height:1.45;color:#0E1117;text-decoration:none;}a.trust-strip__value:hover{text-decoration:underline;}.hero-cta-ghost{background:transparent;color:#DBD1BC;border:1px solid #DBD1BC;transition:background 0.3s,color 0.3s;}.hero-cta-ghost:hover{background:#DBD1BC;color:#0E1117;}.nav-articles-link{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.4;color:#0E1117;background:transparent;border:1px solid #0E1117;border-radius:4px;height:44px;padding:0 16px;text-decoration:none;transition:background 0.3s ease,color 0.3s ease;cursor:pointer;white-space:nowrap;}.nav-articles-link:hover{background:#0E1117;color:#fff;}@media (min-width:768px){.nav-articles-link{height:54px;padding:0 24px;font-size:16px;}}@media (max-width:767px){.nav-articles-link{display:none;}}.hero-latest-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 12px;background:rgba(219,209,188,0.08);border:1px solid rgba(219,209,188,0.25);border-radius:999px;font-family:'Inter',sans-serif;font-size:13px;color:#DBD1BC;text-decoration:none;transition:background 0.2s ease,border-color 0.2s ease,transform 0.15s ease;margin-bottom:24px;max-width:100%;width:max-content;}.hero-latest-badge:hover{background:rgba(219,209,188,0.18);border-color:rgba(219,209,188,0.5);}.hero-latest-badge__label{display:inline-flex;align-items:center;gap:6px;color:#8FA3B8;text-transform:uppercase;letter-spacing:0.08em;font-size:10px;font-weight:700;}.hero-latest-badge__label::before{content:"✦";color:#DBD1BC;font-size:13px;}.hero-latest-badge__title{font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px;}.hero-latest-badge__arrow{font-weight:500;transition:transform 0.2s ease;}.hero-latest-badge:hover .hero-latest-badge__arrow{transform:translateX(2px);}@media (min-width:768px){.hero-latest-badge{font-size:14px;}.hero-latest-badge__title{max-width:320px;}}.article-bio-avatar{width:64px;height:64px;flex-shrink:0;object-fit:cover;border-radius:50%;}.founder-cta-btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:500;font-size:14px;line-height:1.4;color:#fff;background:#0E1117;border-radius:4px;padding:12px 20px;text-decoration:none;transition:background 0.2s ease;cursor:pointer;border:none;}.founder-cta-btn:hover{background:#4A6275;}@media (min-width:768px){.founder-cta-btn{font-size:16px;padding:14px 24px;}}.nav-actions{gap:12px;}.nav-portal-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;min-width:44px;padding:0 11px;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.4;color:#0E1117;background:transparent;border:1px solid #0E1117;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background 0.3s ease,color 0.3s ease;}.nav-portal-link:hover{background:#0E1117;color:#fff;}.nav-portal-link__icon{flex-shrink:0;}.nav-portal-link__text{display:none;}@media (min-width:768px){.nav-actions{gap:16px;}.nav-portal-link{height:54px;padding:0 24px;font-size:16px;}.nav-portal-link__text{display:inline;}}.perf-summary{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 48px;margin-bottom:24px;}.perf-summary__label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#8FA3B8;margin-bottom:4px;}.perf-summary__values{font-family:'Inter',sans-serif;font-size:15px;color:#DBD1BC;}.perf-summary .num{font-variant-numeric:tabular-nums;font-weight:600;font-size:20px;margin-right:6px;}.perf-summary__sep{margin:0 12px;color:#545047;}.perf-summary__asof{font-family:'Inter',sans-serif;font-size:12px;color:#6B7B8D;}@media (max-width:767px){.nav-articles-link.wl-teaser-link{display:inline-flex;}}.team-governance{background:#F3F5F7;border:1px solid #D0DAE3;padding:32px;align-self:start;}.team-governance__list{margin-top:24px;border-top:1px solid #D0DAE3;}.team-governance__list>div{padding:16px 0;border-bottom:1px solid #D0DAE3;}.team-governance__list dt{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}.team-governance__list dd{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;color:#0E1117;margin:0;}</style>
-    <link rel="preload" href="./assets/css/tailwind.min.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <style>@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}html,body{scroll-behavior:smooth;}::-webkit-scrollbar{width:0;}.contact-us-form::-webkit-scrollbar{width:0;}input:-webkit-autofill{background-color:transparent !important;transition:background-color 5000s ease-in-out 0s;-webkit-text-fill-color:inherit !important;}input:-webkit-autofill::first-line{font-family:inherit;font-size:inherit;color:inherit;}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}input[type="number"]{-moz-appearance:textfield;}.apexcharts-legend-text{font-size:14px !important;font-family:"Inter","sans-serif" !important;padding-left:18px !important;}.apexcharts-text tspan{font-family:"Inter","sans-serif" !important;font-size:14px !important;}.apexcharts-legend{padding-left:0px !important;}@media (max-width:1023.98px){.apexcharts-text tspan{font-size:12px !important;}}@media (max-width:767.98px){.apexcharts-text tspan{font-size:8px !important;}.apexcharts-legend{padding-left:20px !important;}.apexcharts-legend-text{font-size:13px !important;padding-left:16px !important;}}.toastify{display:flex !important;align-items:center !important;border:1px solid black !important;font-size:14px !important;font-family:'Funnel Display',sans-serif !important;color:white !important;border-radius:0 !important;background:rgba(0,0,0,0.7) !important;}.toastify .toastify-avatar{width:24px;height:24px;margin-right:12px;}.lang-toggle{display:flex !important;border:1px solid #D0DAE3 !important;overflow:hidden;border-radius:3px;}.lang-btn{padding:7px 12px !important;background:#FFFFFF !important;background-color:#FFFFFF !important;color:#6B7B8D !important;border:none !important;cursor:pointer !important;font-family:'Inter',sans-serif !important;font-size:11px !important;font-weight:600 !important;letter-spacing:0.4px !important;transition:background 0.2s,color 0.2s;}.lang-btn+.lang-btn{border-left:1px solid #D0DAE3 !important;}.lang-btn.active{background:#0E1117 !important;background-color:#0E1117 !important;color:#FFFFFF !important;}.lang-btn:hover:not(.active){background:#F3F5F7 !important;background-color:#F3F5F7 !important;color:#0E1117 !important;}@media (min-width:768px){.hero-content-left{padding-right:48px;}}.section-light-bg{background-color:#F3F5F7;}.trust-strip{background-color:#F3F5F7;border-bottom:1px solid #D0DAE3;}.trust-strip__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;max-width:1360px;margin:0 auto;padding:14px 24px;}@media (min-width:1024px){.trust-strip__grid{grid-template-columns:repeat(4,1fr);gap:0;padding:14px 24px;}.trust-strip__grid>div{padding:0 24px;border-left:1px solid #D0DAE3;}.trust-strip__grid>div:first-child{padding-left:0;border-left:none;}.trust-strip__grid>div:last-child{padding-right:0;}}.trust-strip__label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;}.trust-strip__value{display:block;font-family:'Inter',sans-serif;font-size:12px;line-height:1.45;color:#0E1117;text-decoration:none;}a.trust-strip__value:hover{text-decoration:underline;}.hero-cta-ghost{background:transparent;color:#DBD1BC;border:1px solid #DBD1BC;transition:background 0.3s,color 0.3s;}.hero-cta-ghost:hover{background:#DBD1BC;color:#0E1117;}.nav-articles-link{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.4;color:#0E1117;background:transparent;border:1px solid #0E1117;border-radius:4px;height:44px;padding:0 16px;text-decoration:none;transition:background 0.3s ease,color 0.3s ease;cursor:pointer;white-space:nowrap;}.nav-articles-link:hover{background:#0E1117;color:#fff;}@media (min-width:768px){.nav-articles-link{height:54px;padding:0 24px;font-size:16px;}}@media (max-width:767px){.nav-articles-link{display:none;}}.hero-latest-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 12px;background:rgba(219,209,188,0.08);border:1px solid rgba(219,209,188,0.25);border-radius:999px;font-family:'Inter',sans-serif;font-size:13px;color:#DBD1BC;text-decoration:none;transition:background 0.2s ease,border-color 0.2s ease,transform 0.15s ease;margin-bottom:24px;max-width:100%;width:max-content;}.hero-latest-badge:hover{background:rgba(219,209,188,0.18);border-color:rgba(219,209,188,0.5);}.hero-latest-badge__label{display:inline-flex;align-items:center;gap:6px;color:#8FA3B8;text-transform:uppercase;letter-spacing:0.08em;font-size:10px;font-weight:700;}.hero-latest-badge__label::before{content:"✦";color:#DBD1BC;font-size:13px;}.hero-latest-badge__title{font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px;}.hero-latest-badge__arrow{font-weight:500;transition:transform 0.2s ease;}.hero-latest-badge:hover .hero-latest-badge__arrow{transform:translateX(2px);}@media (min-width:768px){.hero-latest-badge{font-size:14px;}.hero-latest-badge__title{max-width:320px;}}.article-bio-avatar{width:64px;height:64px;flex-shrink:0;object-fit:cover;border-radius:50%;}.founder-cta-btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:500;font-size:14px;line-height:1.4;color:#fff;background:#0E1117;border-radius:4px;padding:12px 20px;text-decoration:none;transition:background 0.2s ease;cursor:pointer;border:none;}.founder-cta-btn:hover{background:#4A6275;}@media (min-width:768px){.founder-cta-btn{font-size:16px;padding:14px 24px;}}.nav-actions{gap:12px;}.nav-portal-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;min-width:44px;padding:0 11px;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.4;color:#0E1117;background:transparent;border:1px solid #0E1117;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background 0.3s ease,color 0.3s ease;}.nav-portal-link:hover{background:#0E1117;color:#fff;}.nav-portal-link__icon{flex-shrink:0;}.nav-portal-link__text{display:none;}@media (min-width:768px){.nav-actions{gap:16px;}.nav-portal-link{height:54px;padding:0 24px;font-size:16px;}.nav-portal-link__text{display:inline;}}.perf-summary{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 48px;margin-bottom:24px;}.perf-summary__label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#8FA3B8;margin-bottom:4px;}.perf-summary__values{font-family:'Inter',sans-serif;font-size:15px;color:#DBD1BC;}.perf-summary .num{font-variant-numeric:tabular-nums;font-weight:600;font-size:20px;margin-right:6px;}.perf-summary__sep{margin:0 12px;color:#545047;}.perf-summary__asof{font-family:'Inter',sans-serif;font-size:12px;color:#6B7B8D;}@media (max-width:767px){.nav-articles-link.wl-teaser-link{display:inline-flex;}}.section-title{font-size:32px;line-height:1.2;letter-spacing:-0.01em}@media (min-width:768px){.section-title{font-size:40px}}@media (min-width:1280px){.section-title{font-size:48px}}.hero__grid{display:grid;grid-template-columns:1fr}@media (min-width:1024px){.hero__grid{grid-template-columns:1fr 1fr;min-height:min(calc(100vh - 88px),820px)}}.hero__content{display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:48px 24px 32px}@media (min-width:768px){.hero__content{padding:64px 40px 40px}}@media (min-width:1024px){.hero__content{padding:88px 48px 48px 40px}}.hero__eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8FA3B8;margin-bottom:20px}.hero__title{font-size:38px;line-height:1.15;letter-spacing:-0.01em}@media (min-width:768px){.hero__title{font-size:50px}}@media (min-width:1280px){.hero__title{font-size:58px}}.hero__tagline{font-size:18px;line-height:1.55;max-width:520px;margin-top:20px}@media (min-width:768px){.hero__tagline{font-size:20px}}.hero__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.hero__facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;border-top:1px solid rgba(219,209,188,0.18);padding-top:24px}@media (min-width:1280px){.hero__facts{grid-template-columns:repeat(4,auto);justify-content:start}}.hero__facts dt{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#8FA3B8;margin-bottom:4px}.hero__facts dd{font-family:'Inter',sans-serif;font-size:13px;line-height:1.45;color:#DBD1BC;margin:0}.hero__facts a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(219,209,188,0.4)}.hero__media{position:relative;min-height:360px}@media (min-width:768px){.hero__media{min-height:480px}}.hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.invest{padding:64px 24px}@media (min-width:1024px){.invest{padding:96px 24px}}.invest__panel{background:#DBD1BC;padding:32px 24px}@media (min-width:768px){.invest__panel{padding:48px}}.invest__intro{display:grid;gap:16px}@media (min-width:1024px){.invest__intro{grid-template-columns:1fr 1fr;gap:48px;align-items:end}}.invest__text{font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;color:#545047}.invest__steps{list-style:none;padding:0;display:grid;grid-template-columns:1fr;margin:40px 0 32px;border-top:1px solid rgba(84,80,71,0.3)}@media (min-width:768px){.invest__steps{grid-template-columns:1fr 1fr;column-gap:32px}}@media (min-width:1024px){.invest__steps{grid-template-columns:repeat(4,1fr)}}.invest__step{padding:20px 0;border-bottom:1px solid rgba(84,80,71,0.3)}@media (min-width:1024px){.invest__step{border-bottom:none}}.invest__num{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;color:#545047;font-variant-numeric:tabular-nums}.invest__step-title{font-family:'Funnel Display',sans-serif;font-size:20px;line-height:1.3;color:#0E1117;margin-top:8px}.invest__step-desc{font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:#545047;margin-top:6px}.fund-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid;padding-top:12px;margin-bottom:16px}.fund-facts dt{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#667085}.fund-facts dd{font-family:'Inter',sans-serif;font-size:14px;color:#111111;margin:0}.team-governance{background:#F3F5F7;border:1px solid #D0DAE3;padding:32px;align-self:start;}.team-governance__list{margin-top:24px;border-top:1px solid #D0DAE3;}.team-governance__list>div{padding:16px 0;border-bottom:1px solid #D0DAE3;}.team-governance__list dt{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}.team-governance__list dd{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;color:#0E1117;margin:0;}</style>
+    <link rel="preload" href="./assets/css/tailwind.min.css?v=1.3" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/funnel-display-400-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" imagesrcset="/assets/images/webp/hero-image-480.webp 480w, /assets/images/webp/hero-image-768.webp 768w, /assets/images/webp/hero-image.webp 1440w" imagesizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1440px" fetchpriority="high">
-    <noscript><link rel="stylesheet" href="./assets/css/tailwind.min.css?v=1.2"></noscript>
+    <noscript><link rel="stylesheet" href="./assets/css/tailwind.min.css?v=1.3"></noscript>
     <!-- aos css — non-critical, loaded async -->
     <link rel="preload" href="./assets/css/aos.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="./assets/css/aos.min.css"></noscript>
@@ -521,47 +521,18 @@
       </div>
     </div>
     <!-- ============= HERO SECTION ======== -->
-    <section
-      class="bg-darkGray overflow-hidden 2xl:h-[calc(100vh-88px)] 2xl:relative"
-    >
-      <div
-        class="absolute 2xl:bottom-0 w-full 2xl:left-0 max-2xl:hidden max-w-[50%]"
-      >
-        <img
-          src="./assets/images/webp/hero-graph-img.webp"
-          srcset="./assets/images/webp/hero-graph-img-768.webp 768w, ./assets/images/webp/hero-graph-img.webp 1440w"
-          sizes="(max-width: 768px) 768px, 1440px"
-          alt="hero graph image"
-          loading="lazy"
-          fetchpriority="low"
-          decoding="async"
-          class="w-full max-2xl:h-[363px] max-custom-xs:h-[200px] object-cover" width="1440" height="852">
-      </div>
-      <div
-        class="max-w-[1440px] mx-auto flex justify-between md:gap-6 sm:flex-row flex-col overflow-hidden 2xl:h-full"
-      >
-        <div
-          class="hero-content-left md:ps-10 ps-6 pe-6 md:py-10 py-8 flex flex-col justify-between sm:max-w-[50%]"
-        >
-          <div class="relative">
-            <a href="/blog/aif-vs-aifm-crypto-explained" class="hero-latest-badge relative z-[3]" data-i18n-html="heroLatestArticle">
-              <span class="hero-latest-badge__label">New</span>
-              <span class="hero-latest-badge__title">AIF vs AIFM: What's the Difference for Crypto Funds</span>
-              <span class="hero-latest-badge__arrow" aria-hidden="true">→</span>
-            </a>
-            <h1
-              class="md:!leading-140 !leading-120 font-funnel-display md:text-[50px] text-custom-5xl text-white relative z-[3]"
-              data-i18n-html="heroTitle"
-            >
+    <section class="hero bg-darkGray">
+      <div class="hero__grid max-w-[1440px] mx-auto">
+        <div class="hero__content">
+          <div>
+            <p class="hero__eyebrow" data-i18n="heroEyebrow">Regulated alternative investment fund manager · Estonia</p>
+            <h1 class="hero__title font-funnel-display text-white" data-i18n-html="heroTitle">
               Institutional-grade strategies <span class="block">in digital assets</span>
             </h1>
-            <p
-              class="max-w-[550px] font-inter md:text-xl text-lg md:mt-6 mt-4 text-lightBlue md:!leading-140 !leading-160 relative z-[3]"
-              data-i18n="heroTagline"
-            >
+            <p class="hero__tagline font-inter text-lightBlue" data-i18n="heroTagline">
               Three distinct approaches. One regulated framework. Managed for investors who demand precision.
             </p>
-            <div class="flex flex-col items-start gap-3 mt-8 relative z-[3]">
+            <div class="hero__ctas">
               <button
                 data-cal-link="sparkcore/discovery"
                 data-cal-origin="https://app.cal.eu"
@@ -580,80 +551,23 @@
                 Request Documentation
               </button>
             </div>
-            <div
-              class="absolute xl:top-[103%] top-[32%] max-custom-xs:top-[85%] max-custom-xs:-right-[40px] w-[730px] max-sm:w-full max-custom-xs:h-[200px] left-[-40px] 2xl:hidden"
-            >
-              <img
-                src="./assets/images/webp/hero-graph-img.webp"
-                srcset="./assets/images/webp/hero-graph-img-768.webp 768w, ./assets/images/webp/hero-graph-img.webp 1440w"
-                sizes="(max-width: 768px) 768px, 1440px"
-                alt="hero graph image"
-                loading="lazy"
-                fetchpriority="low"
-                decoding="async"
-                class="w-full h-[363px] max-custom-xs:h-[200px] object-cover" width="1440" height="852">
-            </div>
           </div>
-          <a
-            rel="noopener noreferrer"
-            href="#our-starategy"
-            class="md:size-[69px] size-[50px] flex justify-center z-[2] items-center cursor-pointer border-white border rounded-full mt-8"
-          >
-            <img
-              class="size-4"
-              src="/assets/images/svg/hero-arrow.svg"
-              alt="arrow" width="14" height="18">
-          </a>
+          <dl class="hero__facts" aria-label="Key facts"><div><dt>Regulator</dt><dd><a href="https://www.fi.ee/en/investment-market/fund-management-companies-0/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" rel="noopener noreferrer">Finantsinspektsioon (EE)</a></dd></div><div><dt>Accounting</dt><dd>Big Four firm</dd></div><div><dt>Legal counsel</dt><dd>Hedman Partners &amp; Co</dd></div><div><dt>LEI</dt><dd><a href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" rel="noopener noreferrer">8945003BBN0RVNNB0S84</a></dd></div></dl>
         </div>
-        <div
-          class="sm:max-w-[50%] w-full md:mt-auto 2xl:mt-0 relative 2xl:absolute 2xl:end-0 2xl:top-0 2xl:h-full"
-         
-        >
-          <div
-            class="absolute top-0 end-0 z-[2] xl:size-[315px] lg:size-[200px] size-[120px] max-sm:hidden"
-          >
-            <img
-              src="./assets/images/webp/hero-sec-vector.webp"
-              alt="hero section vector"
-              class="w-full h-full" width="630" height="634">
-          </div>
+        <div class="hero__media">
           <img
-            class="w-full xl:h-[800px] sm:h-full h-[400px] md:h-[550px] object-cover z-[1] 2xl:h-full"
             src="/assets/images/webp/hero-image.webp"
             srcset="/assets/images/webp/hero-image-480.webp 480w, /assets/images/webp/hero-image-768.webp 768w, /assets/images/webp/hero-image.webp 1440w"
-            sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1440px"
-            alt="hero image" width="1440" height="1600" fetchpriority="high" loading="eager">
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            alt="" width="1440" height="1600" fetchpriority="high" loading="eager">
         </div>
       </div>
     </section>
-
-    <!-- === TRUST STRIP === -->
-    <div class="trust-strip">
-      <div class="trust-strip__grid">
-        <div>
-          <p class="trust-strip__label">Regulator</p>
-          <a href="https://www.fi.ee/en/investment-market/fund-management-companies-0/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" rel="noopener noreferrer" class="trust-strip__value">Finantsinspektsioon (EE) — Small Fund Manager</a>
-        </div>
-        <div>
-          <p class="trust-strip__label">Accounting</p>
-          <p class="trust-strip__value">Big Four firm</p>
-        </div>
-        <div>
-          <p class="trust-strip__label">Legal Counsel</p>
-          <p class="trust-strip__value">Hedman Partners &amp; Co</p>
-        </div>
-        <div>
-          <p class="trust-strip__label">LEI</p>
-          <a href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" rel="noopener noreferrer" class="trust-strip__value">8945003BBN0RVNNB0S84</a>
-        </div>
-      </div>
-    </div>
-
     <!-- === OUR APPROACH === -->
     <div class="section-light-bg">
     <section class="max-w-[1360px] mx-auto px-6 pt-10 sm:pt-14 lg:pt-20 pb-8 sm:pb-10 overflow-x-hidden">
       <h2
-        class="text-custom-5xl sm:text-5xl lg:text-custom-6xl text-darkGray leading-120 md:leading-140 font-funnel-display mb-4"
+        class="section-title text-darkGray font-funnel-display mb-4"
         data-i18n="approachTitle"
       >
         Our approach
@@ -687,7 +601,7 @@
       class="max-w-[1360px] mx-auto px-6 pt-8 sm:pt-12 lg:pt-16 overflow-x-hidden"
     >
       <h2
-        class="text-custom-5xl sm:text-5xl lg:text-custom-6xl text-darkGray leading-120 md:leading-140 font-funnel-display"
+        class="section-title text-darkGray font-funnel-display"
         data-i18n="fundsTitle"
       >
         Our digital asset investment strategies
@@ -726,21 +640,22 @@
             <p class="font-funnel-display text-lg leading-tight mb-4" style="color:#111111;min-height:3.25rem;">An offensive directional strategy focused on Bitcoin.</p>
             <div class="w-full h-px mb-4" style="background:#999C9E;"></div>
             <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#1B2D4D;">Objective</p>
-            <p class="font-inter text-base leading-160 mb-4 text-justify" style="color:#111111;min-height:5.75rem;">Outperform Bitcoin over the medium / long term, with exposure managed according to market conditions.</p>
-            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#B2B6BA;">
+            <p class="font-inter text-base leading-160 mb-4" style="color:#111111;min-height:5.75rem;">Outperform Bitcoin over the medium / long term, with exposure managed according to market conditions.</p>
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#FFFFFF;border:1px solid #EAEBEB;">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#11161E;">Directional engine</p>
                 <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="background:#11161E;color:#FFFFFF;">Dominant</span>
               </div>
-              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Bitcoin exposure with moderate leverage (max 2x), strictly controlled.</p>
+              <p class="font-inter text-sm leading-160" style="color:#111111;">Bitcoin exposure with moderate leverage (max 2x), strictly controlled.</p>
             </div>
-            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#B2B6BA;">
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#FFFFFF;border:1px solid #EAEBEB;">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#11161E;">Defensive sleeve</p>
                 <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="border:1px solid #11161E;color:#11161E;">Secondary</span>
               </div>
-              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Weakly correlated strategies to strengthen overall robustness.</p>
+              <p class="font-inter text-sm leading-160" style="color:#111111;">Weakly correlated strategies to strengthen overall robustness.</p>
             </div>
+            <dl class="fund-facts" style="border-color:#EAEBEB;"><div><dt>Launch</dt><dd>August 2025</dd></div><div><dt>Liquidity</dt><dd>Quarterly</dd></div></dl>
             <div class="mt-auto">
               <button
                 class="open-sidebar w-full rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
@@ -778,21 +693,22 @@
             <p class="font-funnel-display text-lg leading-tight mb-4" style="color:#111111;min-height:3.25rem;">An active strategy on digital assets, defensive by nature.</p>
             <div class="w-full h-px mb-4" style="background:#988F85;"></div>
             <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#5C4E3E;">Objective</p>
-            <p class="font-inter text-base leading-160 mb-4 text-justify" style="color:#111111;min-height:5.75rem;">Deliver steady performance with controlled volatility and limited drawdown, even during phases of market instability.</p>
-            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#D8D1C2;">
+            <p class="font-inter text-base leading-160 mb-4" style="color:#111111;min-height:5.75rem;">Deliver steady performance with controlled volatility and limited drawdown, even during phases of market instability.</p>
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#FFFFFF;border:1px solid #DED6CB;">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#1B2D4D;">Core base</p>
                 <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="background:#AD9A7E;color:#FFFFFF;">Dominant</span>
               </div>
-              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Market-neutral strategies and defensive algorithmic approaches. No directional leverage.</p>
+              <p class="font-inter text-sm leading-160" style="color:#111111;">Market-neutral strategies and defensive algorithmic approaches. No directional leverage.</p>
             </div>
-            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#D8D1C2;">
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#FFFFFF;border:1px solid #DED6CB;">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#1B2D4D;">Directional sleeve</p>
                 <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="border:1px solid #AD9A7E;color:#111111;">Secondary</span>
               </div>
-              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Dynamic exposure focused mainly on Bitcoin and Ethereum. Moderate leverage, strictly controlled.</p>
+              <p class="font-inter text-sm leading-160" style="color:#111111;">Dynamic exposure focused mainly on Bitcoin and Ethereum. Moderate leverage, strictly controlled.</p>
             </div>
+            <dl class="fund-facts" style="border-color:#DED6CB;"><div><dt>Launch</dt><dd>March 2025</dd></div><div><dt>Liquidity</dt><dd>Quarterly</dd></div></dl>
             <div class="mt-auto">
               <button
                 class="open-sidebar w-full rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
@@ -830,21 +746,22 @@
             <p class="font-funnel-display text-lg leading-tight mb-4" style="color:#111111;min-height:3.25rem;">A neutral strategy with returns independent of market direction.</p>
             <div class="w-full h-px mb-4" style="background:#AFB1B6;"></div>
             <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#1B2D4D;">Objective</p>
-            <p class="font-inter text-base leading-160 mb-4 text-justify" style="color:#111111;min-height:5.75rem;">Generate steady performance from relative spreads and arbitrage opportunities.</p>
-            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#DBDEE4;">
+            <p class="font-inter text-base leading-160 mb-4" style="color:#111111;min-height:5.75rem;">Generate steady performance from relative spreads and arbitrage opportunities.</p>
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#FFFFFF;border:1px solid #E0E4E4;">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#111111;">Relative selection</p>
                 <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="background:#4C5B7A;color:#FFFFFF;">Dominant</span>
               </div>
-              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Long/Short Beta Neutral: capturing performance spreads between digital assets.</p>
+              <p class="font-inter text-sm leading-160" style="color:#111111;">Long/Short Beta Neutral: capturing performance spreads between digital assets.</p>
             </div>
-            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#DBDEE4;">
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#FFFFFF;border:1px solid #E0E4E4;">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#111111;">Arbitrage</p>
                 <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="border:1px solid #4C5B7A;color:#111111;">Secondary</span>
               </div>
-              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Relative Value / Arbitrage: exploiting price or yield spreads between related instruments.</p>
+              <p class="font-inter text-sm leading-160" style="color:#111111;">Relative Value / Arbitrage: exploiting price or yield spreads between related instruments.</p>
             </div>
+            <dl class="fund-facts" style="border-color:#E0E4E4;"><div><dt>Launch</dt><dd>September 2025</dd></div><div><dt>Liquidity</dt><dd>Quarterly</dd></div></dl>
             <div class="mt-auto">
               <button
                 class="open-sidebar w-full rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
@@ -865,7 +782,7 @@
     <div class="bg-[#0E1117]">
       <div class="max-w-[1360px] mx-auto md:px-6 py-8 sm:py-12 lg:py-16">
         <h2
-          class="max-md:px-6 text-custom-5xl sm:text-5xl lg:text-custom-5xxl text-[#DBD1BC] leading-120 md:leading-140 font-funnel-display pb-6 sm:pb-11 lg:pb-16"
+          class="section-title max-md:px-6 text-[#DBD1BC] font-funnel-display pb-6"
           data-i18n="perfTitle"
         >
           Performance Evolution
@@ -886,7 +803,7 @@
     <section class="pt-8 sm:pt-12 lg:pt-16 overflow-hidden">
       <div class="max-w-[1360px] px-6 mx-auto">
         <h2
-          class="md:!leading-140 !leading-120 font-funnel-display xl:text-custom-6xl lg:text-6xl md:text-5xl text-custom-5xl text-darkGray"
+          class="section-title font-funnel-display text-darkGray"
           data-i18n="teamTitle"
         >
           Meet our team
@@ -919,7 +836,7 @@
               Managing Partner · Trading &amp; Strategy
             </p>
             <p
-              class="font-inter font-normal text-lg md:leading-140 leading-160 text-steelBlue my-4 text-justify"
+              class="font-inter font-normal text-lg md:leading-140 leading-160 text-steelBlue my-4"
               data-i18n="teamBioOlivier"
             >
               Active in trading for over twenty years, Olivier began in equity markets before turning to crypto-assets in 2017. Co-founder of DSM, he applies a methodology combining technical analysis and innovative strategies to optimise portfolio performance.
@@ -961,7 +878,7 @@
               Managing Partner · Systems &amp; Risk
             </p>
             <p
-              class="font-inter font-normal text-lg leading-140 text-steelBlue my-4 xl:pr-1 text-justify"
+              class="font-inter font-normal text-lg leading-140 text-steelBlue my-4 xl:pr-1"
               data-i18n="teamBioAlex"
             >
               Software engineer, Alexandre has invested in crypto-assets since 2014. Founder of the Cointips YouTube channel in 2017 and co-founder of DSM in 2020, he also leads a private community of crypto-asset investors.
@@ -1015,23 +932,11 @@
      
     >
       <div
-        class="lg:p-12 max-w-[1312px] max-lg:!pb-[252px] max-custom-xs:!pb-[245px] mx-auto bg-darkGray md:p-8 py-8 px-6 relative overflow-hidden"
+        class="lg:p-12 max-w-[1312px] mx-auto bg-darkGray md:p-8 py-8 px-6 relative overflow-hidden"
       >
-        <div
-          class="w-[310px] h-[353px] absolute bottom-0 end-0 z-[2] max-sm:hidden"
-        >
-          <img
-            src="./assets/images/webp/blur-box.webp"
-            alt="blur box"
-            class="w-full h-full" width="426" height="606">
-        </div>
-        <img
-          src="./assets/images/webp/contact-us-img.webp"
-          alt="graph image"
-          class="absolute bottom-0 end-0 max-w-[700px] lg:h-[305px] sm:h-[250px] h-[190px] z-[1] object-cover" width="1382" height="476">
         <div class="flex flex-col items-start justify-start relative z-[3]">
           <h2
-            class="md:text-5xl text-custom-5xl md:leading-140 leading-120 text-white font-funnel-display"
+            class="section-title text-white font-funnel-display"
             data-i18n="newsletterTitle"
           >
             Subscribe to our newsletter
@@ -1082,125 +987,41 @@
       </div>
     </section>
     <!-- ====== INVEST WITH US ======= -->
-    <section class="pt-0 lg:pt-20 xl:pt-[104px] pb-8 sm:pb-12 lg:pb-16 overflow-x-hidden">
-      <div class="max-w-[1360px] mx-auto lg:px-6">
-        <div class="flex md:flex-row flex-col-reverse">
-          <div
-            class="lg:max-w-[696px] w-full max-md:h-[500px] max-sm:h-[400px]"
-          >
-            <img
-              src="./assets/images/webp/invest-in-us.webp"
-              alt="invest in us image"
-              class="w-full h-full object-cover" width="1392" height="1600">
-          </div>
-          <div
-            class="bg-cream xl:p-10 lg:p-8 md:p-6 py-8 px-6 flex flex-col items-start justify-between lg:max-w-[616px] w-full"
-           
-           
-          >
-            <div class="flex flex-col">
-              <h2
-                class="md:text-5xl text-custom-5xl xl:leading-140 leading-110 text-charcoal font-funnel-display"
-                data-i18n="investTitle"
-              >
-                Invest with us
-              </h2>
-              <p
-                class="font-inter text-xl max-custom-xs:pe-2.5 leading-140 font-normal text-charcoal lg:mt-6 sm:mt-4 mt-6 xl:pr-1 text-justify"
-                data-i18n="investText"
-              >
-                SparkCore funds are marketed to professional investors. Other investors may, subject to conditions, access them within the limits of the Estonian regime. The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins. NAV is calculated daily; redemptions are processed quarterly.
-              </p>
-            </div>
-            <div
-              class="flex flex-col items-start justify-center xl:gap-6 sm:gap-4 gap-6 mt-4 max-sm:mt-8 max-custom-xs:w-full"
-            >
-              <div
-                class="flex items-center justify-center gap-3 max-custom-xs:justify-start max-custom-xs:items-start max-custom-xs:flex-col"
-              >
-                <span
-                  class="max-custom-xs:size-10 size-8 flex items-center justify-center"
-                >
-                  <img
-                    src="./assets/images/svg/invest-svg-1.svg"
-                    alt="Step 1: Request information"
-                    class="w-full h-full"
-                  />
-                </span>
-                <p
-                  class="font-funnel-display text-xl leading-140 text-darkGray"
-                  data-i18n="investStep1"
-                >
-                  Request information
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-center gap-3 max-custom-xs:justify-start max-custom-xs:items-start max-custom-xs:flex-col"
-              >
-                <span
-                  class="max-custom-xs:size-10 size-8 flex items-center justify-center"
-                >
-                  <img
-                    src="./assets/images/svg/invest-svg-2.svg"
-                    alt="Step 2: We will contact you with further details"
-                    class="w-full h-full"
-                  />
-                </span>
-                <p
-                  class="font-funnel-display text-xl leading-140 text-darkGray"
-                  data-i18n="investStep2"
-                >
-                  We will contact you with further details
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-center gap-3 max-custom-xs:justify-start max-custom-xs:items-start max-custom-xs:flex-col"
-              >
-                <span
-                  class="max-custom-xs:size-10 size-8 flex items-center justify-center"
-                >
-                  <img
-                    src="./assets/images/svg/invest-svg-3.svg"
-                    alt="Step 3: Sign the required documents"
-                    class="w-full h-full"
-                  />
-                </span>
-                <p
-                  class="font-funnel-display text-xl leading-140 text-darkGray"
-                  data-i18n="investStep3"
-                >
-                  Sign the required documents
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-center gap-3 max-custom-xs:justify-start max-custom-xs:items-start max-custom-xs:flex-col"
-              >
-                <span
-                  class="max-custom-xs:size-10 size-8 flex items-center justify-center"
-                >
-                  <img
-                    src="./assets/images/svg/invest-svg-4.svg"
-                    alt="Step 4: Become an investor"
-                    class="w-full h-full"
-                  />
-                </span>
-                <p
-                  class="font-funnel-display text-xl leading-140 text-darkGray"
-                  data-i18n="investStep4"
-                >
-                  Become an investor
-                </p>
-              </div>
-              <button
-                aria-label="Contact Us"
-                class="open-sidebar px-6 h-[54px] py-4 bg-darkGray flex items-center justify-center hover:bg-transparent hover:border-darkGray hover:text-darkGray transition-all duration-300 border border-transparent font-inter text-white font-normal text-base leading-140 rounded-[4px] max-sm:w-full"
-                data-i18n="navContact"
-              >
-                Contact Us
-              </button>
-            </div>
-          </div>
+    <section class="invest">
+      <div class="invest__panel max-w-[1312px] mx-auto">
+        <div class="invest__intro">
+          <h2 class="section-title font-funnel-display text-charcoal" data-i18n="investTitle">Invest with us</h2>
+          <p class="invest__text" data-i18n="investText">SparkCore funds are marketed to professional investors. Other investors may, subject to conditions, access them within the limits of the Estonian regime. The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins. NAV is calculated daily; redemptions are processed quarterly.</p>
         </div>
+        <ol class="invest__steps">
+          <li class="invest__step">
+            <span class="invest__num" aria-hidden="true">01</span>
+            <p class="invest__step-title" data-i18n="investStep1">Request information</p>
+            <p class="invest__step-desc" data-i18n="investStep1Desc">Contact form or discovery call with the management team.</p>
+          </li>
+          <li class="invest__step">
+            <span class="invest__num" aria-hidden="true">02</span>
+            <p class="invest__step-title" data-i18n="investStep2">Identity verification</p>
+            <p class="invest__step-desc" data-i18n="investStep2Desc">Online KYC and source-of-funds checks.</p>
+          </li>
+          <li class="invest__step">
+            <span class="invest__num" aria-hidden="true">03</span>
+            <p class="invest__step-title" data-i18n="investStep3">Electronic signature</p>
+            <p class="invest__step-desc" data-i18n="investStep3Desc">Subscription documents signed electronically.</p>
+          </li>
+          <li class="invest__step">
+            <span class="invest__num" aria-hidden="true">04</span>
+            <p class="invest__step-title" data-i18n="investStep4">Investor portal</p>
+            <p class="invest__step-desc" data-i18n="investStep4Desc">Positions, reports and documents in your secure investor space.</p>
+          </li>
+        </ol>
+        <button
+          aria-label="Contact Us"
+          class="open-sidebar font-inter font-normal h-[54px] px-6 py-4 rounded text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center"
+          data-i18n="navContact"
+        >
+          Contact Us
+        </button>
       </div>
     </section>
 
@@ -1211,11 +1032,11 @@
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-2" data-i18n="wlSubtitle">Services for managers</p>
-            <h2 class="md:!leading-140 !leading-120 font-funnel-display xl:text-custom-6xl lg:text-6xl md:text-5xl text-custom-5xl text-darkGray" data-i18n="wlTitle">
+            <h2 class="section-title font-funnel-display text-darkGray" data-i18n="wlTitle">
               White Label Solution
             </h2>
           </div>
-          <p class="font-inter text-base text-steelBlue leading-160 sm:max-w-[420px] text-justify" data-i18n="wlIntro">
+          <p class="font-inter text-base text-steelBlue leading-160 sm:max-w-[420px]" data-i18n="wlIntro">
             SparkCore makes its regulated infrastructure available to enable third-party managers to launch their own alternative investment fund.
           </p>
         </div>
@@ -1366,7 +1187,7 @@
         alt="back-top" width="50" height="50">
     </div>
 
-    <script defer src="./assets/js/translations.js?v=2.2"></script>
+    <script defer src="./assets/js/translations.js?v=2.3"></script>
     <script defer src="./assets/js/aos.min.js"></script>
     <script defer src="./assets/js/main.js?v=3"></script>
     <script defer src="./assets/js/index.js?v=2.8"></script>
