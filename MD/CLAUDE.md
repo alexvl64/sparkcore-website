@@ -173,6 +173,17 @@ l'Admin : ne pas la révoquer sans prévoir la relève) — lecture via `sudo`.
 | Bing Webmaster | ❌ | clé perdue avec claude-vps-01 |
 | IndexNow | ✅ | clé dans le repo, `scripts/ops/indexnow_ping.py` |
 
+**Outillage installé sur le VPS (2026-09-25, lancé par Alex)** : `claude-seo` v2.4.0
+(`~/.claude/skills/seo*`, 19 agents `seo-*`, runtime + Chromium dans
+`~/.local/share/claude-seo`) et `claude-blog` v2.2.0 (`~/.claude/skills/blog*`,
+5 agents, scripts `~/.claude/scripts/`, dépendances `textstat`/`bs4` en
+`--user`). Config Google commune : `~/.config/claude-seo/google-api.json`
+(SA ci-dessus, copie de clé `service_account.json` en 600, GSC
+`sc-domain:sparkcore.fund`, GA4 `530665322`) — `gsc_query.py` et
+`ga4_report.py` vérifiés. **PageSpeed / CrUX dans ces outils exigent une clé
+API** (`"api_key"` dans le JSON) : à créer dans la console GCP du projet ;
+en attendant, PSI passe par le jeton du SA (scope `openid`).
+
 
 > ⚠️ **Note historique 2026-05-02** : la config sci pointait par erreur vers `properties/529476067` (orphelin, 0 row). Corrigé vers `530665322` après triangulation : repo `analytics.js:3` + `curl https://sparkcore.fund/assets/js/analytics.js` + GA4 admin `dataStreams.list`. Toujours croiser ces 3 sources avant de déclarer le tracking en panne.
 
