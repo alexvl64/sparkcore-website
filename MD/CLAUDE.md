@@ -605,7 +605,7 @@ All settings below are live on the `sparkcore.fund` zone.
 default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com https://www.googletagmanager.com https://rum.cronitor.io https://static.cloudflareinsights.com https://app.cal.com https://cal.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formcarry.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://rum.cronitor.io https://a.nel.cloudflare.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com; frame-src https://challenges.cloudflare.com https://app.cal.com https://cal.com; report-uri /csp-report
 ```
 
-> **Cal.com (2026-09-25)** : cal.eu ferme le 1er novembre 2026 ; le site pointe sur `app.cal.com` (compte `cal.com/sparkcore`, événement `discovery`). La valeur ci-dessus est la cible ; pendant la transition la règle CF peut garder `app.cal.eu` en plus.
+> **Cal.com (2026-09-25)** : cal.eu ferme le 1er novembre 2026 ; le site pointe sur `app.cal.com` (compte `cal.com/sparkcore`, événement `discovery`). CSP Cloudflare alignée le 2026-09-25 : plus aucune référence à `cal.eu`.
 
 > Note: `'unsafe-inline'` is intentional for a static site with no user authentication. Replace with nonces only if moving to Cloudflare Workers.
 
