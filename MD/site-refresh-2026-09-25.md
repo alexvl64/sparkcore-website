@@ -1,6 +1,6 @@
 # Rafraîchissement du site — feuille de route (2026-09-25)
 
-> Statut : CHANTIER · go Alex 2026-09-25 · branche `claude/site-refresh-2026-09`
+> Statut : LIVE · promu en prod le 2026-09-25 (main = beta = `cd9517e`) · go Alex 2026-09-25 · branche `claude/site-refresh-2026-09`
 > → `beta` (beta.sparkcore.fund) · promotion `main` validée par Alex uniquement.
 
 ## Décisions actées (Alex, 2026-09-25)
