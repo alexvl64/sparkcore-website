@@ -100,7 +100,7 @@ const translations = {
 
     // === PERFORMANCE SECTION ===
     perfTitle: "Évolution de la performance",
-    perfDisclaimer: "Le fonds Dynamic Trends est opérationnel depuis le 1er août 2025. Les performances antérieures proviennent de stratégies réelles exécutées sur comptes gérés, sans aucun backtest. Les performances passées ne garantissent pas les performances futures.",
+    perfDisclaimer: "Base 100 au 1er août 2023. Le fonds Dynamic Trends est opérationnel depuis le 1er août 2025 (VL du fonds, nette de frais). La période grisée correspond à la même stratégie exécutée sur comptes gérés : opérations réelles, sans backtest, brutes de frais. Les performances passées ne garantissent pas les performances futures.",
 
     // === TEAM ===
     teamTitle: "Rencontrez notre équipe",
@@ -289,7 +289,7 @@ const translations = {
 
     // === PERFORMANCE SECTION ===
     perfTitle: "Performance Evolution",
-    perfDisclaimer: "The Dynamic Trends fund has been operational since 1 August 2025. Prior performance data derives from real strategies executed on managed accounts, with no backtesting. Past performance does not guarantee future results.",
+    perfDisclaimer: "Base 100 on 1 August 2023. The Dynamic Trends fund has been operational since 1 August 2025 (fund NAV, net of fees). The shaded period shows the same strategy executed on managed accounts: real trading, no backtesting, gross of fees. Past performance does not guarantee future results.",
 
     // === TEAM ===
     teamTitle: "Meet our team",

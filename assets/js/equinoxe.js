@@ -57,14 +57,14 @@ const T = {
     lblChartTitle:'Performance Evolution — Base 100 · Linear Scale',
     legendBench:'Risk-free rate',
     valKfNote:'*All figures calculated since 01/01/2025 (target maximum drawdown 5%).',
-    valChartNote:'<strong class="chart-note-lead">Real performance, net of fees.</strong> From January 2025 to the end of August 2025, returns were generated on managed accounts (real strategies, no backtest), outside the fund structure, prior to the fund\'s launch on 01/09/2025.',
+    valChartNote:'<strong class="chart-note-lead">Real performance, net of fees.</strong> From January 2025 to the end of August 2025, returns were generated on managed accounts (real strategies, no backtest), outside the fund structure, prior to the fund\'s launch on 01/09/2025 (shaded area).',
     lblPerfTitle:'Monthly Performance History (%)',
     thYear:'Year',
     thJan:'Jan', thFeb:'Feb', thMar:'Mar', thApr:'Apr', thMay:'May', thJun:'Jun',
     thJul:'Jul', thAug:'Aug', thSep:'Sep', thOct:'Oct', thNov:'Nov', thDec:'Dec',
     thYtd:'YTD',
     valPerfNote:'Real performance, net of fees.',
-    valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The strategy is reserved for qualified or professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
+    valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The fund is marketed to professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
     ftrCompany:'SparkCore.investment OÜ · Reg. No. 16265864',
     ftrAddress:'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
     ftrPrivacy:'Privacy Policy',
@@ -127,14 +127,14 @@ const T = {
     lblChartTitle:'Évolution de la performance — base 100 · échelle linéaire',
     legendBench:'Taux sans risque',
     valKfNote:'*Indicateurs calculés depuis le 01/01/2025 (perte maximale cible 5%).',
-    valChartNote:'<strong class="chart-note-lead">Performance réelle, nette de frais.</strong> De janvier 2025 à fin août 2025, les performances ont été réalisées sur comptes gérés (stratégies réelles, sans backtest), hors de la structure du fonds, avant le lancement du fonds le 01/09/2025.',
+    valChartNote:'<strong class="chart-note-lead">Performance réelle, nette de frais.</strong> De janvier 2025 à fin août 2025, les performances ont été réalisées sur comptes gérés (stratégies réelles, sans backtest), hors de la structure du fonds, avant le lancement du fonds le 01/09/2025 (zone grisée).',
     lblPerfTitle:'Historique mensuel des performances (%)',
     thYear:'Année',
     thJan:'Jan', thFeb:'Fév', thMar:'Mar', thApr:'Avr', thMay:'Mai', thJun:'Jun',
     thJul:'Jul', thAug:'Aoû', thSep:'Sep', thOct:'Oct', thNov:'Nov', thDec:'Déc',
     thYtd:'YTD',
     valPerfNote:'Performance réelle, nette de frais.',
-    valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. La stratégie est réservée aux investisseurs qualifiés ou professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
+    valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. Le fonds est commercialisé auprès d\'investisseurs professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
     ftrCompany:'SparkCore.investment OÜ · N° d\'enregistrement 16265864',
     ftrAddress:'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
     ftrPrivacy:'Politique de confidentialité',
@@ -365,7 +365,11 @@ function setLang(lang) {
 /* ── CHART (identique à l'original) ── */
 const SHEET_ID = FACTSHEET_SHEET_ID;
 const SHEET_GID = GID_CHART_BASE100;
-const period = [], dynamicTrendsValue = [], btcBase100 = [];
+const dynamicTrendsValue = [], btcBase100 = [];
+// Managed accounts (real strategies, outside the fund) until the launch on
+// 01/09/2025: shaded on the chart so the two periods are never read as one.
+const EQ_FUND_LAUNCH = '2025-09-01';
+function utcTs(iso) { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d); }
 
 // Données chart INVENTÉES (placeholder Equinoxe — base 100). [year, monthIndex0, equinoxe, cci30]
 const EQX_CHART = [
@@ -402,12 +406,11 @@ async function loadFactsheet() {
     }
     buildMonthlyTable();
 
-    const locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
-    period.length = 0; dynamicTrendsValue.length = 0; btcBase100.length = 0;
+    dynamicTrendsValue.length = 0; btcBase100.length = 0;
     for (const p of (d.chart_base100 || [])) {
-      period.push(new Date(p.date + 'T00:00:00').toLocaleDateString(locale, { year: 'numeric', month: 'long' }));
-      dynamicTrendsValue.push(p.fund);
-      btcBase100.push(p.benchmark);
+      const x = utcTs(p.date);
+      dynamicTrendsValue.push({ x, y: p.fund });
+      btcBase100.push({ x, y: p.benchmark });
     }
     renderChart();
   } catch (e) {
@@ -423,11 +426,17 @@ function renderChart() {
     chart: {height:260,type:'line',zoom:{enabled:false},toolbar:{show:false},animations:{enabled:false},background:'transparent',fontFamily:'Inter, sans-serif'},
     stroke: {width:[2,1.5],dashArray:[0,6]},
     colors: ['#111111','#8A8E96'],
-    xaxis: {categories:period,tickAmount:7,axisTicks:{show:false},axisBorder:{show:false},labels:{hideOverlappingLabels:true,showDuplicates:false,rotate:0,style:{colors:'#1B2D4D',fontFamily:'Inter, sans-serif',fontSize:'9px'}}},
+    annotations: {xaxis: [
+      {x: dynamicTrendsValue[0].x, x2: utcTs(EQ_FUND_LAUNCH), fillColor: '#8A8E96', opacity: 0.12, borderColor: 'transparent',
+       label: {text: currentLang === 'fr' ? 'Comptes gérés' : 'Managed accounts', orientation: 'horizontal', position: 'top', textAnchor: 'start', offsetX: 4, offsetY: 4, borderWidth: 0, style: {background: 'transparent', color: '#1B2D4D', fontSize: '9px', fontFamily: 'Inter, sans-serif'}}},
+      {x: utcTs(EQ_FUND_LAUNCH), borderColor: '#4C5B7A', strokeDashArray: 3,
+       label: {text: currentLang === 'fr' ? 'Lancement du fonds' : 'Fund launch', orientation: 'horizontal', position: 'top', textAnchor: 'start', offsetX: 4, offsetY: 4, borderWidth: 0, style: {background: 'transparent', color: '#4C5B7A', fontSize: '9px', fontFamily: 'Inter, sans-serif'}}},
+    ]},
+    xaxis: {type:'datetime',axisTicks:{show:false},axisBorder:{show:false},tooltip:{enabled:false},labels:{hideOverlappingLabels:true,rotate:0,formatter:(v, ts) => new Date(ts != null ? ts : v).toLocaleDateString(currentLang === 'fr' ? 'fr-FR' : 'en-US', {month:'short', year:'numeric', timeZone:'UTC'}),style:{colors:'#1B2D4D',fontFamily:'Inter, sans-serif',fontSize:'9px'}}},
     yaxis: {logarithmic:false,labels:{show:false},axisTicks:{show:false},axisBorder:{show:false}},
     grid: {yaxis:{lines:{show:false}},padding:{left:30,right:14,top:-10,bottom:0}},
     legend: {show:false},
-    tooltip: {theme:'light',style:{fontFamily:'Inter, sans-serif',fontSize:'11px'}},
+    tooltip: {theme:'light',style:{fontFamily:'Inter, sans-serif',fontSize:'11px'},x:{formatter:ts => new Date(ts).toLocaleDateString(currentLang === 'fr' ? 'fr-FR' : 'en-US', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'})}},
   }).render();
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(draw); } else { draw(); }
 }
