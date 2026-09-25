@@ -59,6 +59,39 @@ if (sourceTracking !== 'DSM' && sourceTracking !== 'PAP') {
 	sourceTracking = 'UNKNOWN';
 }
 
+//  ======== CLOUDFLARE TURNSTILE (on demand) ===========
+// Loaded only when a form is about to be used (contact sidebar opened,
+// newsletter field focused): the widget weighs ~1.3 MB and was the main cause
+// of the slow mobile first paint. Widgets are rendered explicitly from their
+// data-* attributes, so the submit handlers below are unchanged.
+let turnstilePromise = null;
+function loadTurnstile() {
+  if (turnstilePromise) return turnstilePromise;
+  turnstilePromise = new Promise((resolve, reject) => {
+    window.scTurnstileReady = () => {
+      document.querySelectorAll(".cf-turnstile").forEach((el) => {
+        if (el.dataset.rendered) return;
+        el.dataset.rendered = "1";
+        window.turnstile.render(el, {
+          sitekey: el.dataset.sitekey,
+          theme: el.dataset.theme || "auto",
+          appearance: el.dataset.appearance || "always",
+        });
+      });
+      resolve();
+    };
+    const s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=scTurnstileReady";
+    s.async = true;
+    s.onerror = () => {
+      turnstilePromise = null;
+      reject(new Error("turnstile load failed"));
+    };
+    document.head.appendChild(s);
+  });
+  return turnstilePromise;
+}
+
 //  ======== FORM SIDEBAR ===========
 // Get button and sidebar elements
 const openSidebarButtons = document.querySelectorAll(".open-sidebar");
@@ -92,6 +125,7 @@ openSidebarButtons.forEach((button) => {
     sidebar.classList.remove("-right-full");
     sidebar.classList.add("right-0");
     document.body.classList.add("overflow-hidden");
+    loadTurnstile().catch(() => {});
   });
 });
 
@@ -104,6 +138,7 @@ openSidebarButtons.forEach((button) => {
   sidebar.classList.remove("-right-full");
   sidebar.classList.add("right-0");
   document.body.classList.add("overflow-hidden");
+  loadTurnstile().catch(() => {});
 })();
 
 // Close the sidebar
@@ -326,8 +361,9 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  // Récupérer le token Turnstile
-  const turnstileToken = turnstile.getResponse("#cf-turnstile");
+  // Récupérer le token Turnstile (chargé à la demande)
+  if (typeof window.turnstile === "undefined") loadTurnstile().catch(() => {});
+  const turnstileToken = typeof window.turnstile !== "undefined" ? turnstile.getResponse("#cf-turnstile") : "";
   if (!turnstileToken) {
     Toastify({
       text: currentTranslations.recaptchaError,
@@ -465,6 +501,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Elements
   const emailInput = document.getElementById("emailInput");
   const subscribeButton = document.getElementById("subscribeButton");
+  if (emailInput) {
+    emailInput.addEventListener("focus", () => loadTurnstile().catch(() => {}), { once: true });
+  }
   const errorText = document.getElementById("errorText");
 
   // Handle Email Input Validation
@@ -499,7 +538,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Turnstile check
+    // Turnstile check (widget loaded on demand)
+    if (typeof window.turnstile === "undefined") {
+      loadTurnstile().catch(() => {});
+      return;
+    }
     const turnstileToken = turnstile.getResponse("#cf-turnstile-newsletter");
     if (!turnstileToken) {
       return;
