@@ -42,10 +42,8 @@ SparkCore Fund Management (legal entity: SparkCore.investment OÜ) is an alterna
 - Accepted currencies: EUR, USD, MiCA-compliant stablecoins
 - NAV: calculated daily
 - Liquidity: quarterly redemptions
-- Management fee: 2% per annum
-- Performance fee: 20% with High Water Mark, calculated quarterly
-- Entry / exit fees: 0% (early commitment break: 4%)
-- Minimum commitment: 1 year
+- Fees: management fee and performance fee with High Water Mark; rates vary by fund (see fund documentation, available on request)
+- Entry fees: none; minimum commitment and early-redemption terms vary by fund
 - Target investors: funds are marketed to professional investors; other investors may, subject to conditions, access them within the limits of the Estonian regime
 
 ## White-Label Solution

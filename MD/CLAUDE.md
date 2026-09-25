@@ -490,6 +490,8 @@ Le `.htaccess` a été **supprimé du repo le 2026-05-09** (commit `claude/cf-er
 | `sparkcore-fund` | `main` | `sparkcore.fund` |
 | `sparkcore-fund-beta` | `beta` | `beta.sparkcore.fund` |
 
+> **Beta non indexée (2026-09-25)** : `functions/_middleware.js` ajoute `X-Robots-Tag: noindex, nofollow` à toute réponse servie sur un hôte autre que `sparkcore.fund` / `www.sparkcore.fund` (beta, previews `*.pages.dev`). Le même code part en prod (main = beta) où il ne fait rien. Ne pas bloquer beta via `robots.txt` (partagé avec la prod, et Google doit pouvoir lire le noindex).
+
 ### `_redirects` — redirects actifs
 
 ```

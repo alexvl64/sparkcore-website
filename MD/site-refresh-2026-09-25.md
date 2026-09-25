@@ -71,8 +71,13 @@
   31 pages qui ne les chargeaient pas, charte `MD/SPARKCORE-DESIGN.md`.
   **Reporté** : sortie des couleurs de fonds des `style=""` inline (pur
   confort de maintenance, aucun effet visible).
-- En attente d'Alex : sections réclamations, conflits d'intérêts, SFDR et
-  rémunération de la page réglementaire (non publiées sans texte validé).
+- Page réglementaire : périmètre arrêté avec Alex (2026-09-25) = faits
+  publics + licences ; pas de sections réclamations / conflits / SFDR /
+  rémunération sans texte fourni. « usaldusfond » = limited partnership.
+- Frais : FAQ et `llms.txt` rendus génériques (barèmes par fonds dans les
+  factsheets uniquement ; EQ 1 % / 25 %).
+- Beta : `X-Robots-Tag: noindex, nofollow` posé par `functions/_middleware.js`
+  pour tout hôte autre que `sparkcore.fund` (inerte en prod).
 
 ## Hors périmètre
 

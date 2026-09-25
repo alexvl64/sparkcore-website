@@ -15,7 +15,23 @@
  * - Rewrites 403 responses with /403.html.
  * - Rewrites 500/502/503/504 responses with /500.html.
  * - Preserves the original status code; only the body and a few headers change.
+ * - Non-production hosts (beta.sparkcore.fund, *.pages.dev previews) get
+ *   `X-Robots-Tag: noindex, nofollow` on every response. The same code ships
+ *   to prod (main = beta), where the host check makes it a no-op.
  */
+
+const PROD_HOSTS = new Set(['sparkcore.fund', 'www.sparkcore.fund']);
+
+function isNonProdHost(request) {
+  const host = new URL(request.url).hostname;
+  return !PROD_HOSTS.has(host);
+}
+
+function withNoindex(response) {
+  const r = new Response(response.body, response);
+  r.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  return r;
+}
 
 const ERROR_MAP = {
   403: '/403.html',
@@ -49,6 +65,11 @@ async function brandedErrorResponse(context, status) {
 }
 
 export async function onRequest(context) {
+  const response = await handle(context);
+  return isNonProdHost(context.request) ? withNoindex(response) : response;
+}
+
+async function handle(context) {
   let response;
   try {
     response = await context.next();
