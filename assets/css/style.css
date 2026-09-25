@@ -335,3 +335,36 @@ a.trust-strip__value:hover {
     padding: 14px 24px;
   }
 }
+/* ── Header actions: investor portal link (text) + Articles + Contact ── */
+.nav-actions { gap: 12px; }
+.nav-portal-link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #0E1117;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.nav-portal-link:hover { border-bottom-color: #0E1117; }
+@media (min-width: 768px) {
+  .nav-actions { gap: 28px; }
+  .nav-portal-link { font-size: 16px; }
+}
+
+.nav-portal-link { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px; }
+.nav-portal-link__text { display: none; }
+@media (min-width: 768px) {
+  .nav-portal-link { min-width: 0; min-height: 0; }
+  .nav-portal-link__icon { display: none; }
+  .nav-portal-link__text { display: inline; }
+}
+
+/* ── Team: governance panel (homepage) ── */
+.team-governance { background: #F3F5F7; border: 1px solid #D0DAE3; padding: 32px; align-self: start; }
+.team-governance__list { margin-top: 24px; border-top: 1px solid #D0DAE3; }
+.team-governance__list > div { padding: 16px 0; border-bottom: 1px solid #D0DAE3; }
+.team-governance__list dt { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: #667085; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.team-governance__list dd { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.5; color: #0E1117; margin: 0; }

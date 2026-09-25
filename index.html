@@ -42,7 +42,7 @@
 
     <!-- style css -->
     <!-- Critical CSS: fonts.css + style.css inlined (minified) to eliminate render-blocking round-trip -->
-    <style>@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}html,body{scroll-behavior:smooth;}::-webkit-scrollbar{width:0;}.contact-us-form::-webkit-scrollbar{width:0;}input:-webkit-autofill{background-color:transparent !important;transition:background-color 5000s ease-in-out 0s;-webkit-text-fill-color:inherit !important;}input:-webkit-autofill::first-line{font-family:inherit;font-size:inherit;color:inherit;}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}input[type="number"]{-moz-appearance:textfield;}.apexcharts-legend-text{font-size:20px !important;font-family:"Funnel Display","sans-serif" !important;padding-left:24px !important;}.apexcharts-text tspan{font-family:"Inter","sans-serif" !important;font-size:14px !important;}.apexcharts-legend{padding-left:0px !important;}@media (max-width:1023.98px){.apexcharts-text tspan{font-size:12px !important;}}@media (max-width:767.98px){.apexcharts-text tspan{font-size:8px !important;}.apexcharts-legend{padding-left:20px !important;}.apexcharts-legend-text{font-size:16px !important;padding-left:20px !important;}}.toastify{display:flex !important;align-items:center !important;border:1px solid black !important;font-size:14px !important;font-family:'Funnel Display',sans-serif !important;color:white !important;border-radius:0 !important;background:rgba(0,0,0,0.7) !important;}.toastify .toastify-avatar{width:24px;height:24px;margin-right:12px;}.lang-toggle{display:flex !important;border:1px solid #D0DAE3 !important;overflow:hidden;border-radius:3px;}.lang-btn{padding:7px 12px !important;background:#FFFFFF !important;background-color:#FFFFFF !important;color:#6B7B8D !important;border:none !important;cursor:pointer !important;font-family:'Inter',sans-serif !important;font-size:11px !important;font-weight:600 !important;letter-spacing:0.4px !important;transition:background 0.2s,color 0.2s;}.lang-btn+.lang-btn{border-left:1px solid #D0DAE3 !important;}.lang-btn.active{background:#0E1117 !important;background-color:#0E1117 !important;color:#FFFFFF !important;}.lang-btn:hover:not(.active){background:#F3F5F7 !important;background-color:#F3F5F7 !important;color:#0E1117 !important;}@media (min-width:768px){.hero-content-left{padding-right:48px;}}.section-light-bg{background-color:#F3F5F7;}.trust-strip{background-color:#F3F5F7;border-bottom:1px solid #D0DAE3;}.trust-strip__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;max-width:1360px;margin:0 auto;padding:14px 24px;}@media (min-width:1024px){.trust-strip__grid{grid-template-columns:repeat(4,1fr);gap:0;padding:14px 24px;}.trust-strip__grid>div{padding:0 24px;border-left:1px solid #D0DAE3;}.trust-strip__grid>div:first-child{padding-left:0;border-left:none;}.trust-strip__grid>div:last-child{padding-right:0;}}.trust-strip__label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;}.trust-strip__value{display:block;font-family:'Inter',sans-serif;font-size:12px;line-height:1.45;color:#0E1117;text-decoration:none;}a.trust-strip__value:hover{text-decoration:underline;}.hero-cta-ghost{background:transparent;color:#DBD1BC;border:1px solid #DBD1BC;transition:background 0.3s,color 0.3s;}.hero-cta-ghost:hover{background:#DBD1BC;color:#0E1117;}.nav-articles-link{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.4;color:#0E1117;background:transparent;border:1px solid #0E1117;border-radius:4px;height:44px;padding:0 16px;text-decoration:none;transition:background 0.3s ease,color 0.3s ease;cursor:pointer;white-space:nowrap;}.nav-articles-link:hover{background:#0E1117;color:#fff;}@media (min-width:768px){.nav-articles-link{height:54px;padding:0 24px;font-size:16px;}}@media (max-width:767px){.nav-articles-link{display:none;}}.hero-latest-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 12px;background:rgba(219,209,188,0.08);border:1px solid rgba(219,209,188,0.25);border-radius:999px;font-family:'Inter',sans-serif;font-size:13px;color:#DBD1BC;text-decoration:none;transition:background 0.2s ease,border-color 0.2s ease,transform 0.15s ease;margin-bottom:24px;max-width:100%;width:max-content;}.hero-latest-badge:hover{background:rgba(219,209,188,0.18);border-color:rgba(219,209,188,0.5);}.hero-latest-badge__label{display:inline-flex;align-items:center;gap:6px;color:#8FA3B8;text-transform:uppercase;letter-spacing:0.08em;font-size:10px;font-weight:700;}.hero-latest-badge__label::before{content:"✦";color:#DBD1BC;font-size:13px;}.hero-latest-badge__title{font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px;}.hero-latest-badge__arrow{font-weight:500;transition:transform 0.2s ease;}.hero-latest-badge:hover .hero-latest-badge__arrow{transform:translateX(2px);}@media (min-width:768px){.hero-latest-badge{font-size:14px;}.hero-latest-badge__title{max-width:320px;}}.article-bio-avatar{width:64px;height:64px;flex-shrink:0;object-fit:cover;border-radius:50%;}.founder-cta-btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:500;font-size:14px;line-height:1.4;color:#fff;background:#0E1117;border-radius:4px;padding:12px 20px;text-decoration:none;transition:background 0.2s ease;cursor:pointer;border:none;}.founder-cta-btn:hover{background:#4A6275;}@media (min-width:768px){.founder-cta-btn{font-size:16px;padding:14px 24px;}}</style>
+    <style>@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/funnel-display-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/funnel-display-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Funnel Display';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/funnel-display-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/inter-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}html,body{scroll-behavior:smooth;}::-webkit-scrollbar{width:0;}.contact-us-form::-webkit-scrollbar{width:0;}input:-webkit-autofill{background-color:transparent !important;transition:background-color 5000s ease-in-out 0s;-webkit-text-fill-color:inherit !important;}input:-webkit-autofill::first-line{font-family:inherit;font-size:inherit;color:inherit;}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}input[type="number"]{-moz-appearance:textfield;}.apexcharts-legend-text{font-size:20px !important;font-family:"Funnel Display","sans-serif" !important;padding-left:24px !important;}.apexcharts-text tspan{font-family:"Inter","sans-serif" !important;font-size:14px !important;}.apexcharts-legend{padding-left:0px !important;}@media (max-width:1023.98px){.apexcharts-text tspan{font-size:12px !important;}}@media (max-width:767.98px){.apexcharts-text tspan{font-size:8px !important;}.apexcharts-legend{padding-left:20px !important;}.apexcharts-legend-text{font-size:16px !important;padding-left:20px !important;}}.toastify{display:flex !important;align-items:center !important;border:1px solid black !important;font-size:14px !important;font-family:'Funnel Display',sans-serif !important;color:white !important;border-radius:0 !important;background:rgba(0,0,0,0.7) !important;}.toastify .toastify-avatar{width:24px;height:24px;margin-right:12px;}.lang-toggle{display:flex !important;border:1px solid #D0DAE3 !important;overflow:hidden;border-radius:3px;}.lang-btn{padding:7px 12px !important;background:#FFFFFF !important;background-color:#FFFFFF !important;color:#6B7B8D !important;border:none !important;cursor:pointer !important;font-family:'Inter',sans-serif !important;font-size:11px !important;font-weight:600 !important;letter-spacing:0.4px !important;transition:background 0.2s,color 0.2s;}.lang-btn+.lang-btn{border-left:1px solid #D0DAE3 !important;}.lang-btn.active{background:#0E1117 !important;background-color:#0E1117 !important;color:#FFFFFF !important;}.lang-btn:hover:not(.active){background:#F3F5F7 !important;background-color:#F3F5F7 !important;color:#0E1117 !important;}@media (min-width:768px){.hero-content-left{padding-right:48px;}}.section-light-bg{background-color:#F3F5F7;}.trust-strip{background-color:#F3F5F7;border-bottom:1px solid #D0DAE3;}.trust-strip__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;max-width:1360px;margin:0 auto;padding:14px 24px;}@media (min-width:1024px){.trust-strip__grid{grid-template-columns:repeat(4,1fr);gap:0;padding:14px 24px;}.trust-strip__grid>div{padding:0 24px;border-left:1px solid #D0DAE3;}.trust-strip__grid>div:first-child{padding-left:0;border-left:none;}.trust-strip__grid>div:last-child{padding-right:0;}}.trust-strip__label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;}.trust-strip__value{display:block;font-family:'Inter',sans-serif;font-size:12px;line-height:1.45;color:#0E1117;text-decoration:none;}a.trust-strip__value:hover{text-decoration:underline;}.hero-cta-ghost{background:transparent;color:#DBD1BC;border:1px solid #DBD1BC;transition:background 0.3s,color 0.3s;}.hero-cta-ghost:hover{background:#DBD1BC;color:#0E1117;}.nav-articles-link{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.4;color:#0E1117;background:transparent;border:1px solid #0E1117;border-radius:4px;height:44px;padding:0 16px;text-decoration:none;transition:background 0.3s ease,color 0.3s ease;cursor:pointer;white-space:nowrap;}.nav-articles-link:hover{background:#0E1117;color:#fff;}@media (min-width:768px){.nav-articles-link{height:54px;padding:0 24px;font-size:16px;}}@media (max-width:767px){.nav-articles-link{display:none;}}.hero-latest-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 12px;background:rgba(219,209,188,0.08);border:1px solid rgba(219,209,188,0.25);border-radius:999px;font-family:'Inter',sans-serif;font-size:13px;color:#DBD1BC;text-decoration:none;transition:background 0.2s ease,border-color 0.2s ease,transform 0.15s ease;margin-bottom:24px;max-width:100%;width:max-content;}.hero-latest-badge:hover{background:rgba(219,209,188,0.18);border-color:rgba(219,209,188,0.5);}.hero-latest-badge__label{display:inline-flex;align-items:center;gap:6px;color:#8FA3B8;text-transform:uppercase;letter-spacing:0.08em;font-size:10px;font-weight:700;}.hero-latest-badge__label::before{content:"✦";color:#DBD1BC;font-size:13px;}.hero-latest-badge__title{font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px;}.hero-latest-badge__arrow{font-weight:500;transition:transform 0.2s ease;}.hero-latest-badge:hover .hero-latest-badge__arrow{transform:translateX(2px);}@media (min-width:768px){.hero-latest-badge{font-size:14px;}.hero-latest-badge__title{max-width:320px;}}.article-bio-avatar{width:64px;height:64px;flex-shrink:0;object-fit:cover;border-radius:50%;}.founder-cta-btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:500;font-size:14px;line-height:1.4;color:#fff;background:#0E1117;border-radius:4px;padding:12px 20px;text-decoration:none;transition:background 0.2s ease;cursor:pointer;border:none;}.founder-cta-btn:hover{background:#4A6275;}@media (min-width:768px){.founder-cta-btn{font-size:16px;padding:14px 24px;}}.nav-actions{gap:12px;}.nav-portal-link{font-family:'Inter',sans-serif;font-weight:500;font-size:13px;line-height:1.4;color:#0E1117;text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent;transition:border-color 0.2s ease;}.nav-portal-link:hover{border-bottom-color:#0E1117;}@media (min-width:768px){.nav-actions{gap:28px;}.nav-portal-link{font-size:16px;}}.nav-portal-link{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}.nav-portal-link__text{display:none;}@media (min-width:768px){.nav-portal-link{min-width:0;min-height:0;}.nav-portal-link__icon{display:none;}.nav-portal-link__text{display:inline;}}.team-governance{background:#F3F5F7;border:1px solid #D0DAE3;padding:32px;align-self:start;}.team-governance__list{margin-top:24px;border-top:1px solid #D0DAE3;}.team-governance__list>div{padding:16px 0;border-bottom:1px solid #D0DAE3;}.team-governance__list dt{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#667085;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}.team-governance__list dd{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;color:#0E1117;margin:0;}</style>
     <link rel="preload" href="./assets/css/tailwind.min.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/funnel-display-400-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
@@ -89,19 +89,9 @@
             "https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou"
           ],
           "founder": [
-            {"@id": "https://sparkcore.fund/#person-paul-antoine-pons"},
             {"@id": "https://sparkcore.fund/#person-olivier-sayegh"},
             {"@id": "https://sparkcore.fund/#person-alexandre-vinal"}
           ]
-        },
-        {
-          "@type": "Person",
-          "@id": "https://sparkcore.fund/#person-paul-antoine-pons",
-          "name": "Paul-Antoine PONS",
-          "jobTitle": "Managing Partner, SparkCore Fund Management",
-          "url": "https://www.linkedin.com/in/paul-antoine-pons-523aa919a/",
-          "worksFor": {"@id": "https://sparkcore.fund/#organization"},
-          "sameAs": ["https://www.linkedin.com/in/paul-antoine-pons-523aa919a/"]
         },
         {
           "@type": "Person",
@@ -218,7 +208,7 @@
           "name": "What is the minimum investment in SparkCore funds?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The minimum investment is €50,000, restricted to qualified or professional investors. Subscriptions are accepted in EUR, USD, and regulated stablecoins."
+            "text": "The minimum investment is €50,000, and our funds are marketed to professional investors. Other investors may, subject to conditions, access them within the limits of the Estonian regime. Subscriptions are accepted in EUR, USD, and regulated stablecoins."
           }
         },
         {
@@ -239,10 +229,10 @@
         },
         {
           "@type": "Question",
-          "name": "Who founded SparkCore?",
+          "name": "Who manages SparkCore's funds?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SparkCore Fund Management was founded by three Managing Partners: Paul-Antoine PONS (over 7 years in financial markets and crypto-assets, founder of SparkCore.investment OÜ), Olivier SAYEGH (20+ years in trading, co-founder of DSM), and Alexandre VINAL (software engineer investing in crypto since 2014, founder of the Cointips YouTube channel and co-founder of DSM)."
+            "text": "SparkCore's funds are managed by two Managing Partners: Olivier SAYEGH (20+ years in trading, co-founder of DSM) and Alexandre VINAL (software engineer investing in crypto since 2014, founder of the Cointips YouTube channel and co-founder of DSM). The Management Board of SparkCore.investment OÜ is composed of Alexandre VINAL and Paul-Antoine PONS."
           }
         },
         {
@@ -271,8 +261,9 @@
             class="md:w-[209px] md:h-10 w-[125px] h-6"
             src="/assets/images/svg/logo.svg"
             alt="SparkCore Fund Management" width="210" height="40"></a>
-        <div class="flex items-center gap-7">
-        <a href="/blog/" class="nav-articles-link" data-i18n="navArticles">Articles</a>
+        <div class="flex items-center nav-actions">
+        <a href="https://investor.sparkcore-investment.com/" class="nav-portal-link" aria-label="Investor login"><svg class="nav-portal-link__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10.5" rx="1"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg><span class="nav-portal-link__text" data-i18n="navPortal">Investor login</span></a>
+          <a href="/blog/" class="nav-articles-link" data-i18n="navArticles">Articles</a>
           <button
             aria-label="Contact Us"
             class="open-sidebar font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center"
@@ -471,13 +462,6 @@
                   data-i18n="sidebarOpt2"
                 >
                   DSM (past or current clients)
-                </li>
-                <li
-                  class="px-4 py-2 cursor-pointer hover:bg-lightGray"
-                  data-value="communauté-paul-antoine"
-                  data-i18n="sidebarOpt3"
-                >
-                  Paul-Antoine PONS's community
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
@@ -688,7 +672,7 @@
         </div>
         <div>
           <p class="font-funnel-display text-2xl text-darkGray leading-tight mb-3" data-i18n="approachP2Title">Transparent</p>
-          <p class="font-inter text-base text-steelBlue leading-160" data-i18n="approachP2">Monthly investor letters, quarterly NAV with Big Four-audited accounting, and on-demand portfolio reporting.</p>
+          <p class="font-inter text-base text-steelBlue leading-160" data-i18n="approachP2">Monthly investor letters, daily NAV, accounting by a Big Four firm, and a secure investor portal.</p>
         </div>
         <div>
           <p class="font-funnel-display text-2xl text-darkGray leading-tight mb-3" data-i18n="approachP3Title">Regulated</p>
@@ -920,48 +904,6 @@
               class="md:max-w-[416px] overflow-hidden max-w-[328px] xl:h-[400px] lg:h-[350px] h-[300px]"
             >
               <img
-                src="./assets/images/webp/team-member-first.webp"
-                alt="Photo of Paul-Antoine PONS"
-                class="w-full h-full object-cover" width="832" height="800">
-            </div>
-            <p
-              class="text-custom-4xl font-funnel-display leading-140 text-darkGray mt-4 md:mb-1 mb-3"
-            >
-              Paul-Antoine Pons
-            </p>
-            <p
-              class="font-inter font-medium text-lg sm:text-xl leading-140 text-steelBlue"
-              data-i18n="teamRolePA"
-            >
-              Managing Partner
-            </p>
-            <p
-              class="font-inter font-normal text-lg md:leading-140 leading-160 text-steelBlue my-4 text-justify"
-              data-i18n="teamBioPA"
-            >
-              With over 7 years of experience in financial markets and crypto-assets, Paul-Antoine has guided several high net worth individuals in their investments. He founded SparkCore Fund Management (SparkCore.investment OÜ), a regulated alternative investment fund manager.
-            </p>
-            <a
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/paul-antoine-pons-523aa919a/"
-              target="_blank"
-              class="sm:size-[34px] size-[54px] rounded-full border border-steelBlue flex hover:scale-[1.1] transition-all duration-300 items-center justify-center"
-            >
-              <img
-                src="./assets/images/svg/linkedin.svg"
-                alt="LinkedIn"
-                class="sm:w-4 sm:h-[19px] w-6 h-6" width="16" height="17">
-            </a>
-          </div>
-          <div
-            class="flex flex-col group"
-           
-           
-          >
-            <div
-              class="md:max-w-[416px] overflow-hidden max-w-[328px] xl:h-[400px] lg:h-[350px] h-[300px]"
-            >
-              <img
                 src="./assets/images/webp/team-member-second.webp"
                 alt="Photo of Olivier SAYEGH"
                 class="w-full h-full object-cover" width="832" height="800">
@@ -975,7 +917,7 @@
               class="font-inter font-medium text-lg sm:text-xl leading-140 text-steelBlue"
               data-i18n="teamRoleOlivier"
             >
-              Managing Partner
+              Managing Partner · Trading &amp; Strategy
             </p>
             <p
               class="font-inter font-normal text-lg md:leading-140 leading-160 text-steelBlue my-4 text-justify"
@@ -1017,7 +959,7 @@
               class="font-inter font-medium sm:text-xl text-lg md:leading-140 leading-160 text-steelBlue"
               data-i18n="teamRoleAlex"
             >
-              Managing Partner
+              Managing Partner · Systems &amp; Risk
             </p>
             <p
               class="font-inter font-normal text-lg leading-140 text-steelBlue my-4 xl:pr-1 text-justify"
@@ -1049,6 +991,20 @@
                   class="sm:w-[19px] w-7 sm:h-[14px] h-5" width="20" height="14">
               </a>
             </div>
+          </div>
+          <div class="flex flex-col team-governance">
+            <p id="gov-title" class="text-custom-4xl font-funnel-display leading-140 text-darkGray md:mb-1 mb-3" data-i18n="govTitle">Governance</p>
+            <p class="font-inter font-normal text-lg leading-160 text-steelBlue mt-3" data-i18n="govBody">SparkCore.investment OÜ is supervised by Finantsinspektsioon (Estonian Financial Supervisory Authority) as a Small Fund Manager. Investment management is carried out by Olivier Sayegh and Alexandre Vinal.</p>
+            <dl class="team-governance__list">
+              <div>
+                <dt data-i18n="govBoardLabel">Management Board</dt>
+                <dd>Alexandre Vinal · Paul-Antoine Pons</dd>
+              </div>
+              <div>
+                <dt data-i18n="govAmlLabel">AML supervision</dt>
+                <dd data-i18n="govAml">Dual MLRO structure: internal officer registered with the FIU and external crypto-specialist officer.</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </div>
@@ -1154,8 +1110,7 @@
                 class="font-inter text-xl max-custom-xs:pe-2.5 leading-140 font-normal text-charcoal lg:mt-6 sm:mt-4 mt-6 xl:pr-1 text-justify"
                 data-i18n="investText"
               >
-                Investment in funds managed by SparkCore is reserved for experienced investors, institutional investors and family offices.
-                The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins.
+                SparkCore funds are marketed to professional investors. Other investors may, subject to conditions, access them within the limits of the Estonian regime. The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins. NAV is calculated daily; redemptions are processed quarterly.
               </p>
             </div>
             <div
@@ -1469,7 +1424,7 @@
             class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6"
           >
             <span class="text-darkGray" data-i18n="footerDisclaimerLabel">Disclaimer:</span>
-            <span data-i18n="footerWarning"> Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to SparkCore strategies is reserved for experienced investors, institutional investors and family offices. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.</span>
+            <span data-i18n="footerWarning"> Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. SparkCore funds are marketed to professional investors; other investors may, subject to conditions, access them within the limits of the Estonian regime. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.</span>
           </p>
           <p class="font-inter font-normal text-sm leading-140 text-steelBlue custom-xs:mt-2 mt-3">
             <a rel="noopener noreferrer" href="/privacy-policy"
@@ -1515,7 +1470,7 @@
         alt="back-top" width="50" height="50">
     </div>
 
-    <script defer src="./assets/js/translations.js"></script>
+    <script defer src="./assets/js/translations.js?v=2.0"></script>
     <script defer src="./assets/js/aos.min.js"></script>
     <script defer src="./assets/js/main.js"></script>
     <script defer src="./assets/js/index.js?v=2.7"></script>

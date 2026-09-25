@@ -41,10 +41,9 @@ const T = {
     lblTeam:'Team',
     lblRole1:'Manager · Trading & Strategy',
     valBio1:'20+ years trading, co-founder DSM. Technical analysis strategies on crypto-assets.',
-    lblRole2:'Manager · Tech & Systems',
+    lblRole2:'Manager · Systems & Risk',
     valBio2:'Software engineer. Crypto investor since 2014. Founder Cointips, co-founder DSM.',
-    lblRole3:'Manager · Structuring',
-    valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore Fund Management (SparkCore.investment OÜ).',
+    lblRole3:'Management Board',
     lblStratTitle:'Strategy Overview',
     valStratIntro:'<strong>Equinoxe</strong> is the defensive pillar of the SparkCore range, a non-directional strategy dedicated to digital assets.<span class="sp-next">The fund aims to generate steady performance, decorrelated from major market trends, by relying on two distinct engines: relative selection between assets and the exploitation of price inefficiencies. Directional exposure is strictly controlled and remains marginal in the construction of the portfolio.</span><span class="sp-next">As the defensive pillar, Equinoxe is intended to provide a complementary, stabilising source of return alongside the more directional funds in the SparkCore range.</span>',
     lblOffensiveTag:'Relative-selection block — Long/Short',
@@ -112,10 +111,9 @@ const T = {
     lblTeam:'Équipe',
     lblRole1:'Gérant · Trading & Stratégie',
     valBio1:'+20 ans de trading, co-fondateur DSM. Stratégies basées sur l\'analyse technique des crypto-actifs.',
-    lblRole2:'Gérant · Tech & Systèmes',
+    lblRole2:'Gérant · Systèmes & risques',
     valBio2:'Ingénieur informatique. Investisseur crypto depuis 2014. Fondateur Cointips, co-fondateur DSM.',
-    lblRole3:'Gérant · Structuration',
-    valBio3:'+7 ans marchés financiers & crypto-actifs. Fondateur de SparkCore Fund Management (SparkCore.investment OÜ).',
+    lblRole3:'Management Board',
     lblStratTitle:'Aperçu de la stratégie',
     valStratIntro:'<strong>Equinoxe</strong> est le pilier défensif de la gamme SparkCore, une stratégie non directionnelle dédiée aux actifs numériques.<span class="sp-next">Le fonds vise à générer une performance régulière et décorrélée des grandes tendances du marché, en s\'appuyant sur deux moteurs distincts : la sélection relative entre actifs et l\'exploitation d\'inefficiences de prix. L\'exposition directionnelle est strictement encadrée et reste marginale dans la construction du portefeuille.</span><span class="sp-next">En tant que pilier défensif, Equinoxe a vocation à apporter une source de rendement complémentaire et stabilisatrice face aux autres fonds plus directionnels de la gamme SparkCore.</span>',
     lblOffensiveTag:'Bloc sélection relative — Long/Short',
@@ -324,7 +322,7 @@ function applyLang(lang) {
   s('lbl-kf-return', t.lblKfReturn); s('lbl-kf-maxdd', t.lblKfMaxdd);
   s('lbl-kf-vol', t.lblKfVol); s('lbl-kf-ratios', t.lblKfRatios);
   s('lbl-role-1', t.lblRole1); s('val-bio-1', t.valBio1);
-  s('lbl-role-2', t.lblRole2); s('val-bio-2', t.valBio2); s('lbl-role-3', t.lblRole3); s('val-bio-3', t.valBio3);
+  s('lbl-role-2', t.lblRole2); s('val-bio-2', t.valBio2); s('lbl-role-3', t.lblRole3);
   h('val-strat-intro', t.valStratIntro);
   s('lbl-offensive-tag', t.lblOffensiveTag); s('lbl-offensive-name', t.lblOffensiveName);
   s('val-offensive-desc', t.valOffensiveDesc); s('lbl-defensive-tag', t.lblDefensiveTag);

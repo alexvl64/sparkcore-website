@@ -42,10 +42,9 @@ const T = {
     lblTeam:'Team',
     lblRole1:'Manager · Trading & Strategy',
     valBio1:'20+ years trading, co-founder DSM. Technical analysis strategies on crypto-assets.',
-    lblRole2:'Manager · Tech & Systems',
+    lblRole2:'Manager · Systems & Risk',
     valBio2:'Software engineer. Crypto investor since 2014. Founder Cointips, co-founder DSM.',
-    lblRole3:'Manager · Structuring',
-    valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore Fund Management (SparkCore.investment OÜ).',
+    lblRole3:'Management Board',
     lblStratTitle:'Strategy Overview',
     valStratIntro:'<strong>CryptoVision</strong> is SparkCore\'s active, defensive strategy. The fund combines an actively managed directional sleeve with a market-neutral core to participate in the potential of digital assets without taking permanent passive exposure.<span class="sp-next">Since its strategy overhaul in March 2025, CryptoVision targets more durable and resilient exposure to digital assets, with a maximum drawdown target of 15%. The allocation between the two blocks is adjusted dynamically according to market conditions, volatility, liquidity and the risk/return profile. The portfolio is rebalanced monthly within a strict risk-management framework.</span>',
     lblDefensiveTag:'Defensive block — Primary core',
@@ -112,10 +111,9 @@ const T = {
     lblTeam:'Équipe',
     lblRole1:'Gérant · Trading & Stratégie',
     valBio1:'+20 ans de trading, co-fondateur DSM. Stratégies basées sur l\'analyse technique des crypto-actifs.',
-    lblRole2:'Gérant · Tech & Systèmes',
+    lblRole2:'Gérant · Systèmes & risques',
     valBio2:'Ingénieur informatique. Investisseur crypto depuis 2014. Fondateur Cointips, co-fondateur DSM.',
-    lblRole3:'Gérant · Structuration',
-    valBio3:'+7 ans marchés financiers & crypto-actifs. Fondateur de SparkCore Fund Management (SparkCore.investment OÜ).',
+    lblRole3:'Management Board',
     lblStratTitle:'Aperçu de la stratégie',
     valStratIntro:'<strong>CryptoVision</strong> est la stratégie active et défensive de SparkCore. Le fonds combine une poche directionnelle pilotée et un socle market neutral afin de participer au potentiel des actifs numériques sans adopter une exposition passive permanente.<span class="sp-next">Depuis la refonte de sa stratégie en mars 2025, CryptoVision vise une exposition plus durable et résiliente aux actifs numériques, avec une perte maximale ciblée de 15 %. L\'allocation entre les deux blocs est ajustée dynamiquement selon les conditions de marché, la volatilité, la liquidité et le rapport rendement/risque. Le portefeuille fait l\'objet de rééquilibrages mensuels dans un cadre de gestion du risque strict.</span>',
     lblDefensiveTag:'Bloc défensif — Socle principal',
@@ -329,7 +327,7 @@ function applyLang(lang) {
   s('val-kf-note', t.valKfNote);
   s('lbl-role-1', t.lblRole1); s('val-bio-1', t.valBio1);
   s('lbl-role-2', t.lblRole2); s('val-bio-2', t.valBio2);
-  s('lbl-role-3', t.lblRole3); s('val-bio-3', t.valBio3);
+  s('lbl-role-3', t.lblRole3);
   h('val-strat-intro', t.valStratIntro);
   s('lbl-defensive-tag', t.lblDefensiveTag); s('lbl-defensive-name', t.lblDefensiveName);
   s('val-defensive-desc', t.valDefensiveDesc);

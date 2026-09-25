@@ -40,12 +40,13 @@ SparkCore Fund Management (legal entity: SparkCore.investment OÜ) is an alterna
 
 - Minimum subscription: EUR 50,000
 - Accepted currencies: EUR, USD, MiCA-compliant stablecoins
-- Liquidity: quarterly
+- NAV: calculated daily
+- Liquidity: quarterly redemptions
 - Management fee: 2% per annum
 - Performance fee: 20% with High Water Mark, calculated quarterly
 - Entry / exit fees: 0% (early commitment break: 4%)
 - Minimum commitment: 1 year
-- Target investors: professional investors, institutional investors, family offices
+- Target investors: funds are marketed to professional investors; other investors may, subject to conditions, access them within the limits of the Estonian regime
 
 ## White-Label Solution
 
@@ -53,25 +54,26 @@ SparkCore Fund Management offers a white-label solution allowing third-party par
 
 ## Team
 
-### Paul-Antoine PONS
-- Role: Managing Partner
-- Background: Over 7 years of experience in financial markets and crypto-assets. Guided several high net worth individuals in their investments. Founded SparkCore Fund Management (SparkCore.investment OÜ).
-- LinkedIn: https://www.linkedin.com/in/paul-antoine-pons-523aa919a/
-
 ### Olivier SAYEGH
-- Role: Managing Partner
+- Role: Managing Partner, Trading & Strategy
 - Background: Active in trading for over twenty years, began in equity markets before turning to crypto-assets in 2017. Co-founder of DSM, combining technical analysis and innovative strategies.
 - LinkedIn: https://www.linkedin.com/in/olivier-sayegh-5b89b3135/
 
 ### Alexandre VINAL
-- Role: Managing Partner
+- Role: Managing Partner, Systems & Risk; Member of the Management Board
 - Background: Software engineer, investing in crypto-assets since 2014. Founder of the Cointips YouTube channel (2017), co-founder of DSM (2020), leads a private community of crypto-asset investors.
 - LinkedIn: https://www.linkedin.com/in/alexandrevinal/
+
+## Governance
+
+- Investment management: Olivier SAYEGH and Alexandre VINAL
+- Management Board of SparkCore.investment OÜ: Alexandre VINAL, Paul-Antoine PONS
 
 ## Contacts & Resources
 
 - Website: https://sparkcore.fund
-- Fund factsheets: gated, available on request to qualified investors
+- Fund factsheets: gated, available on request to professional investors
+- Investor portal (existing investors): https://investor.sparkcore-investment.com/
 - Privacy Policy: https://sparkcore.fund/privacy-policy
 - Contact: contact@sparkcore.fund
 - EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou

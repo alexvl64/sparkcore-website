@@ -17,6 +17,7 @@ const translations = {
     // === NAVIGATION ===
     navContact: "Nous contacter",
     navArticles: "Articles",
+    navPortal: "Espace investisseur",
 
     // === SIDEBAR FORM ===
     sidebarTitle: "En savoir plus sur SparkCore ?",
@@ -32,7 +33,6 @@ const translations = {
     sidebarSelectPlaceholder: "Choisissez une option",
     sidebarOpt1: "Communauté d'Alexandre VINAL (Cointips)",
     sidebarOpt2: "DSM (anciens clients ou clients)",
-    sidebarOpt3: "Communauté de Paul-Antoine PONS",
     sidebarOpt4: "Recherche en ligne",
     sidebarOpt5: "Réseaux sociaux (LinkedIn, etc.)",
     sidebarOpt6: "Recommandation d'un proche",
@@ -55,7 +55,7 @@ const translations = {
     approachP1Title: "Disciplinée",
     approachP1: "Chaque stratégie opère avec des objectifs de risque explicites, un dimensionnement de position systématique et un noyau défensif algorithmique indépendant.",
     approachP2Title: "Transparente",
-    approachP2: "Lettres mensuelles aux investisseurs, valorisation trimestrielle auditée par un cabinet Big Four, reporting sur demande.",
+    approachP2: "Lettres mensuelles aux investisseurs, VL quotidienne, comptabilité tenue par un cabinet Big Four et espace investisseur sécurisé.",
     approachP3Title: "Réglementée",
     approachP3: "Structure AIF estonienne supervisée par la Finantsinspektsioon — le même cadre opérationnel que les gestionnaires alternatifs traditionnels.",
 
@@ -104,10 +104,13 @@ const translations = {
 
     // === TEAM ===
     teamTitle: "Rencontrez notre équipe",
-    teamRolePA: "Associés gérants",
-    teamRoleOlivier: "Associés gérants",
-    teamRoleAlex: "Associés gérants",
-    teamBioPA: "Avec plus de 7 ans d'expérience sur les marchés financiers et dans les crypto-actifs, Paul-Antoine a accompagné plusieurs high net worth individuals dans leurs investissements. Il a fondé SparkCore Fund Management (SparkCore.investment OÜ), un gestionnaire de fonds d'investissement alternatifs réglementé.",
+    teamRoleOlivier: "Associé gérant · Trading & stratégie",
+    teamRoleAlex: "Associé gérant · Systèmes & risques",
+    govTitle: "Gouvernance",
+    govBody: "SparkCore.investment OÜ est supervisée par la Finantsinspektsioon (autorité estonienne de surveillance financière) au titre du régime des gestionnaires de petite taille. La gestion des fonds est assurée par Olivier Sayegh et Alexandre Vinal.",
+    govBoardLabel: "Management Board",
+    govAmlLabel: "Supervision LCB-FT",
+    govAml: "Double MLRO : un responsable interne enregistré auprès de la FIU et un responsable externe spécialisé crypto-actifs.",
     teamBioOlivier: "Actif dans le trading depuis plus de vingt ans, Olivier a commencé sur les marchés actions avant de se tourner vers les crypto-actifs en 2017. Cofondateur de DSM, il utilise une méthodologie combinant analyse technique et stratégies innovantes pour optimiser les performances des portefeuilles.",
     teamBioAlex: "Ingénieur en informatique, Alexandre investit dans les crypto-actifs depuis 2014. Fondateur de la chaîne YouTube Cointips en 2017 et co-fondateur de DSM en 2020, il dirige également une communauté privée d'investisseurs en crypto-actifs.",
 
@@ -122,7 +125,7 @@ const translations = {
 
     // === INVEST SECTION ===
     investTitle: "Investissez avec nous",
-    investText: "L'investissement dans les fonds gérés par SparkCore est réservé aux investisseurs expérimentés, aux investisseurs institutionnels et aux family offices. Le capital minimum par investisseur est de 50 000 €, en EUR, USD ou stablecoins réglementés.",
+    investText: "Nos fonds sont commercialisés auprès d'investisseurs professionnels. D'autres investisseurs peuvent, sous conditions, y accéder dans les limites du régime estonien. Le capital minimum par investisseur est de 50 000 €, en EUR, USD ou stablecoins réglementés. La VL est calculée quotidiennement ; les rachats sont traités chaque trimestre.",
     investStep1: "Demander des informations",
     investStep2: "Nous vous contacterons avec plus de détails",
     investStep3: "Signer les documents nécessaires",
@@ -165,7 +168,7 @@ const translations = {
     footerLicenceLink: "EFIU (Institution Financière)",
     footerAddress: "N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie",
     footerDisclaimerLabel: "Avertissement :",
-    footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies SparkCore est réservé aux investisseurs expérimentés, aux investisseurs institutionnels et aux family offices. Investissement minimum : 50 000 €. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
+    footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. Nos fonds sont commercialisés auprès d'investisseurs professionnels ; d'autres investisseurs peuvent, sous conditions, y accéder dans les limites du régime estonien. Investissement minimum : 50 000 €. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
     footerInsightsLink: "Articles",
 
@@ -203,6 +206,7 @@ const translations = {
     // === NAVIGATION ===
     navContact: "Contact Us",
     navArticles: "Articles",
+    navPortal: "Investor login",
 
     // === SIDEBAR FORM ===
     sidebarTitle: "Learn more about SparkCore?",
@@ -218,7 +222,6 @@ const translations = {
     sidebarSelectPlaceholder: "Select an option",
     sidebarOpt1: "Alexandre VINAL's community (Cointips)",
     sidebarOpt2: "DSM (past or current clients)",
-    sidebarOpt3: "Paul-Antoine PONS's community",
     sidebarOpt4: "Online search",
     sidebarOpt5: "Social media (LinkedIn, etc.)",
     sidebarOpt6: "Referral by a contact",
@@ -241,7 +244,7 @@ const translations = {
     approachP1Title: "Disciplined",
     approachP1: "Each strategy operates with explicit risk targets, systematic position-sizing, and an independent algorithmic defensive core.",
     approachP2Title: "Transparent",
-    approachP2: "Monthly investor letters, quarterly NAV with Big Four-audited accounting, and on-demand portfolio reporting.",
+    approachP2: "Monthly investor letters, daily NAV, accounting by a Big Four firm, and a secure investor portal.",
     approachP3Title: "Regulated",
     approachP3: "Estonian AIF structure supervised by Finantsinspektsioon — the same operational framework as traditional alternative asset managers.",
 
@@ -290,10 +293,13 @@ const translations = {
 
     // === TEAM ===
     teamTitle: "Meet our team",
-    teamRolePA: "Managing Partner",
-    teamRoleOlivier: "Managing Partner",
-    teamRoleAlex: "Managing Partner",
-    teamBioPA: "With over 7 years of experience in financial markets and crypto-assets, Paul-Antoine has guided several high net worth individuals in their investments. He founded SparkCore Fund Management (SparkCore.investment OÜ), a regulated alternative investment fund manager.",
+    teamRoleOlivier: "Managing Partner · Trading & Strategy",
+    teamRoleAlex: "Managing Partner · Systems & Risk",
+    govTitle: "Governance",
+    govBody: "SparkCore.investment OÜ is supervised by Finantsinspektsioon (Estonian Financial Supervisory Authority) as a Small Fund Manager. Investment management is carried out by Olivier Sayegh and Alexandre Vinal.",
+    govBoardLabel: "Management Board",
+    govAmlLabel: "AML supervision",
+    govAml: "Dual MLRO structure: internal officer registered with the FIU and external crypto-specialist officer.",
     teamBioOlivier: "Active in trading for over twenty years, Olivier began in equity markets before turning to crypto-assets in 2017. Co-founder of DSM, he applies a methodology combining technical analysis and innovative strategies to optimise portfolio performance.",
     teamBioAlex: "Software engineer, Alexandre has invested in crypto-assets since 2014. Founder of the Cointips YouTube channel in 2017 and co-founder of DSM in 2020, he also leads a private community of crypto-asset investors.",
 
@@ -308,7 +314,7 @@ const translations = {
 
     // === INVEST SECTION ===
     investTitle: "Invest with us",
-    investText: "Investment in funds managed by SparkCore is reserved for experienced investors, institutional investors and family offices. The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins.",
+    investText: "SparkCore funds are marketed to professional investors. Other investors may, subject to conditions, access them within the limits of the Estonian regime. The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins. NAV is calculated daily; redemptions are processed quarterly.",
     investStep1: "Request information",
     investStep2: "We will contact you with further details",
     investStep3: "Sign the required documents",
@@ -351,7 +357,7 @@ const translations = {
     footerLicenceLink: "EFIU (Financial Institution)",
     footerAddress: "Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia",
     footerDisclaimerLabel: "Disclaimer:",
-    footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to SparkCore strategies is reserved for experienced investors, institutional investors and family offices. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.",
+    footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. SparkCore funds are marketed to professional investors; other investors may, subject to conditions, access them within the limits of the Estonian regime. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
     footerInsightsLink: "Articles",
 
