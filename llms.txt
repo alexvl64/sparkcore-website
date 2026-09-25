@@ -30,9 +30,10 @@ SparkCore Fund Management (legal entity: SparkCore.investment OÜ) is an alterna
 - Legal entity: SparkCore.investment OÜ, Estonian registry no. 16265864
 - LEI (Legal Entity Identifier): 8945003BBN0RVNNB0S84 — https://search.gleif.org/#/record/8945003BBN0RVNNB0S84
 - Regime: Small Fund Manager registered with the Finantsinspektsioon (EFSA)
-- EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
-- Financial Institution licence: EFIU (KYC/AML) — https://mtr.ttja.ee/taotluse_tulemus/609065
-- Investment vehicle: usaldusfond (Estonian limited partnership)
+- EFSA registry: https://www.fi.ee/en/investment-market/fund-management-companies-0/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
+- Registration: Finantsinspektsioon Management Board decision no. 4.1-1/132 of 1 August 2022 (Investment Funds Act § 453)
+- Financial Institution licence: no. FFA000467 (valid since 24 October 2023), issued by the Estonian FIU (Rahapesu Andmebüroo), KYC/AML — https://mtr.ttja.ee/taotluse_tulemus/609065
+- Investment vehicle: usaldusfond (Estonian limited partnership); SparkCore.investment OÜ is the general partner
 - AML supervision: dual MLRO structure — internal officer (FIU) and external officer (France)
 - Accounting: Big Four firm
 
@@ -76,7 +77,7 @@ SparkCore Fund Management offers a white-label solution allowing third-party par
 - Regulatory information: https://sparkcore.fund/regulatory-information
 - White-label solution for fund managers: https://sparkcore.fund/white-label
 - Contact: contact@sparkcore.fund
-- EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
+- EFSA registry: https://www.fi.ee/en/investment-market/fund-management-companies-0/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
 - EFIU licence: https://mtr.ttja.ee/taotluse_tulemus/609065
 - Full content index (blog articles & resources): https://sparkcore.fund/llms-full.txt
 
