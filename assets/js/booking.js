@@ -1,7 +1,7 @@
 /* ── Cal.eu Embed — Booking Page ── */
 
 const CAL_LINK = "sparkcore/discovery";
-const CAL_ORIGIN = "https://app.cal.eu";
+const CAL_ORIGIN = "https://app.cal.com";
 
 const T = {
   en: {

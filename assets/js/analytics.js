@@ -176,7 +176,7 @@
 
   /* ── GA4: cal_booking_complete (Key Event) — captures bookings from any page hosting a Cal embed/popup ── */
   window.addEventListener("message", function (e) {
-    if (e.origin !== "https://app.cal.eu") return;
+    if (e.origin !== "https://app.cal.com" && e.origin !== "https://cal.com") return;
     var d = e.data || {};
     var action = d.type || d.action || (d.detail && (d.detail.type || d.detail.action));
     if (action !== "bookingSuccessful" && action !== "BOOKING_CONFIRMED" && action !== "__bookingSuccessful") return;

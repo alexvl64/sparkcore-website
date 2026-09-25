@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <script defer src="/assets/js/analytics.js"></script>
+    <script defer src="/assets/js/analytics.js?v=2"></script>
     <title>SparkCore — Gestionnaire de fonds crypto réglementé | Estonie</title>
     <!-- Balises meta principales -->
     <meta name="description" content="SparkCore.investment OÜ — AIFM crypto réglementé en Estonie, supervisé par la Finantsinspektsioon. Fonds d'investissement alternatifs en crypto-actifs, pour investisseurs qualifiés." />
@@ -505,7 +505,7 @@
             <div class="hero__ctas">
               <button
                 data-cal-link="sparkcore/discovery"
-                data-cal-origin="https://app.cal.eu"
+                data-cal-origin="https://app.cal.com"
                 data-cal-config='{"layout":"month_view","theme":"light"}'
                 class="font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-sm md:text-base bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-cream duration-300 max-[500px]:w-full flex items-center justify-center cursor-pointer"
                 data-i18n="heroCtaPrimary"
@@ -976,7 +976,7 @@
               </button>
               <button
                 data-cal-link="sparkcore/discovery"
-                data-cal-origin="https://app.cal.eu"
+                data-cal-origin="https://app.cal.com"
                 data-cal-config='{"layout":"month_view","theme":"light"}'
                 class="font-inter font-normal h-[54px] px-6 py-4 rounded text-base text-darkGray !leading-140 border border-darkGray hover:bg-darkGray hover:text-white duration-300 flex items-center justify-center cursor-pointer"
                 data-i18n="investCall"
@@ -1183,12 +1183,12 @@
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Cal.com popup — hero CTA (lazy-loaded: embed.js downloads on first interaction or idle) -->
     <script>
-    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A+"/embed/embed.js";cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.eu","init");
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A+"/embed/embed.js";cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com","init");
     (function(){
       var inited=false;
       function initCal(){
         if(inited)return;inited=true;
-        Cal("init",{origin:"https://app.cal.eu"});
+        Cal("init",{origin:"https://app.cal.com"});
         Cal("ui",{theme:"light",cssVarsPerTheme:{light:{"cal-brand":"#0E1117"}}});
       }
       function attachCtaListeners(){

@@ -535,9 +535,9 @@ loadFactsheet();
     }
     p(cal, ar);
   };
-})(window, "https://app.cal.eu", "init");
+})(window, "https://app.cal.com", "init");
 
-Cal("init", { origin: "https://app.cal.eu" });
+Cal("init", { origin: "https://app.cal.com" });
 Cal("ui", {
   theme: "light",
   cssVarsPerTheme: {

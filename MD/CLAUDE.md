@@ -114,7 +114,7 @@ GA4 enhanced measurement actif → events automatiques sans code custom :
 |---|---|---|---|
 | `factsheet_request_open` | Click sur `.open-sidebar` avec `data-i18n=dtFactsheet` ou `cvFactsheet` | `fund` (dynamic-trends\|cryptovision), `lang` | `assets/js/index.js` |
 | `contact_form_submit` | Submit succès du sidebar form (FormCarry `oHdZL-AalnM`) | `form_source` (dropdown), `cta_origin` (factsheet-*\|nav-contact\|hero), `lang` | `assets/js/index.js` |
-| `cal_booking_complete` | postMessage `bookingSuccessful` depuis `app.cal.eu` (capté sur **toutes** les pages avec Cal — `/discovery-call` + factsheets popup) | `event_type=discovery`, `booking_source` (discovery_page \| factsheet-cryptovision \| factsheet-dynamic-trends \| other), `lang` | `assets/js/analytics.js` (centralisé pour couvrir popups factsheets ET embed `/discovery-call`) |
+| `cal_booking_complete` | postMessage `bookingSuccessful` depuis `app.cal.eu` (capté sur **toutes** les pages avec Cal (origine `app.cal.com` depuis la migration cal.eu → cal.com, 2026-09-25) — `/discovery-call` + factsheets popup) | `event_type=discovery`, `booking_source` (discovery_page \| factsheet-cryptovision \| factsheet-dynamic-trends \| other), `lang` | `assets/js/analytics.js` (centralisé pour couvrir popups factsheets ET embed `/discovery-call`) |
 
 **Famille 2 — GA4 Admin (custom events filtrés sur `page_view`)** : signal d'arrivée sur les pages gated email-only. Aucun code — créés dans Admin → Affichage des données → Événements personnalisés.
 
@@ -602,8 +602,10 @@ All settings below are live on the `sparkcore.fund` zone.
 **Header:** `Content-Security-Policy`
 **Value:**
 ```
-default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com https://www.googletagmanager.com https://rum.cronitor.io https://static.cloudflareinsights.com https://app.cal.eu 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net https://app.cal.eu 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formcarry.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://rum.cronitor.io https://a.nel.cloudflare.com https://cdn.jsdelivr.net https://app.cal.eu; frame-src https://challenges.cloudflare.com https://app.cal.eu; report-uri /csp-report
+default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com https://www.googletagmanager.com https://rum.cronitor.io https://static.cloudflareinsights.com https://app.cal.com https://cal.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formcarry.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://rum.cronitor.io https://a.nel.cloudflare.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com; frame-src https://challenges.cloudflare.com https://app.cal.com https://cal.com; report-uri /csp-report
 ```
+
+> **Cal.com (2026-09-25)** : cal.eu ferme le 1er novembre 2026 ; le site pointe sur `app.cal.com` (compte `cal.com/sparkcore`, événement `discovery`). La valeur ci-dessus est la cible ; pendant la transition la règle CF peut garder `app.cal.eu` en plus.
 
 > Note: `'unsafe-inline'` is intentional for a static site with no user authentication. Replace with nonces only if moving to Cloudflare Workers.
 
