@@ -664,12 +664,12 @@ The auto-redirect from `/` → `/fr/` for FR-language browsers is intentional an
 - Audience: prospective fund managers + institutional allocators evaluating regulated crypto fund vehicles.
 - All articles carry `"inLanguage": "en"` and `<html lang="en">`.
 
-**2. FR surface = homepage + two institutional page pairs.**
+**2. FR surface = homepage + three institutional page pairs.**
 
 - `/fr/index.html` stays (localized landing + EN↔FR toggle + auto-redirect of FR browsers). It has **no blog**: its nav + footer "Articles" links point to the EN `/blog/`, and the hero "latest article" badge (which promoted the FR strc article) was removed.
-- Since 2026-09-25, two **EN↔FR parity pairs** (option (a) below) exist with reciprocal `hreflang` and sitemap entries: `/white-label` ↔ `/fr/white-label` and `/regulatory-information` ↔ `/fr/informations-reglementaires`. They are static pages (no runtime translation); their footer language switch is a plain link to the other page.
+- Since 2026-09-25, three **EN↔FR parity pairs** (option (a) below) exist with reciprocal `hreflang` and sitemap entries: `/white-label` ↔ `/fr/white-label`, `/regulatory-information` ↔ `/fr/informations-reglementaires` and `/privacy-policy` ↔ `/fr/politique-de-confidentialite` (rewritten 2026-09-25; the former `privacy-policy.js` in-place translation was removed). They are static pages (no runtime translation); their footer language switch is a plain link to the other page.
 - `/fr/blog/*` is a **retired namespace** → 410 Gone. Do not recreate pages under it without restoring the full SEO surface (sitemap, hreflang, internal links).
-- The sitemap keeps EN/FR `hreflang` alternates **only for the homepage** (`/` ↔ `/fr/`) **and the two pairs above**. The `/blog/` index is now EN self-canonical (its FR alternate was removed).
+- The sitemap keeps EN/FR `hreflang` alternates **only for the homepage** (`/` ↔ `/fr/`) **and the three pairs above**. The `/blog/` index is now EN self-canonical (its FR alternate was removed).
 
 **3. Future content rule.**
 

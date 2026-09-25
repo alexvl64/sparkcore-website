@@ -123,7 +123,7 @@ const translations = {
     newsletterPlaceholder: "Votre e-mail",
     newsletterButton: "S'abonner",
     newsletterError: "Veuillez entrer une adresse e-mail valide.",
-    newsletterConsent: "En vous abonnant, vous consentez à recevoir notre newsletter mensuelle. Aucune donnée n'est transmise à des tiers. Vous pouvez vous désabonner à tout moment. <a href=\"/privacy-policy\" class=\"underline underline-offset-2 hover:text-white transition-colors duration-200\">Politique de confidentialité</a>.",
+    newsletterConsent: "En vous abonnant, vous consentez à recevoir notre newsletter mensuelle. Aucune donnée n'est transmise à des tiers. Vous pouvez vous désabonner à tout moment. <a href=\"/fr/politique-de-confidentialite\" class=\"underline underline-offset-2 hover:text-white transition-colors duration-200\">Politique de confidentialité</a>.",
     newsletterConsentLink: "Politique de confidentialité",
 
     // === INVEST SECTION ===
@@ -144,7 +144,7 @@ const translations = {
     investStep1: "Demande d'information",
     investStep1Desc: "Formulaire de contact ou appel de découverte avec l'équipe de gestion.",
     investStep2: "Vérification d'identité",
-    investStep2Desc: "KYC et vérification de l'origine des fonds en ligne.",
+    investStep2Desc: "KYC et vérification de l'origine des fonds.",
     investStep3: "Signature électronique",
     investStep3Desc: "Documents de souscription signés électroniquement.",
     investStep4: "Espace investisseur",
@@ -352,7 +352,7 @@ const translations = {
     investStep1: "Request information",
     investStep1Desc: "Contact form or discovery call with the management team.",
     investStep2: "Identity verification",
-    investStep2Desc: "Online KYC and source-of-funds checks.",
+    investStep2Desc: "KYC and source-of-funds checks.",
     investStep3: "Electronic signature",
     investStep3Desc: "Subscription documents signed electronically.",
     investStep4: "Investor portal",
