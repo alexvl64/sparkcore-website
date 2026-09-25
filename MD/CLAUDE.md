@@ -73,6 +73,11 @@ cron) sont archivés sur la branche `claude/archive-audit-2026-06-21`
 
 ## Charte et chantier en cours
 
+- **Performance** : Cloudflare Turnstile (≈ 1,3 Mo) est chargé **à la demande**
+  par `assets/js/index.js` (ouverture du formulaire de contact, focus du champ
+  newsletter), jamais dans le `<head>` : le chargement d'office faisait un LCP
+  mobile de 14 s (63 → 96 sur PSI mobile après correction, 2026-09-25).
+
 - Charte graphique : `MD/SPARKCORE-DESIGN.md` (tokens, composants, règles de
   contenu réglementaires, checklist). À relire avant tout écran.
 - Rafraîchissement 2026-09 : `MD/site-refresh-2026-09-25.md`.
@@ -151,22 +156,23 @@ Sitemap.xml ne contient PAS ces 3 pages (volontaire). GSC URL Inspection 2026-05
 
 > Si une nouvelle page gated est créée à l'avenir, propager les 4 couches — sinon elle peut fuiter via `llms.txt` ou les AI crawlers même avec un meta noindex.
 
-### APIs connectées (config `~/.config/claude-seo/projects/sci.json`)
+### APIs Google — état vérifié le 2026-09-25 (depuis le VPS SparkCore)
+
+Identifiants : le compte de service `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com`
+dont une clé vit sur le VPS dans `/etc/sparkcore-admin/nav-sheet-key.json`
+(`root:sparkcore-admin 640`, **partagée avec la synchro de la feuille NAV** de
+l'Admin : ne pas la révoquer sans prévoir la relève) — lecture via `sudo`.
 
 | API | Statut | Notes |
 |---|---|---|
-| GA4 Data API | ✅ | property `530665322` |
-| GSC Search Analytics | ✅ | `sc-domain:sparkcore.fund` |
-| GSC URL Inspection | ✅ | |
-| GSC Indexing API | ✅ | |
-| PageSpeed Insights | ⚠️ | bug script `audit_details` côté skill (credentials OK) |
-| CrUX history | ⚠️ | trafic Chrome insuffisant — normal pour site récent |
-| Cloudflare API | ✅ Read-only | clé `cloudflare_api_token`, IP-restreinte au VPS, créée 2026-05-06. Voir section Cloudflare ci-dessous pour usage. |
-| Google Ads | ❌ | non applicable (pas d'ads) |
-| Bing Webmaster | ✅ | clé dans `backlinks-projects/sci.json`, voir section Bing WMT |
-| IndexNow | ✅ | clé `27994a06b868d24820429dc36c1bafee`, script `scripts/ops/indexnow_ping.py` |
+| GSC Search Analytics | ✅ | `sc-domain:sparkcore.fund`, le SA est `siteOwner` |
+| GSC URL Inspection | ✅ | accueil « Submitted and indexed » |
+| GA4 Data + Admin API | ✅ | property `530665322` ; rétention : événements **2 mois**, données utilisateur **14 mois** (remise à zéro à chaque visite) |
+| PageSpeed Insights | ✅ via le SA | jeton OAuth du SA avec le scope **`openid`** (quota du projet) ; sans clé, le quota anonyme partagé renvoie 429 |
+| CrUX | ❌ | demande une clé API ; trafic Chrome insuffisant de toute façon |
+| Bing Webmaster | ❌ | clé perdue avec claude-vps-01 |
+| IndexNow | ✅ | clé dans le repo, `scripts/ops/indexnow_ping.py` |
 
-Service Account partagé : `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com` (Viewer sur GA4, Full sur GSC).
 
 > ⚠️ **Note historique 2026-05-02** : la config sci pointait par erreur vers `properties/529476067` (orphelin, 0 row). Corrigé vers `530665322` après triangulation : repo `analytics.js:3` + `curl https://sparkcore.fund/assets/js/analytics.js` + GA4 admin `dataStreams.list`. Toujours croiser ces 3 sources avant de déclarer le tracking en panne.
 
