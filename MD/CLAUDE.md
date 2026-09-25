@@ -19,7 +19,7 @@ Context and configuration reference for Claude Code sessions on the `alexvl64/sc
 ## Gestion du site — handover 2026-09-01
 
 Décision Alex (2026-09-01) : **le site est géré exclusivement depuis le VPS
-SparkCore** (clone `/home/ubuntu/sci`, deploy key `~/.ssh/sci_deploy` en
+SparkCore** (clone `/home/ubuntu/sparkcore-website`, repo `alexvl64/sparkcore-website` depuis le renommage 2026-09-01, deploy key `~/.ssh/sci_deploy` en
 écriture, `core.sshCommand` configuré dans le clone). La machine
 `claude-vps-01` (Contabo) est retirée de l'exploitation du site : ses crons
 SEO/blog (pausés depuis 2026-06-21) sont supprimés, ses configs et sa mémoire
@@ -70,6 +70,12 @@ cron) sont archivés sur la branche `claude/archive-audit-2026-06-21`
 7. **Coupons preferred annualisés** : toujours « coupon annuel de X % versé
    mensuellement », jamais « coupon mensuel de X % » (erreur corrigée
    2026-05-11).
+
+## Charte et chantier en cours
+
+- Charte graphique : `MD/SPARKCORE-DESIGN.md` (tokens, composants, règles de
+  contenu réglementaires, checklist). À relire avant tout écran.
+- Rafraîchissement 2026-09 : `MD/site-refresh-2026-09-25.md`.
 
 ## Tracking & Analytics
 
@@ -656,11 +662,12 @@ The auto-redirect from `/` → `/fr/` for FR-language browsers is intentional an
 - Audience: prospective fund managers + institutional allocators evaluating regulated crypto fund vehicles.
 - All articles carry `"inLanguage": "en"` and `<html lang="en">`.
 
-**2. FR surface = homepage only.**
+**2. FR surface = homepage + two institutional page pairs.**
 
 - `/fr/index.html` stays (localized landing + EN↔FR toggle + auto-redirect of FR browsers). It has **no blog**: its nav + footer "Articles" links point to the EN `/blog/`, and the hero "latest article" badge (which promoted the FR strc article) was removed.
+- Since 2026-09-25, two **EN↔FR parity pairs** (option (a) below) exist with reciprocal `hreflang` and sitemap entries: `/white-label` ↔ `/fr/white-label` and `/regulatory-information` ↔ `/fr/informations-reglementaires`. They are static pages (no runtime translation); their footer language switch is a plain link to the other page.
 - `/fr/blog/*` is a **retired namespace** → 410 Gone. Do not recreate pages under it without restoring the full SEO surface (sitemap, hreflang, internal links).
-- The sitemap keeps EN/FR `hreflang` alternates **only for the homepage** (`/` ↔ `/fr/`). The `/blog/` index is now EN self-canonical (its FR alternate was removed).
+- The sitemap keeps EN/FR `hreflang` alternates **only for the homepage** (`/` ↔ `/fr/`) **and the two pairs above**. The `/blog/` index is now EN self-canonical (its FR alternate was removed).
 
 **3. Future content rule.**
 

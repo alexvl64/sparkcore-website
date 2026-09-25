@@ -18,6 +18,8 @@ const translations = {
     navContact: "Nous contacter",
     navArticles: "Articles",
     navPortal: "Espace investisseur",
+    footerRegLink: "Informations réglementaires",
+    footerWlLink: "Solution white label",
 
     // === SIDEBAR FORM ===
     sidebarTitle: "En savoir plus sur SparkCore ?",
@@ -207,6 +209,8 @@ const translations = {
     navContact: "Contact Us",
     navArticles: "Articles",
     navPortal: "Investor login",
+    footerRegLink: "Regulatory information",
+    footerWlLink: "White-label solution",
 
     // === SIDEBAR FORM ===
     sidebarTitle: "Learn more about SparkCore?",

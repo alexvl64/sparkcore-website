@@ -62,8 +62,10 @@ const ppTranslations = {
     footerLicenceLabel: "Licence :",
     footerLicenceLink: "EFIU (Institution Financière)",
     footerDisclaimerLabel: "Avertissement :",
-    footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
+    footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. Les fonds SparkCore sont commercialisés auprès d'investisseurs professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
+    footerRegLink: "Informations réglementaires",
+    footerWlLink: "Solution white label",
   },
   en: {
     ppLabel: "Privacy Policy",
@@ -126,8 +128,10 @@ const ppTranslations = {
     footerLicenceLabel: "Licence:",
     footerLicenceLink: "EFIU (Financial Institution)",
     footerDisclaimerLabel: "Disclaimer:",
-    footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to the strategies is reserved for qualified or professional investors. Please assess your personal situation and seek independent advice before investing.",
+    footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. SparkCore funds are marketed to professional investors. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
+    footerRegLink: "Regulatory information",
+    footerWlLink: "White-label solution",
   }
 };
 

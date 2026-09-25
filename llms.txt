@@ -75,6 +75,8 @@ SparkCore Fund Management offers a white-label solution allowing third-party par
 - Fund factsheets: gated, available on request to professional investors
 - Investor portal (existing investors): https://investor.sparkcore-investment.com/
 - Privacy Policy: https://sparkcore.fund/privacy-policy
+- Regulatory information: https://sparkcore.fund/regulatory-information
+- White-label solution for fund managers: https://sparkcore.fund/white-label
 - Contact: contact@sparkcore.fund
 - EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
 - EFIU licence: https://mtr.ttja.ee/taotluse_tulemus/609065

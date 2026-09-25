@@ -95,6 +95,17 @@ openSidebarButtons.forEach((button) => {
   });
 });
 
+// Deep link from secondary pages (e.g. /white-label): /?contact=<origin>
+// opens the contact sidebar on arrival.
+(function () {
+  const origin = getUrlParameter("contact");
+  if (!origin || !sidebar) return;
+  window.__lastCtaOrigin = origin.replace(/[^a-z0-9-]/gi, "").slice(0, 40) || "deep-link";
+  sidebar.classList.remove("-right-full");
+  sidebar.classList.add("right-0");
+  document.body.classList.add("overflow-hidden");
+})();
+
 // Close the sidebar
 closeSidebarButton.addEventListener("click", () => {
   sidebar.classList.remove("right-0");

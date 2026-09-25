@@ -62,6 +62,18 @@
   `prefers-reduced-motion`). Aucun outil tiers installé.
 - Couleurs de fonds sorties des `style=""` inline vers des classes.
 
+## Avancement
+
+- Lot 1 : fait (beta, commit `55ed836`).
+- Lot 2 : fait (beta, commit `a15843d`).
+- Lot 3 : pages `/white-label` + `/regulatory-information` (paires EN/FR),
+  liens de pied de page sur tout le site, polices de marque chargées sur les
+  31 pages qui ne les chargeaient pas, charte `MD/SPARKCORE-DESIGN.md`.
+  **Reporté** : sortie des couleurs de fonds des `style=""` inline (pur
+  confort de maintenance, aucun effet visible).
+- En attente d'Alex : sections réclamations, conflits d'intérêts, SFDR et
+  rémunération de la page réglementaire (non publiées sans texte validé).
+
 ## Hors périmètre
 
 Aucune modification Admin/R2, aucun envoi. Relecture Hedman Partners des
