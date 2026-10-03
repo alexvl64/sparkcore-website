@@ -1,7 +1,7 @@
 /**
  * CF Pages Function — Newsletter subscribe (proxy serveur-à-serveur → API Admin)
  *
- * Le navigateur POST du JSON : { email, source_tracking, lang, turnstileToken, website? }
+ * Le navigateur POST du JSON : { email, lang, turnstileToken, website? }
  * Vérifie Turnstile côté serveur (TURNSTILE_SECRET_KEY), puis relaie vers
  * {ADMIN_API_BASE}/prospects/newsletter avec `Authorization: Bearer {ADMIN_API_SECRET}`.
  *
@@ -56,7 +56,6 @@ export async function onRequestPost({ request, env }) {
     body: JSON.stringify({
       type: "newsletter",
       email: body.email || "",
-      source_tracking: body.source_tracking || "UNKNOWN",
       lang: body.lang === "fr" ? "fr" : "en",
     }),
   });

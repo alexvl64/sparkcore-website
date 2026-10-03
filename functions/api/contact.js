@@ -2,7 +2,7 @@
  * CF Pages Function — Contact form intake (proxy serveur-à-serveur → API Admin)
  *
  * Le navigateur POST du JSON :
- *   { prenom, nom, telephone, email, source, source_tracking, lang, turnstileToken, website? }
+ *   { prenom, nom, telephone, email, source, lang, turnstileToken, website? }
  * La Function vérifie le token Turnstile côté serveur (TURNSTILE_SECRET_KEY), puis relaie
  * vers {ADMIN_API_BASE}/prospects/contact avec `Authorization: Bearer {ADMIN_API_SECRET}`.
  * Le secret ne quitte jamais la Function (jamais exposé au navigateur ; l'API Admin refuse le CORS).
@@ -65,7 +65,6 @@ export async function onRequestPost({ request, env }) {
       telephone: body.telephone || "",
       email: body.email || "",
       source: body.source || "",
-      source_tracking: body.source_tracking || "UNKNOWN",
       lang: body.lang === "fr" ? "fr" : "en",
     }),
   });

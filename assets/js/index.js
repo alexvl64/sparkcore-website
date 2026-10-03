@@ -53,11 +53,6 @@ function getUrlParameter(name) {
   return urlParams.get(name);
 }
 
-// Récupérer la variable de l'URL (DSM ou PAP)
-let sourceTracking = getUrlParameter('source');
-if (sourceTracking !== 'DSM' && sourceTracking !== 'PAP') {
-	sourceTracking = 'UNKNOWN';
-}
 
 //  ======== CLOUDFLARE TURNSTILE (on demand) ===========
 // Loaded only when a form is about to be used (contact sidebar opened,
@@ -383,7 +378,6 @@ form.addEventListener("submit", async (event) => {
     telephone,
     email,
     source,
-    source_tracking: sourceTracking,
     lang: document.documentElement.lang || "en",
     turnstileToken,
   };
@@ -554,7 +548,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Créer les données à envoyer (JSON → Pages Function /api/newsletter)
     const payload = {
       email: emailValue,
-      source_tracking: sourceTracking,
       lang: document.documentElement.lang || "en",
       turnstileToken,
     };
