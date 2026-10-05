@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signatures email SparkCore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#F3F5F7; --panel:#FFFFFF; --ink:#0E1117; --muted:#5B6472; --line:#D0DAE3; --navy:#1B2D4D; --cream:#DBD1BC; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0B0E13; --panel:#141A22; --ink:#F3F5F7; --muted:#9AA4B2; --line:#232C38; } }
+  :root[data-theme="dark"] { --bg:#0B0E13; --panel:#141A22; --ink:#F3F5F7; --muted:#9AA4B2; --line:#232C38; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,Helvetica,Arial,sans-serif; font-size:15px; line-height:1.55; }
+  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+  h1 { font-family:'Funnel Display',Inter,sans-serif; font-weight:500; font-size:30px; letter-spacing:-0.4px; margin:0 0 6px; }
+  h2 { font-family:'Funnel Display',Inter,sans-serif; font-weight:500; font-size:19px; margin:0; }
+  .lede { color:var(--muted); margin:0 0 24px; }
+  .bar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:24px; }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  .seg button { border:0; background:transparent; color:var(--ink); font:500 13px Inter,sans-serif; padding:7px 14px; cursor:pointer; }
+  .seg button[aria-pressed="true"] { background:var(--navy); color:#fff; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:4px; margin-bottom:20px; }
+  .head { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; padding:14px 18px; border-bottom:1px solid var(--line); }
+  .meta { color:var(--muted); font-size:13px; }
+  .actions { display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { font:500 13px Inter,sans-serif; padding:8px 14px; border-radius:4px; cursor:pointer; border:1px solid var(--navy); background:var(--navy); color:#fff; }
+  .btn.ghost { background:transparent; color:var(--ink); border-color:var(--line); }
+  .stage { padding:24px 18px; overflow-x:auto; background:#FFFFFF; }
+  .stage.darkmail { background:#1E1F22; }
+  .stage .fake { font-family:Arial,sans-serif; font-size:14px; color:#222; margin:0 0 18px; }
+  .stage.darkmail .fake { color:#ddd; }
+  .steps { background:var(--panel); border:1px solid var(--line); border-radius:4px; padding:18px 22px; }
+  .steps ol { margin:8px 0 0; padding-left:20px; }
+  .steps li { margin:6px 0; }
+  .note { color:var(--muted); font-size:13px; margin-top:12px; }
+  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--navy); color:#fff; padding:10px 16px; border-radius:4px; font-size:13px; opacity:0; transition:opacity .2s; pointer-events:none; }
+  .toast.on { opacity:1; }
+  #clip { position:absolute; left:-10000px; top:0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Signatures email SparkCore</h1>
+  <p class="lede">Trois signatures en HTML, en français et en anglais : texte sélectionnable, liens cliquables, mentions légales et confidentialité.</p>
+  <div class="bar">
+    <div class="seg" id="lang"><button data-v="fr" aria-pressed="true">Français</button><button data-v="en" aria-pressed="false">English</button></div>
+    <div class="seg" id="bg"><button data-v="light" aria-pressed="true">Messagerie claire</button><button data-v="dark" aria-pressed="false">Messagerie sombre</button></div>
+  </div>
+  <div id="list"></div>
+  <section class="steps">
+    <h2>Installer dans Proton Mail</h2>
+    <ol>
+      <li>Ouvrir Proton Mail sur le web, puis Paramètres, Tous les paramètres, Identité et adresses.</li>
+      <li>Choisir l'adresse concernée : contact@, alex@ ou olivier@sparkcore.fund.</li>
+      <li>Nom d'affichage : « SparkCore Fund Management » pour contact@.</li>
+      <li>Dans le champ Signature, supprimer l'ancienne image, puis coller avec Ctrl+V ou Cmd+V après « Copier la signature ».</li>
+      <li>Enregistrer, puis s'envoyer un test vers une adresse Gmail et vers une adresse Proton.</li>
+    </ol>
+    <p class="note">Les images sont hébergées sur sparkcore.fund. Elles s'afficheront chez les destinataires une fois le site promu en production. « Copier le HTML » sert pour Apple Mail, Outlook ou un autre logiciel qui accepte le code source.</p>
+  </section>
+</main>
+<div id="clip"></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = /*DATA*/null;
+const PEOPLE = [
+  ["contact", "contact@sparkcore.fund", "Signature générique, nom d'affichage SparkCore Fund Management"],
+  ["alexandre-vinal", "Alexandre Vinal", "alex@sparkcore.fund"],
+  ["olivier-sayegh", "Olivier Sayegh", "olivier@sparkcore.fund"],
+];
+let lang = "fr", bg = "light";
+const list = document.getElementById("list");
+function toast(msg) { const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("on"); setTimeout(() => t.classList.remove("on"), 1800); }
+function render() {
+  list.innerHTML = "";
+  for (const [key, title, meta] of PEOPLE) {
+    const d = DATA[`${key}-${lang}`];
+    const card = document.createElement("section");
+    card.className = "card";
+    card.innerHTML = `<div class="head"><div><h2></h2><div class="meta"></div></div>
+      <div class="actions"><button class="btn" data-a="rich">Copier la signature</button><button class="btn ghost" data-a="src">Copier le HTML</button></div></div>
+      <div class="stage ${bg === "dark" ? "darkmail" : ""}"><p class="fake">${lang === "fr" ? "Bien cordialement," : "Best regards,"}</p><div class="sig"></div></div>`;
+    card.querySelector("h2").textContent = title;
+    card.querySelector(".meta").textContent = meta;
+    card.querySelector(".sig").innerHTML = d.view;
+    card.querySelector('[data-a="rich"]').onclick = () => copyRich(d.copy);
+    card.querySelector('[data-a="src"]').onclick = () => copyText(d.copy);
+    list.appendChild(card);
+  }
+}
+async function copyRich(htmlStr) {
+  try {
+    await navigator.clipboard.write([new ClipboardItem({
+      "text/html": new Blob([htmlStr], { type: "text/html" }),
+      "text/plain": new Blob([htmlStr.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()], { type: "text/plain" }),
+    })]);
+    toast("Signature copiée, à coller dans Proton");
+  } catch (err) {
+    const clip = document.getElementById("clip");
+    clip.innerHTML = htmlStr;
+    const range = document.createRange(); range.selectNodeContents(clip);
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+    const ok = document.execCommand("copy"); sel.removeAllRanges(); clip.innerHTML = "";
+    toast(ok ? "Signature copiée, à coller dans Proton" : "Copie impossible dans ce navigateur");
+  }
+}
+async function copyText(s) {
+  try { await navigator.clipboard.writeText(s); toast("Code HTML copié"); }
+  catch (err) { toast("Copie impossible dans ce navigateur"); }
+}
+for (const [id, set] of [["lang", v => lang = v], ["bg", v => bg = v]]) {
+  document.getElementById(id).addEventListener("click", ev => {
+    const b = ev.target.closest("button"); if (!b) return;
+    set(b.dataset.v);
+    for (const x of document.querySelectorAll(`#${id} button`)) x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    render();
+  });
+}
+render();
+</script>
+</body>
+</html>
