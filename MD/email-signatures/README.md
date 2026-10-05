@@ -8,7 +8,7 @@ remplacent les anciennes bannières image. Images hébergées sur
 chez les destinataires qu'une fois `beta` promu sur `main`.
 
 - `build_assets.py` : images à double résolution (logo blanc, symbole sur tuile
-  navy, pictogrammes, photos recadrées depuis `assets/images/webp/team-member-*`).
+  marron, pictogrammes, photos recadrées depuis `assets/images/webp/team-member-*`).
   Lancer avec le Playwright de `~/ops/pw` et Pillow système sur le `PYTHONPATH`.
 - `build_signatures.py` : écrit `html/<adresse>-<langue>.html` (fragments à
   coller) et `preview.html` (aperçu autonome, copie en un clic, étapes Proton).

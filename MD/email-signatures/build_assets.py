@@ -1,7 +1,7 @@
 """Images des signatures email (2026-10-05) -> assets/images/email-signature/.
 
 Rendu a double resolution (affichage a la moitie) : logo blanc, symbole sur
-tuile navy, pictogrammes, photos recadrees depuis les photos equipe du site.
+tuile marron, pictogrammes, photos recadrees depuis les photos equipe du site.
 Lancer avec le Playwright de ~/ops/pw (voir la memoire ui_diagnostic_jsdom).
 """
 import re
@@ -29,8 +29,8 @@ ICONS = {
 
 SHOTS = {
     "logo-white": (378, 72, f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 40" width="378" height="72">{"".join(white)}</svg>'),
-    "mark-tile": (160, 160, '<div style="width:160px;height:160px;background:#1B2D4D;border-radius:8px;display:flex;align-items:center;justify-content:center">'
-                  f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" width="86" height="84">{mark}</svg></div>'),
+    "mark-tile": (192, 192, '<div style="width:192px;height:192px;background:#5C4E3E;border-radius:8px;display:flex;align-items:center;justify-content:center">'
+                  f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" width="102" height="100">{mark}</svg></div>'),
     **{k: (32, 32, ICON.format(v)) for k, v in ICONS.items()},
 }
 
@@ -43,12 +43,12 @@ with sync_playwright() as p:
         page.locator("#x").screenshot(path=str(OUT / f"{name}.png"), omit_background=True)
     browser.close()
 
-# Photos : carre centre sur le visage, 160 px (affiche en 80).
-CROPS = {"olivier-sayegh": ("team-member-second", (140, 40, 700, 600)),
-         "alexandre-vinal": ("team-member-third", (130, 40, 690, 600))}
+# Photos : carre plein cadre (tete et epaules), 192 px (affiche en 96).
+CROPS = {"olivier-sayegh": ("team-member-second", (16, 0, 816, 800)),
+         "alexandre-vinal": ("team-member-third", (16, 0, 816, 800))}
 for name, (src, box) in CROPS.items():
     im = Image.open(SITE / f"assets/images/webp/{src}.webp").convert("RGB").crop(box)
-    im.resize((160, 160), Image.LANCZOS).save(OUT / f"{name}.jpg", quality=88, optimize=True, progressive=True)
+    im.resize((192, 192), Image.LANCZOS).save(OUT / f"{name}.jpg", quality=88, optimize=True, progressive=True)
 
 for f in sorted(OUT.iterdir()):
     print(f.name, f.stat().st_size)

@@ -93,23 +93,24 @@ def signature(key, lang, src):
         logo_row = (f'<tr><td colspan="5" align="right" style="padding:0 0 10px 0">'
                     f'<a href="{t["site"]}" style="text-decoration:none">{img(src, "logo-white.png", 105, 20, "SparkCore")}</a></td></tr>')
     top_pad = "16px" if p["logo"] else "22px"
+    role_wrap = "white-space:nowrap" if p["role"] else "max-width:210px"
     name = "<br>".join(e(x) for x in p["lines"])
     card = (
         f'<table {TABLE} bgcolor="{NAVY}" style="border-collapse:separate;background:{NAVY};border-radius:4px">'
         f'<tr><td style="padding:{top_pad} 24px 22px 22px">'
         f'<table {TABLE} style="border-collapse:collapse">{logo_row}<tr>'
-        f'<td valign="middle" style="padding:0 18px 0 0">{img(src, p["img"], 80, 80, p["alt"], "border-radius:4px")}</td>'
+        f'<td valign="middle" style="padding:0 18px 0 0">{img(src, p["img"], 96, 96, p["alt"], "border-radius:4px")}</td>'
         f'<td valign="middle" style="padding:0">'
         f'<div style="font-family:{DISPLAY};font-size:23px;line-height:26px;font-weight:500;color:#FFFFFF;letter-spacing:-0.2px;white-space:nowrap">{name}</div>'
-        f'<div style="font-family:{SANS};font-size:12px;line-height:17px;color:{CREAM};padding-top:8px;max-width:210px">{e(role)}</div></td>'
+        f'<div style="font-family:{SANS};font-size:12px;line-height:17px;color:{CREAM};padding-top:8px;{role_wrap}">{e(role)}</div></td>'
         f'<td width="22" style="width:22px;font-size:0;line-height:0">&nbsp;</td>'
         f'<td width="1" bgcolor="{LINE}" style="width:1px;background:{LINE};font-size:0;line-height:0">&nbsp;</td>'
         f'<td valign="middle" style="padding:0 0 0 22px"><table {TABLE} style="border-collapse:collapse">{"".join(lines)}</table></td>'
         f'</tr></table></td></tr></table>'
     )
-    small = f"font-family:{SANS};color:{GREY};margin:0;max-width:560px"
+    small = f"font-family:{SANS};color:{GREY};margin:0;max-width:600px"
     return (
-        f'<table {TABLE} style="border-collapse:collapse;max-width:560px"><tr><td style="padding:0">{card}</td></tr>'
+        f'<table {TABLE} style="border-collapse:collapse;max-width:600px"><tr><td style="padding:0">{card}</td></tr>'
         f'<tr><td style="padding:14px 0 0 0"><p style="{small};font-size:11px;line-height:16px">{e(t["legal"])}</p></td></tr>'
         f'<tr><td style="padding:8px 0 0 0"><p style="{small};font-size:10px;line-height:15px">{e(t["disclaimer"])}</p></td></tr>'
         f'</table>'
