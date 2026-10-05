@@ -97,11 +97,17 @@ async function copyRich(htmlStr) {
     })]);
     toast("Signature copiée, à coller dans Proton");
   } catch (err) {
+    // Copie de secours : le navigateur serialise le fond des ancetres de la
+    // selection (bande grise collee dans Proton). Fond transparent le temps
+    // de la copie, puis restauration.
     const clip = document.getElementById("clip");
+    const saved = [document.documentElement, document.body, clip].map(el => [el, el.style.background]);
+    for (const [el] of saved) el.style.background = "transparent";
     clip.innerHTML = htmlStr;
     const range = document.createRange(); range.selectNodeContents(clip);
     const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
     const ok = document.execCommand("copy"); sel.removeAllRanges(); clip.innerHTML = "";
+    for (const [el, bgv] of saved) el.style.background = bgv;
     toast(ok ? "Signature copiée, à coller dans Proton" : "Copie impossible dans ce navigateur");
   }
 }

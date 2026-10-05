@@ -1,7 +1,11 @@
 """Images des signatures email (2026-10-05) -> assets/images/email-signature/.
 
 Rendu a double resolution (affichage a la moitie) : logo blanc, symbole sur
-tuile marron, pictogrammes, photos recadrees depuis les photos equipe du site.
+tuile marron, pictogrammes, photos sur fond marron.
+Photos : les detourages de cutouts/ (carre plein cadre 512 px, alpha adouci)
+ont ete faits une fois depuis assets/images/webp/team-member-* avec rembg
+(modele u2net_human_seg) dans un venv jetable ; ce script les pose sur le brun
+#5C4E3E. Refaire le detourage seulement si les photos de l'equipe changent.
 Lancer avec le Playwright de ~/ops/pw (voir la memoire ui_diagnostic_jsdom).
 """
 import re
@@ -43,12 +47,13 @@ with sync_playwright() as p:
         page.locator("#x").screenshot(path=str(OUT / f"{name}.png"), omit_background=True)
     browser.close()
 
-# Photos : carre plein cadre (tete et epaules), 192 px (affiche en 96).
-CROPS = {"olivier-sayegh": ("team-member-second", (16, 0, 816, 800)),
-         "alexandre-vinal": ("team-member-third", (16, 0, 816, 800))}
-for name, (src, box) in CROPS.items():
-    im = Image.open(SITE / f"assets/images/webp/{src}.webp").convert("RGB").crop(box)
-    im.resize((192, 192), Image.LANCZOS).save(OUT / f"{name}.jpg", quality=88, optimize=True, progressive=True)
+# Photos : detourage (cutouts/) pose sur le brun de la tuile, 192 px (affiche en 96).
+BROWN = "#5C4E3E"
+for name in ("olivier-sayegh", "alexandre-vinal"):
+    cut = Image.open(Path(__file__).resolve().parent / "cutouts" / f"{name}.png").convert("RGBA")
+    bg = Image.new("RGB", cut.size, BROWN)
+    bg.paste(cut, (0, 0), cut)
+    bg.resize((192, 192), Image.LANCZOS).save(OUT / f"{name}.jpg", quality=88, optimize=True, progressive=True)
 
 for f in sorted(OUT.iterdir()):
     print(f.name, f.stat().st_size)

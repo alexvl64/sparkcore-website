@@ -110,7 +110,7 @@ def signature(key, lang, src):
     )
     small = f"font-family:{SANS};color:{GREY};margin:0;max-width:600px"
     return (
-        f'<table {TABLE} style="border-collapse:collapse;max-width:600px"><tr><td style="padding:0">{card}</td></tr>'
+        f'<table {TABLE} style="border-collapse:collapse;max-width:600px;background-color:transparent"><tr><td style="padding:0">{card}</td></tr>'
         f'<tr><td style="padding:14px 0 0 0"><p style="{small};font-size:11px;line-height:16px">{e(t["legal"])}</p></td></tr>'
         f'<tr><td style="padding:8px 0 0 0"><p style="{small};font-size:10px;line-height:15px">{e(t["disclaimer"])}</p></td></tr>'
         f'</table>'
