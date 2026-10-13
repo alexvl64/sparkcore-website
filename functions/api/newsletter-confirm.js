@@ -22,18 +22,22 @@ export async function onRequestPost({ request, env }) {
   } catch {
     return Response.json({ ok: false, status: "invalid" }, { status: 400 });
   }
-  const token = typeof body.token === "string" ? body.token.trim() : "";
+  const token = body && typeof body.token === "string" ? body.token.trim() : "";
   if (!TOKEN.test(token)) {
     return Response.json({ ok: false, status: "invalid" });
   }
   if (!env.ADMIN_API_BASE || !env.ADMIN_API_SECRET) {
     return Response.json({ ok: false, status: "retry" }, { status: 503 });
   }
+  const headers = { "content-type": "application/json", authorization: `Bearer ${env.ADMIN_API_SECRET}` };
+  // IP réelle du visiteur en tête du XFF (comme contact.js / newsletter.js) : le journal d'activité de l'Admin la garde avec la confirmation.
+  const clientIp = request.headers.get("CF-Connecting-IP") || "";
+  if (clientIp) headers["x-forwarded-for"] = clientIp;
   let r;
   try {
     r = await fetch(`${env.ADMIN_API_BASE.replace(/\/$/, "")}/prospects/newsletter/confirm`, {
       method: "POST",
-      headers: { "content-type": "application/json", authorization: `Bearer ${env.ADMIN_API_SECRET}` },
+      headers,
       body: JSON.stringify({ token }),
     });
   } catch {
