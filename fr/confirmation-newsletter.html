@@ -133,6 +133,8 @@
     </footer>
 
     <script src="/assets/js/page-i18n.js"></script>
+    <!-- Ordre garanti : newsletter-confirm.js sans defer, en fin de body, retire le jeton (#t=…) de l'adresse avant que
+         analytics.js (defer) charge gtag.js, qui enverrait l'URL complète. Ne jamais lui mettre defer ni async. -->
     <script src="/assets/js/newsletter-confirm.js?v=1"></script>
   </body>
 </html>

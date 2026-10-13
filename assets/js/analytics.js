@@ -58,7 +58,8 @@
   });
 
   // Lazy-load gtag.js on first user intent (pointer/touch/scroll/key/focus)
-  // or after 3s idle — whichever comes first.
+  // or after 3s idle — whichever comes first. Keep it lazy: the newsletter confirmation page relies on it — its
+  // script (no defer, end of body) takes the link's token (#t=…) off the address before gtag.js can read location.href.
   var gtagLoaded = false;
   function loadGtag() {
     if (gtagLoaded) return;
