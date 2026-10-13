@@ -38,6 +38,19 @@
 /validation.html
   X-Robots-Tag: noindex, nofollow, noarchive
 
+# Newsletter double opt-in: the page of the email's link (2026-10-13) — must never be indexed
+/newsletter-confirm
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/newsletter-confirm.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/fr/confirmation-newsletter
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/fr/confirmation-newsletter.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
 # ----------------------------------------------------------------
 # PDFs served statically (contrats/) — no-store + noindex
 # Protected PDFs go through the Function which sets its own headers

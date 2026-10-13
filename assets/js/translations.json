@@ -3,14 +3,14 @@
     "successMessage": "Votre message a bien été envoyé.",
     "errorMessage": "Une erreur est survenue. Veuillez réessayer.",
     "recaptchaError": "Veuillez valider le contrôle de sécurité pour continuer.",
-    "subscribeSuccess": "Inscription confirmée. Merci.",
+    "subscribeSuccess": "Merci. Un e-mail vient de vous être envoyé : cliquez sur son lien pour confirmer votre inscription.",
     "subscribeError": "Une erreur est survenue. Veuillez réessayer."
   },
   "en": {
     "successMessage": "Your message was successfully sent.",
     "errorMessage": "An error occurred. Please try again.",
     "recaptchaError": "Please complete the security check to proceed.",
-    "subscribeSuccess": "Subscription confirmed. Thank you.",
+    "subscribeSuccess": "Thank you. An email is on its way: click its link to confirm your subscription.",
     "subscribeError": "An error occurred. Please try again."
   }
 }

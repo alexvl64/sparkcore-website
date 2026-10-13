@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/assets/js/analytics.js?v=3"></script>
+    <title>Newsletter — SparkCore Fund Management</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="/assets/css/style.css?v=3.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=3.1"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.3"></noscript>
+    <script src="/assets/js/translations.js?v=2.6"></script>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+  </head>
+
+  <body>
+    <!-- ========= HEADER ======= -->
+    <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
+      <nav class="max-w-[1440px] mx-auto lg:px-8 md:px-6 px-4 py-4 lg:py-[17px] flex justify-between items-center">
+        <a rel="noopener noreferrer" href="/fr/">
+          <img
+            class="md:w-[209px] md:h-10 w-[125px] h-6"
+            src="/assets/images/svg/logo.svg"
+            alt="SparkCore Fund Management" width="210" height="40">
+        </a>
+              <div class="flex items-center nav-actions"><a href="https://investor.sparkcore-investment.com/" class="nav-portal-link" aria-label="Investor login"><svg class="nav-portal-link__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10.5" rx="1"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg><span class="nav-portal-link__text" data-i18n="navPortal">Investor login</span></a>
+          <a href="/?contact=nav" class="font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center" data-i18n="navContact">Contact Us</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- === NEWSLETTER CONFIRMATION (double opt-in, 2026-10-13) ===== -->
+    <!-- Nothing happens on load: only the button posts the token of the link (assets/js/newsletter-confirm.js). -->
+    <div class="bg-darkGray custom-xs:py-[235px] py-[179.5px] relative">
+      <div class="container mx-auto custom-xs:px-3 px-6">
+        <div class="flex items-center justify-center lg:gap-4 gap-2 lg:mb-2 mb-4 max-md:flex-col">
+          <div class="lg:size-12 size-8">
+            <svg class="lg:size-12 size-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48"
+              fill="none" stroke="#DBD1BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="1" />
+              <path d="M3 7l9 6 9-6" />
+            </svg>
+          </div>
+          <h1 class="font-funnel-display xl:text-5xl lg:text-4xl text-custom-3xl leading-140 text-white text-center"
+            data-i18n="nlConfirmTitle">Confirmez votre inscription</h1>
+        </div>
+        <p class="text-center font-inter font-normal lg:text-xl text-lg leading-140 text-lightBlue mb-6"
+          data-i18n="nlConfirmSubtitle">Newsletter mensuelle de SparkCore</p>
+        <div class="border border-lightGray max-w-[700px] w-full mx-auto p-4 rounded mb-8 relative z-[3]">
+          <p id="nl-confirm-message" role="status" aria-live="polite"
+            class="font-inter font-normal lg:text-xl md:text-lg sm:text-base text-sm leading-140 text-white text-center"
+            data-i18n="nlConfirmIntro">Cliquez sur le bouton ci-dessous pour confirmer votre inscription à notre newsletter.</p>
+        </div>
+        <button type="button" id="nl-confirm-button"
+          class="mt-8 mx-auto font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-base relative z-[3] bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 max-[500px]:w-full flex items-center justify-center text-nowrap"
+          data-i18n="nlConfirmButton">Confirmer mon inscription</button>
+        <a id="nl-confirm-back" rel="noopener noreferrer" href="/fr/"
+          class="mt-8 mx-auto font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-base relative z-[3] bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 max-[500px]:w-full hidden items-center justify-center max-w-[328px] text-nowrap"
+          data-i18n="nlConfirmBack">Retour au site</a>
+      </div>
+      <div class="absolute xl:top-[55%] top-[55%] max-custom-xs:top-[72%] max-custom-xs:-right-[40px] max-w-[730px] max-sm:w-full max-custom-xs:h-[200px] left-[-40px]">
+        <img
+          src="/assets/images/webp/hero-graph-img.webp"
+          alt=""
+          class="w-full h-[363px] max-w-[839px] max-custom-xs:h-[200px]" width="1440" height="852">
+      </div>
+    </div>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="relative z-10">
+      <div class="py-8 sm:py-12 lg:py-16">
+        <div class="max-w-[1360px] px-6 mx-auto">
+          <div class="flex items-center justify-between custom-xs:mb-4 mb-6">
+            <a rel="noopener noreferrer" href="/fr/" class="w-[209px] max-custom-xs:w-[167px] max-custom-xs:h-8 h-10">
+              <img class="w-full h-full" src="/assets/images/svg/logo.svg" alt="SparkCore Fund Management" width="210" height="40">
+            </a>
+            <div class="flex items-center gap-4">
+              <div class="lang-toggle max-sm:hidden" role="group" aria-label="Language selector" id="lang-toggle-footer">
+                <button class="lang-btn active" id="btn-en-footer" onclick="setPageLang('en')" aria-label="Switch to English" aria-pressed="true">EN</button>
+                <button class="lang-btn" id="btn-fr-footer" onclick="setPageLang('fr')" aria-label="Passer en français" aria-pressed="false">FR</button>
+              </div>
+              <a
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/company/sparkcore-investment-o%C3%BC/"
+                target="_blank"
+                class="size-[34px] rounded-full border border-steelBlue hover:scale-[1.1] transition-all duration-300 max-sm:hidden flex items-center justify-center"
+              >
+                <img src="/assets/images/svg/linkedin.svg" alt="LinkedIn" class="w-4 h-[19px]" width="16" height="17">
+              </a>
+            </div>
+          </div>
+          <p class="font-inter font-normal sm:text-base text-lg text-steelBlue leading-140">
+            &copy;<span id="year"></span><span data-i18n="footerCopyright"> SparkCore.investment OÜ — All rights reserved.</span>
+          </p>
+          <div class="w-full h-px bg-paleBlue custom-xs:my-4 my-6"></div>
+          <div class="flex gap-3 flex-wrap max-custom-xs:flex-col items-start justify-start">
+            <p class="font-inter text-steelBlue text-base sm:text-sm leading-140">
+              <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerRegText">Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:</span>
+              <a rel="noopener noreferrer" href="https://www.fi.ee/en/investment-market/fund-management-companies-0/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" class="underline underline-offset-2">Estonian Financial Supervisory Authority (Small Fund Manager)</a>
+            </p>
+            <p class="font-funnel-display font-normal text-base sm:text-sm leading-140 text-softBlueGray max-custom-xs:hidden">—</p>
+            <p class="font-inter text-steelBlue text-base sm:text-sm leading-140">
+              <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerLicenceLabel">Licence:</span>
+              <a rel="noopener noreferrer" href="https://mtr.ttja.ee/taotluse_tulemus/609065" target="_blank" class="underline underline-offset-2" data-i18n="footerLicenceLink">EFIU (Financial Institution)</a>
+            </p>
+          </div>
+          <p class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="text-darkGray" data-i18n="footerDisclaimerLabel">Disclaimer:</span>
+            <span data-i18n="footerWarning"> Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. SparkCore funds are marketed to professional investors. Please assess your personal situation and seek independent advice before investing.</span>
+          </p>
+          <p class="font-inter font-normal text-sm leading-140 text-steelBlue custom-xs:mt-2 mt-3">
+            <a rel="noopener noreferrer" href="/privacy-policy" class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200" data-i18n="footerPrivacyLink">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a rel="noopener noreferrer" href="/regulatory-information" class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200" data-i18n="footerRegLink">Regulatory information</a> <span aria-hidden="true">&middot;</span> <a rel="noopener noreferrer" href="/white-label" class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200" data-i18n="footerWlLink">White-label solution</a> <span aria-hidden="true">&middot;</span> <a rel="noopener noreferrer" href="/blog/" class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200">Articles</a>
+          </p>
+          <div class="flex items-center gap-4 sm:hidden mt-6">
+            <div class="lang-toggle" role="group" aria-label="Language selector" id="lang-toggle-footer-mobile">
+              <button class="lang-btn active" id="btn-en-footer-mobile" onclick="setPageLang('en')" aria-label="Switch to English" aria-pressed="true">EN</button>
+              <button class="lang-btn" id="btn-fr-footer-mobile" onclick="setPageLang('fr')" aria-label="Passer en français" aria-pressed="false">FR</button>
+            </div>
+            <a
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/sparkcore-investment-o%C3%BC/"
+              target="_blank"
+              class="max-md:size-[54px] rounded-full border hover:scale-[1.1] transition-all duration-300 border-steelBlue flex items-center justify-center"
+            >
+              <img src="/assets/images/svg/linkedin.svg" alt="LinkedIn" class="size-6" width="16" height="17">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/page-i18n.js"></script>
+    <script src="/assets/js/newsletter-confirm.js?v=1"></script>
+  </body>
+</html>

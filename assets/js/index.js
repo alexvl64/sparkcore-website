@@ -372,6 +372,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   // Créer les données à envoyer (JSON → Pages Function /api/contact)
+  const utm = siteUtm();
   const payload = {
     prenom,
     nom,
@@ -380,6 +381,8 @@ form.addEventListener("submit", async (event) => {
     source,
     lang: document.documentElement.lang || "en",
     turnstileToken,
+    utm_source: utm.source || "",
+    utm_campaign: utm.campaign || "",
   };
 
   // Désactivez le bouton pour éviter les doubles soumissions
@@ -546,10 +549,13 @@ document.addEventListener("DOMContentLoaded", () => {
     subscribeButton.textContent = currentTranslations.subscribeLoading;
 
     // Créer les données à envoyer (JSON → Pages Function /api/newsletter)
+    const utm = siteUtm();
     const payload = {
       email: emailValue,
       lang: document.documentElement.lang || "en",
       turnstileToken,
+      utm_source: utm.source || "",
+      utm_campaign: utm.campaign || "",
     };
 
     try {
@@ -574,7 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         Toastify({
           text: currentTranslations.subscribeSuccess,
-          duration: 5000,
+          duration: 9000,       // double opt-in: the visitor must read that a link is on its way
           gravity: "bottom",
           position: "right",
           avatar: "/assets/images/svg/success-icon.svg",
@@ -607,6 +613,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// CAMPAIGN OF THE VISIT (kept for the session by analytics.js: the utm_* of the landing page)
+function siteUtm() {
+  try {
+    return JSON.parse(sessionStorage.getItem("sc_utm") || "{}") || {};
+  } catch (e) {
+    return {};
+  }
+}
 
 // EMAIL VALIDATION FUNCTION (GLOBAL)
 function isValidEmail(email) {

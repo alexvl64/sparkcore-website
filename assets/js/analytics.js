@@ -1,3 +1,19 @@
+// Campaign of the visit (2026-10-13, Admin « From this send »): the utm_source / utm_campaign of the page a visitor
+// lands on (a link of the newsletter carries utm_campaign=nl-{issue}-{lang}) are kept for the session of this tab and
+// sent with the contact and newsletter forms (assets/js/index.js). Plain tags only; nothing else is kept, nothing is
+// sent unless the visitor submits a form. Runs before (and apart from) the analytics below.
+(function () {
+  try {
+    var q = new URLSearchParams(window.location.search);
+    var ok = function (v) { return !!v && /^[A-Za-z0-9_.-]{1,64}$/.test(v); };
+    var campaign = q.get("utm_campaign");
+    if (ok(campaign)) {
+      var source = q.get("utm_source");
+      sessionStorage.setItem("sc_utm", JSON.stringify({ source: ok(source) ? source : "", campaign: campaign }));
+    }
+  } catch (e) {}
+})();
+
 (function () {
   // Replace with your GA4 Measurement ID (example: G-XXXXXXXXXX)
   var GA_MEASUREMENT_ID = "G-J80NVPQNVZ";

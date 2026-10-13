@@ -5,6 +5,18 @@
 > **Statut** : SPEC de handoff. Le **site** (`alexvl64/sci`) est préparé ici. L'**app Admin** est un repo séparé (non accessible depuis cette session) → ce document est le **contrat** que l'équipe Admin doit implémenter.
 >
 > **Date** : 2026-06-23
+>
+> **État au 2026-10-13** : spec historique de la migration de juin (Mailjet et ses listes ont depuis laissé la place à
+> Listmonk, `source_tracking` est retiré). La doc vivante est dans `sparkcore-vps` : `server/apps/admin-prospect-intake.md`
+> et `server/infra/listmonk.md`. Ce qui a changé côté site depuis :
+> - **double opt-in** de la newsletter : l'Admin envoie un lien `…/newsletter-confirm#t=<jeton>` (FR :
+>   `/fr/confirmation-newsletter#t=…`) ; la page ne fait rien au chargement, son bouton POSTe le jeton à
+>   `functions/api/newsletter-confirm.js`, qui relaie vers `POST {ADMIN_API_BASE}/prospects/newsletter/confirm`
+>   (Bearer). Réponse `{ok, status}`, `status` = confirmed | already | invalid | expired | refused | retry. Pages gated
+>   (meta, `_headers`, `robots.txt`, hors sitemap) ;
+> - **campagne de la visite** : `analytics.js` garde pour la session de l'onglet les `utm_source` / `utm_campaign` de la
+>   page d'arrivée (`sessionStorage` `sc_utm`), `index.js` les joint aux deux formulaires, les Functions les relaient
+>   nettoyés (`[A-Za-z0-9_.-]{1,64}`).
 
 ---
 
@@ -59,15 +71,15 @@ Le navigateur POST en **JSON** vers la CF Function (`/api/contact` ou `/api/news
 | `telephone` | string | `telephone` (SM `mobile`) | ✅ |
 | `email` | string | `email` | ✅ |
 | `source` | string | dropdown du formulaire (SM `source` après `source_format`) | ✅ |
-| `source_tracking` | string | tracking interne (UTM / origine) | optionnel |
 | `lang` | `en`\|`fr` | `document.documentElement.lang` (ajouté à la migration) | ✅ |
+| `utm_source`, `utm_campaign` | string | campagne de la visite (2026-10-13) | optionnel |
 
 ### (B) Newsletter
 | Champ envoyé | Type | Obligatoire |
 |---|---|---|
 | `email` | string | ✅ |
-| `source_tracking` | string | optionnel |
 | `lang` | `en`\|`fr` | ✅ |
+| `utm_source`, `utm_campaign` | string | optionnel |
 
 > Le **token Turnstile** (`cf-turnstile-response`) et le **honeypot** (`website`) sont **consommés et validés par la CF Function du site** (§3) — ils **ne sont pas** transmis à l'app Admin.
 

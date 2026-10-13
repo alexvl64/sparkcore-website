@@ -1,7 +1,7 @@
 /**
  * CF Pages Function — Newsletter subscribe (proxy serveur-à-serveur → API Admin)
  *
- * Le navigateur POST du JSON : { email, lang, turnstileToken, website? }
+ * Le navigateur POST du JSON : { email, lang, turnstileToken, website?, utm_source?, utm_campaign? }
  * Vérifie Turnstile côté serveur (TURNSTILE_SECRET_KEY), puis relaie vers
  * {ADMIN_API_BASE}/prospects/newsletter avec `Authorization: Bearer {ADMIN_API_SECRET}`.
  *
@@ -10,6 +10,8 @@
  * Env : TURNSTILE_SECRET_KEY, ADMIN_API_BASE, ADMIN_API_SECRET
  * Spec : MD/admin-app/PROSPECT-NEWSLETTER-PIPELINE.md
  */
+const tag = (v) => (typeof v === "string" && /^[A-Za-z0-9_.-]{1,64}$/.test(v) ? v : "");
+
 export async function onRequestPost({ request, env }) {
   let body;
   try {
@@ -57,6 +59,9 @@ export async function onRequestPost({ request, env }) {
       type: "newsletter",
       email: body.email || "",
       lang: body.lang === "fr" ? "fr" : "en",
+      // Campaign of the visit (kept by the site for the session); plain tags only, cleaned again by the Admin.
+      utm_source: tag(body.utm_source),
+      utm_campaign: tag(body.utm_campaign),
     }),
   });
   if (!r.ok) {

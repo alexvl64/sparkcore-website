@@ -7,7 +7,7 @@ const translations = {
     formSubmitError: "Une erreur est survenue. Veuillez réessayer.",
     formValidationError: "Veuillez entrer une adresse e-mail valide.",
     subscribeLoading: "Envoi en cours...",
-    subscribeSuccess: "Inscription confirmée. Merci.",
+    subscribeSuccess: "Merci. Un e-mail vient de vous être envoyé : cliquez sur son lien pour confirmer votre inscription.",
     subscribeError: "Une erreur est survenue. Veuillez réessayer.",
     connectionError: "Impossible d'envoyer le message. Vérifiez votre connexion.",
     contactButton: "Nous contacter",
@@ -197,6 +197,20 @@ const translations = {
     validationBody: "Votre soumission est en cours d'examen. Vous recevrez sous peu un e-mail de confirmation si votre vérification est validée, accompagné des instructions pour finaliser votre investissement.",
     validationContact: "Nous contacter",
 
+    // === NEWSLETTER CONFIRMATION PAGE (double opt-in, 2026-10-13) ===
+    nlConfirmTitle: "Confirmez votre inscription",
+    nlConfirmSubtitle: "Newsletter mensuelle de SparkCore",
+    nlConfirmIntro: "Cliquez sur le bouton ci-dessous pour confirmer votre inscription à notre newsletter.",
+    nlConfirmButton: "Confirmer mon inscription",
+    nlConfirmWorking: "Confirmation en cours...",
+    nlConfirmDone: "Votre inscription est confirmée. Vous recevrez notre prochaine newsletter ; un e-mail de bienvenue vient de vous être envoyé.",
+    nlConfirmAlready: "Votre inscription était déjà confirmée. Merci.",
+    nlConfirmExpired: "Ce lien a expiré. Inscrivez-vous à nouveau depuis le site pour recevoir un nouveau lien.",
+    nlConfirmInvalid: "Ce lien n'est pas valide. Utilisez le lien complet de l'e-mail reçu, ou inscrivez-vous à nouveau depuis le site.",
+    nlConfirmRefused: "Cette adresse ne peut pas être inscrite en ligne. Écrivez-nous à contact@sparkcore.fund.",
+    nlConfirmRetry: "Une erreur temporaire est survenue. Réessayez dans quelques minutes.",
+    nlConfirmBack: "Retour au site",
+
     // === ERROR PAGES ===
     error404Title: "Page introuvable",
     error404Subtitle: "La page que vous cherchez n'existe pas ou a été déplacée.",
@@ -215,7 +229,7 @@ const translations = {
     formSubmitError: "An error occurred. Please try again.",
     formValidationError: "Please enter a valid email address.",
     subscribeLoading: "Sending...",
-    subscribeSuccess: "Subscription confirmed. Thank you.",
+    subscribeSuccess: "Thank you. An email is on its way: click its link to confirm your subscription.",
     subscribeError: "An error occurred. Please try again.",
     connectionError: "Unable to send the message. Please check your connection.",
     contactButton: "Contact Us",
@@ -404,6 +418,20 @@ const translations = {
     validationSubtitle: "Thank you for completing the verification process.",
     validationBody: "Your submission is under review. You will shortly receive a confirmation email if your verification is validated, along with instructions to finalise your investment.",
     validationContact: "Contact Us",
+
+    // === NEWSLETTER CONFIRMATION PAGE (double opt-in, 2026-10-13) ===
+    nlConfirmTitle: "Confirm your subscription",
+    nlConfirmSubtitle: "SparkCore's monthly newsletter",
+    nlConfirmIntro: "Click the button below to confirm your subscription to our newsletter.",
+    nlConfirmButton: "Confirm my subscription",
+    nlConfirmWorking: "Confirming...",
+    nlConfirmDone: "Your subscription is confirmed. You will receive our next newsletter; a welcome email is on its way.",
+    nlConfirmAlready: "Your subscription was already confirmed. Thank you.",
+    nlConfirmExpired: "This link has expired. Sign up again on the website to receive a new link.",
+    nlConfirmInvalid: "This link is not valid. Use the complete link of the email you received, or sign up again on the website.",
+    nlConfirmRefused: "This address cannot be subscribed online. Write to us at contact@sparkcore.fund.",
+    nlConfirmRetry: "A temporary error occurred. Please try again in a few minutes.",
+    nlConfirmBack: "Back to the website",
 
     // === ERROR PAGES ===
     error404Title: "Page Not Found",

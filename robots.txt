@@ -31,6 +31,8 @@ Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /MD/
 
 User-agent: OAI-SearchBot
@@ -38,6 +40,8 @@ Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /MD/
 
 User-agent: Google-Extended
@@ -45,6 +49,8 @@ Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /MD/
 
 User-agent: ClaudeBot
@@ -52,6 +58,8 @@ Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /MD/
 
 User-agent: PerplexityBot
@@ -59,6 +67,8 @@ Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /MD/
 
 User-agent: CCBot
@@ -66,6 +76,8 @@ Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /MD/
 
 # All other crawlers — block sensitive paths
@@ -73,6 +85,8 @@ User-agent: *
 Disallow: /factsheets/
 Disallow: /discovery-call
 Disallow: /validation
+Disallow: /newsletter-confirm
+Disallow: /fr/confirmation-newsletter
 Disallow: /validation.html
 Disallow: /MD/
 Disallow: /404.html
