@@ -40,15 +40,6 @@ cron) sont archivés sur la branche `claude/archive-audit-2026-06-21`
   `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com`
   (console GCP, compte `sparkcore.public.df59f6@gmail.com`), clé Bing WMT.
 
-## Contributeur hors VPS (Olivier, depuis le 2026-10-16)
-
-Une session lancée sur la machine d'un contributeur n'a ni accès au VPS ni
-secret : ce qui précède sur le clone, les clés et l'outillage SEO ne la
-concerne pas. Son circuit est dans [`CONTRIBUTING.md`](CONTRIBUTING.md) : une
-branche `olivier/<sujet>` partie de `beta`, une PR vers `beta`, relue et
-fusionnée par Alex ; `main` et `beta` sont protégées. Les règles de travail
-ci-dessous valent pour elle aussi.
-
 ## Règles de travail (reprises de la mémoire claude-vps-01, 2026-09-01)
 
 1. **Propose-then-implement** : toute refonte ou refactor substantiel du site
