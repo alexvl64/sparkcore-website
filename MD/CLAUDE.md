@@ -431,7 +431,7 @@ Plus de PHP. Le seul backend est une **CF Pages Function** en JS :
 | `proxy.php` | ❌ Supprimé | Code mort |
 | `form_config.php` | ❌ Supprimé | Code mort |
 | `secure_pdf.php` | ❌ Supprimé | Remplacé par `functions/ressources/[[path]].js` |
-| `functions/ressources/[[path]].js` | ✅ Actif | Gate SHA-256 pour PDFs dépôt sur CF Pages |
+| `functions/ressources/[[path]].js` | ❌ Supprimé (17/10/2026) | Gardait les PDFs d'instructions de dépôt, retirés avec lui |
 
 ### Formulaires de contact
 
@@ -449,23 +449,14 @@ Deux sources complémentaires :
 |---|---|
 | `_headers` (CF Pages) | `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Robots-Tag` sur pages gated + MD/ |
 | CF Transform Rule | `Content-Security-Policy` (couvre toute la zone, y compris beta) |
-| CF Pages Function | `Cache-Control: no-store`, `X-Robots-Tag: noindex` sur PDFs protégés |
 
-### PDF gate — CF Pages Function
+### Instructions de dépôt — plus de PDF sur le site
 
-- Fichier : `functions/ressources/[[path]].js`
-- PDFs protégés (`instructions_depot_*`, `deposit_*`) : accès bloqué sans `?h=<sha256>` correct → 403
-- Contrats (`/ressources/contrats/*.pdf`) : pass-through vers le static asset store
-- Hash comparison XOR (constant-time, réplique `hash_equals()` PHP)
-- URL format : `/ressources/<filename>.pdf?h=<sha256-du-fichier>`
-- **Mettre à jour les hashes dans la Function si un PDF est remplacé** (`sha256sum <fichier>`)
-
-Hashes actuels (2026-05-06) :
-```
-instructions_depot_dynamic_trends.pdf  → 6dd4b62679ebe03a60acca7d1d0ed853a52becfffa61515de03fb0958209d3f8
-instructions_depot_cryptovision.pdf    → bbe56dfa98a64d40b195d8ff548300e8fdf4ac8e66ab4b78b78c81621ee43e55
-deposit_instructions_quants_space.pdf  → 660385624f4f305eab4b0b4a3a2f940d88816d06427efceff1bb70d3d40fe0a2
-```
+Les PDFs `instructions_depot_dynamic_trends.pdf`, `instructions_depot_cryptovision.pdf` et
+`deposit_instructions_quants_space.pdf`, et la Function qui les gardait par empreinte SHA-256, sont **supprimés
+depuis le 17/10/2026** (Alex) : les investisseurs reçoivent leurs instructions de dépôt par la page de paiement
+sécurisée de l'Admin (`/pay/{token}`, bouton « Get Deposit Instructions » de l'email). `/ressources/` ne sert plus
+que `contrats/`, en accès direct, en-têtes posés par `_headers`.
 
 ### Décisions de sécurité explicites (assumées, non corrigées)
 
@@ -505,7 +496,6 @@ Le `.htaccess` a été **supprimé du repo le 2026-05-09** (commit `claude/cf-er
 | HTTPS + www→apex | CF DNS/SSL settings + Redirect Rule |
 | `RewriteRule ^MD(/\|$) - [F,L]` | `_redirects` `/MD/* /404.html 404` |
 | Block dotfiles + dev files (`package.json`, `.gitignore`) | `_redirects` (CF Pages auto-exclut `.git`, `.env`, `.DS_Store`, `_headers`, `_redirects`, `README.md`) |
-| Blocage PDFs dépôt (hash gate) | `functions/ressources/[[path]].js` |
 | `noindex` factsheets/discovery-call/validation/contrats | `_headers` |
 | URL rewriting `.html` (try_files) | Natif CF Pages |
 | `ErrorDocument 404 /404.html` | Natif CF Pages |
