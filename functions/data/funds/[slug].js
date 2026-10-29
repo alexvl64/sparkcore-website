@@ -4,7 +4,9 @@
  * read. The SparkCore Admin publishes funds/<slug>.json to the bucket daily.
  *
  * Route: GET /data/funds/<slug>.json  ->  R2 object funds/<slug>.json
- *   slug in { dynamic-trends, cryptovision, equinoxe }.
+ *   slug in { dynamic-trends, cryptovision, equinoxe, entities }. ``entities`` is
+ *   the address and registration of SparkCore and the funds (Admin, Config ->
+ *   Funds), copied into the pages by scripts/ops/sync_entities.py.
  *
  * Free-tier safe: responses are cached at the edge (s-maxage=3600), so R2 is hit
  * at most ~once/hour/edge-location instead of once per visitor.

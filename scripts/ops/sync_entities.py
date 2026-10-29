@@ -6,7 +6,7 @@ fiches publie ``funds/entities.json`` sur R2, servi par ``functions/data/funds/[
 ``https://sparkcore.fund/data/funds/entities.json``. Ce script la recopie là où l'adresse s'écrit en clair (le
 référencement lit le HTML, pas le JavaScript) ; une adresse ne se change donc jamais à la main dans le site.
 
-Trois formes, toutes rédigées une fois par le script, jamais composées ici autrement que par ``FORMATS`` :
+Trois formes, toutes recopiées telles que l'Admin les compose (rien n'est recomposé ici) :
 
 * texte HTML entre repères : ``<!--entity:GP:footer:en-->…<!--/entity-->`` ;
 * ligne de JS ou de Python portant le repère en commentaire de fin, ``// entity:GP:line:fr`` ou
@@ -38,11 +38,10 @@ URL = "https://sparkcore.fund/data/funds/entities.json"
 SKIP_DIRS = {".git", "node_modules", "seo"}            # MD/seo : instantanés d'audit, figés
 SUFFIXES = {".html", ".js", ".py"}
 
-# Les seules compositions du site ; la ligne d'adresse elle-même vient toute faite de l'Admin.
+# Rien n'est composé ici : la ligne d'adresse et le pied de page viennent tout faits de l'Admin (admin.entities).
 FORMATS = {
     "line": lambda e, lang: e["address_line"][lang],
-    "footer": lambda e, lang: (f"Reg. No. {e['registry_code']} — " if lang == "en"
-                               else f"N° d'enregistrement : {e['registry_code']} — ") + e["address_line"][lang],
+    "footer": lambda e, lang: e["footer"][lang],
 }
 
 HTML_MARK = re.compile(r"<!--entity:(\w+):(\w+):(en|fr)-->(.*?)<!--/entity-->", re.S)
@@ -60,7 +59,7 @@ def load(args) -> dict:
             data = json.load(r)
     ents = data.get("entities") or {}
     gp = ents.get("GP") or {}
-    if not (gp.get("address") and gp.get("address_line", {}).get("en") and gp.get("registry_code")):
+    if not (gp.get("address") and gp.get("address_line", {}).get("en") and gp.get("footer", {}).get("en")):
         sys.exit("Source sans adresse ni numéro d'enregistrement pour GP : rien n'est écrit.")
     return ents
 
