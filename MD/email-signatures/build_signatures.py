@@ -28,7 +28,7 @@ TXT = {
         "contact_role": "Gestionnaire de fonds crypto réglementé · Estonie",
         "legal": "SparkCore.investment OÜ · Gestionnaire de fonds d'investissement alternatifs de petite taille, "
                  "supervisé par la Finantsinspektsioon (Estonie) · Code registre 16265864 · "
-                 "Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie",
+                 "Narva mnt 5, Tallinn, 10117, Estonie", # entity:GP:line:fr
         "disclaimer": "Le contenu de cet e-mail est confidentiel et destiné uniquement au destinataire spécifié "
                       "dans le message. Il est strictement interdit de partager toute partie de ce message avec un "
                       "tiers, sans le consentement écrit de l'expéditeur. Si vous avez reçu ce message par erreur, "
@@ -41,7 +41,7 @@ TXT = {
         "contact_role": "Regulated crypto fund manager · Estonia",
         "legal": "SparkCore.investment OÜ · Small alternative investment fund manager supervised by "
                  "Finantsinspektsioon (Estonia) · Registry code 16265864 · "
-                 "Männimäe 1, Pudisoo, 74626 Harju County, Estonia",
+                 "Narva mnt 5, Tallinn, 10117, Estonia", # entity:GP:line:en
         "disclaimer": "The content of this email is confidential and intended solely for the recipient specified "
                       "in the message. It is strictly forbidden to share any part of this message with a third "
                       "party without the written consent of the sender. If you received this message by mistake, "

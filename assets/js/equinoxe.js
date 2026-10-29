@@ -66,7 +66,7 @@ const T = {
     valPerfNote:'Real performance, net of fees.',
     valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The fund is marketed to professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
     ftrCompany:'SparkCore.investment OÜ · Reg. No. 16265864',
-    ftrAddress:'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
+    ftrAddress:'Narva mnt 5, Tallinn, 10117, Estonia', // entity:GP:line:en
     ftrPrivacy:'Privacy Policy',
   },
   fr: {
@@ -136,7 +136,7 @@ const T = {
     valPerfNote:'Performance réelle, nette de frais.',
     valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. Le fonds est commercialisé auprès d\'investisseurs professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
     ftrCompany:'SparkCore.investment OÜ · N° d\'enregistrement 16265864',
-    ftrAddress:'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
+    ftrAddress:'Narva mnt 5, Tallinn, 10117, Estonie', // entity:GP:line:fr
     ftrPrivacy:'Politique de confidentialité',
   }
 };

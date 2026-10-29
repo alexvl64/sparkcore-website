@@ -185,7 +185,7 @@ const translations = {
     footerRegText: "Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :",
     footerLicenceLabel: "Licence :",
     footerLicenceLink: "EFIU (Institution Financière)",
-    footerAddress: "N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie",
+    footerAddress: "N° d'enregistrement : 16265864 — Narva mnt 5, Tallinn, 10117, Estonie", // entity:GP:footer:fr
     footerDisclaimerLabel: "Avertissement :",
     footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. Nos fonds sont commercialisés auprès d'investisseurs professionnels ; d'autres investisseurs peuvent, sous conditions, y accéder dans les limites du régime estonien. Investissement minimum : 50 000 €. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
@@ -407,7 +407,7 @@ const translations = {
     footerRegText: "Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:",
     footerLicenceLabel: "Licence:",
     footerLicenceLink: "EFIU (Financial Institution)",
-    footerAddress: "Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia",
+    footerAddress: "Reg. No. 16265864 — Narva mnt 5, Tallinn, 10117, Estonia", // entity:GP:footer:en
     footerDisclaimerLabel: "Disclaimer:",
     footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. SparkCore funds are marketed to professional investors; other investors may, subject to conditions, access them within the limits of the Estonian regime. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
