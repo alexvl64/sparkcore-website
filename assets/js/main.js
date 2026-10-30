@@ -238,7 +238,10 @@ function loadApexCharts() {
   if (typeof ApexCharts !== "undefined") return Promise.resolve();
   return new Promise(function (resolve, reject) {
     var s = document.createElement("script");
-    s.src = "https://cdn.jsdelivr.net/npm/apexcharts";
+    // Pinned + SRI, same file and hash as the factsheets (entry 1014 of sparkcore-vps).
+    s.src = "https://cdn.jsdelivr.net/npm/apexcharts@8.6.0/dist/apexcharts.min.js";
+    s.integrity = "sha384-n1tkqIOjPFiM9OKwa4MIDQxKzmOmp7uxbk2qGkyUo4jIO/tdI5QaZSy8dcIWLwt7";
+    s.crossOrigin = "anonymous";
     s.onload = resolve;
     s.onerror = reject;
     document.head.appendChild(s);

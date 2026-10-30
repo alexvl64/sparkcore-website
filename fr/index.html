@@ -50,8 +50,8 @@
     <link rel="preload" href="../assets/css/aos.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/aos.min.css"></noscript>
     <!-- toastify css — non-critical, loaded async -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.css" integrity="sha384-TO4IUm4upNqQuSHA3xAk5ixibmqyKUAvTD3UIJdx9KctftYoctvBVGeH6nzXTOO2" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.css" integrity="sha384-TO4IUm4upNqQuSHA3xAk5ixibmqyKUAvTD3UIJdx9KctftYoctvBVGeH6nzXTOO2" crossorigin="anonymous"></noscript>
 
     <noscript><link rel="stylesheet" href="../assets/css/tailwind.min.css?v=1.3"></noscript>
     <!-- ApexCharts loaded lazily via IntersectionObserver in main.js when #chart enters viewport -->
@@ -1178,9 +1178,9 @@
     </div>
 
     <script defer src="../assets/js/translations.js?v=2.6"></script>
-    <script defer src="../assets/js/main.js?v=3"></script>
+    <script defer src="../assets/js/main.js?v=4"></script>
     <script defer src="../assets/js/index.js?v=2.11"></script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.js" integrity="sha384-VwoO4KYHycI5E2Vzjf4m+IY3C8JKnLhRzzVeR7n4Qdx+Qkq0YUC3aiJ6vY0XVlVT" crossorigin="anonymous"></script>
     <!-- Cal.com popup — hero CTA (lazy-loaded: embed.js downloads on first interaction or idle) -->
     <script>
     (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A+"/embed/embed.js";cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com","init");

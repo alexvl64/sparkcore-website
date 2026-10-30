@@ -462,9 +462,30 @@ que `contrats/`, en accès direct, en-têtes posés par `_headers`.
 
 | Item | Audit | Décision | Justification |
 |---|---|---|---|
-| **SRI sur scripts CDN** (ApexCharts, Toastify) | HIGH (65/100) | ❌ Skipped | Coût maintenance perpétuelle (regénération hash à chaque update) > bénéfice (jsdelivr jamais compromis en 10 ans). À reconsidérer si on commence à traiter des paiements ou auth. |
-| **CSP `'unsafe-inline'`** | HIGH (60/100) | ✅ Conservé | Nécessaire pour le site statique sans Workers. À retirer si migration vers Cloudflare Workers. |
+| **CSP `'unsafe-inline'`** | HIGH (60/100) | ✅ Conservé (Alex, 30/10/2026) | Le site a des Pages Functions depuis, donc un nonce serait possible ; écarté parce qu'il faudrait un HTMLRewriter sur toutes les pages et sortir la CSP de la Transform Rule, pour un site statique qui ne reflète aucune saisie et sans champ de connexion. Le risque des scripts CDN est couvert par l'épinglage + SRI (ci-dessous). |
 | **Contrats `/ressources/contrats/` accessibles par URL directe** | CRITICAL (90/100) | ✅ Conservé | Modèle de menace assumé : URLs partagées uniquement par email, documents non-critiques, `X-Robots-Tag: noindex` empêche l'indexation. |
+
+### Librairies CDN : versions épinglées + SRI (depuis le 30/10/2026)
+
+La décision du 15/04 (« SRI écarté, coût de maintenance ») est renversée par Alex le 30/10/2026, après le scan de
+sécurité externe (entrée 1014 de `sparkcore-vps`) : sous `@latest`, une publication npm compromise partait chez tous
+les visiteurs. Une version épinglée ne change d'empreinte qu'avec une mise à jour voulue.
+
+| Librairie | URL (fichier livré tel quel dans le paquet npm) | Où |
+|---|---|---|
+| Toastify JS 1.12.0 | `npm/toastify-js@1.12.0/src/toastify.js` | `index.html`, `fr/index.html` |
+| Toastify CSS 1.12.0 | `npm/toastify-js@1.12.0/src/toastify.css` (preload + noscript) | `index.html`, `fr/index.html` |
+| ApexCharts 8.6.0 | `npm/apexcharts@8.6.0/dist/apexcharts.min.js` | `factsheets/*.html`, chargement différé de `assets/js/main.js` (accueils) |
+
+Règles :
+- **Jamais** les fichiers `.min.js` / `.min.css` que jsDelivr génère lui-même (en-tête « Minified by jsDelivr ») :
+  leur contenu change avec l'outil de jsDelivr, l'empreinte casserait et le navigateur bloquerait le script.
+- Mettre à jour = choisir la version, prendre l'empreinte du fichier
+  (`curl -s <url> | openssl dgst -sha384 -binary | openssl base64 -A`), la recouper avec le `hash` (sha256) de l'API
+  `data.jsdelivr.com/v1/packages/npm/<paquet>@<version>`, remplacer URL et `integrity` partout (y compris
+  `main.js`, puis bumper son `?v=`), vérifier dans un navigateur qu'aucune erreur « integrity » n'apparaît.
+- Toujours `crossorigin="anonymous"` avec `integrity` (jsDelivr répond `Access-Control-Allow-Origin: *`).
+- Pas de SRI possible sur Cronitor, Google Tag Manager, Turnstile et Cal.com (scripts d'éditeur qui évoluent) : accepté.
 
 ### Actions de remediation : aucune en attente
 
@@ -608,7 +629,7 @@ default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenge
 
 > **Cal.com (2026-09-25)** : cal.eu ferme le 1er novembre 2026 ; le site pointe sur `app.cal.com` (compte `cal.com/sparkcore`, événement `discovery`). CSP Cloudflare alignée le 2026-09-25 : plus aucune référence à `cal.eu`.
 
-> Note: `'unsafe-inline'` is intentional for a static site with no user authentication. Replace with nonces only if moving to Cloudflare Workers.
+> Note : `'unsafe-inline'` est conservé (décision du 30/10/2026, tableau « Décisions de sécurité explicites » plus haut).
 
 ### Rules → Redirect Rules
 
