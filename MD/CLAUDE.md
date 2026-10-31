@@ -629,7 +629,7 @@ default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenge
 
 > **Cal.com (2026-09-25)** : cal.eu ferme le 1er novembre 2026 ; le site pointe sur `app.cal.com` (compte `cal.com/sparkcore`, événement `discovery`). CSP Cloudflare alignée le 2026-09-25 : plus aucune référence à `cal.eu`.
 
-> **Correction du 31/10/2026** (scan externe, entrée 1015 de sparkcore-vps) : la règle vivante avait dérivé de cette
+> **Correction du 31/10/2026, appliquée le même jour** (règle en version 10 ; scan externe, entrées 1015-1016 de sparkcore-vps) : la règle vivante avait dérivé de cette
 > doc (Google Fonts retiré de `style-src`/`font-src`) et ne connaissait pas l'hôte de collecte de GA4
 > (`region1.google-analytics.com`, qui varie selon la région du visiteur) : **aucune mesure GA4 ne partait**, sur
 > aucune page, et les factsheets et la page de RDV perdaient leurs polices. Valeur ci-dessus : `connect-src` en
