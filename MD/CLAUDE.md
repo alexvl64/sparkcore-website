@@ -200,7 +200,7 @@ de données » (trafic Chrome insuffisant).
 
 ### Vérifier le tracking depuis le navigateur
 
-1. **DevTools Network** : F12 → filtre `collect` → recharger → requête `https://www.google-analytics.com/g/collect?v=2&tid=G-J80NVPQNVZ&...`
+1. **DevTools Network** : F12 → filtre `collect` → recharger → requête `https://region1.google-analytics.com/g/collect?v=2&tid=G-J80NVPQNVZ&...` (l'hôte varie selon la région)
 2. **Console JS** : `window.dataLayer.find(x => x[0] === 'config')` → `['config', 'G-J80NVPQNVZ', { anonymize_ip: true }]`
 3. **GA4 Realtime** : property `SparkCore.investment OÜ` → Reports → Realtime → +1 user dans les 30s
 
@@ -624,10 +624,21 @@ All settings below are live on the `sparkcore.fund` zone.
 **Header:** `Content-Security-Policy`
 **Value:**
 ```
-default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com https://www.googletagmanager.com https://rum.cronitor.io https://static.cloudflareinsights.com https://app.cal.com https://cal.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formcarry.com https://docs.google.com https://www.google-analytics.com https://analytics.google.com https://rum.cronitor.io https://a.nel.cloudflare.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com; frame-src https://challenges.cloudflare.com https://app.cal.com https://cal.com; report-uri /csp-report
+default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com https://www.googletagmanager.com https://rum.cronitor.io https://static.cloudflareinsights.com https://app.cal.com https://cal.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://docs.google.com https://rum.cronitor.io https://a.nel.cloudflare.com https://cdn.jsdelivr.net https://app.cal.com https://cal.com; frame-src https://challenges.cloudflare.com https://app.cal.com https://cal.com; report-uri /csp-report
 ```
 
 > **Cal.com (2026-09-25)** : cal.eu ferme le 1er novembre 2026 ; le site pointe sur `app.cal.com` (compte `cal.com/sparkcore`, événement `discovery`). CSP Cloudflare alignée le 2026-09-25 : plus aucune référence à `cal.eu`.
+
+> **Correction du 31/10/2026** (scan externe, entrée 1015 de sparkcore-vps) : la règle vivante avait dérivé de cette
+> doc (Google Fonts retiré de `style-src`/`font-src`) et ne connaissait pas l'hôte de collecte de GA4
+> (`region1.google-analytics.com`, qui varie selon la région du visiteur) : **aucune mesure GA4 ne partait**, sur
+> aucune page, et les factsheets et la page de RDV perdaient leurs polices. Valeur ci-dessus : `connect-src` en
+> `https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com` (forme documentée
+> par Google pour GA4), Google Fonts rétabli, `formcarry.com` retiré (plus utilisé). Vérifiée dans Chromium en
+> substituant l'en-tête sur neuf pages de prod, consentement accordé : aucune violation, 27 requêtes GA émises (0 avec
+> l'ancienne). **Avant de modifier la règle dans Cloudflare, relever l'en-tête servi** (`curl -sI https://sparkcore.fund/
+> | grep -i content-security`) et le comparer à cette doc : c'est la Transform Rule qui fait foi, et elle couvre
+> toute la zone (beta compris, donc pas d'étape beta).
 
 > Note : `'unsafe-inline'` est conservé (décision du 30/10/2026, tableau « Décisions de sécurité explicites » plus haut).
 
